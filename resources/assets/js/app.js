@@ -18,7 +18,22 @@ import TaskList from './components/TaskList.vue';
 
 const app = new Vue({
     el: '#app',
+    data: {
+        showModal: false
+    },
     components: {
         TaskList
     }
 });
+
+new Vue({
+    el: '#vue-crud-wrapper',
+    data: {
+        items: [],
+        newItem: {
+            'title': '',
+            'body': ''
+        },
+    },
+    methods: {}
+})

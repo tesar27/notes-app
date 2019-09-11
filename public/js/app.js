@@ -1377,10 +1377,25 @@ window.Vue = __webpack_require__(38);
 
 
 var app = new Vue({
-  el: '#app',
-  components: {
-    TaskList: __WEBPACK_IMPORTED_MODULE_0__components_TaskList_vue___default.a
-  }
+    el: '#app',
+    data: {
+        showModal: false
+    },
+    components: {
+        TaskList: __WEBPACK_IMPORTED_MODULE_0__components_TaskList_vue___default.a
+    }
+});
+
+new Vue({
+    el: '#vue-crud-wrapper',
+    data: {
+        items: [],
+        newItem: {
+            'title': '',
+            'body': ''
+        }
+    },
+    methods: {}
 });
 
 /***/ }),
@@ -42648,7 +42663,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\resources\\assets\\js\\components\\TaskList.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\resources\\assets\\js\\components\\TaskList.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] TaskList.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -42659,9 +42674,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5d923f93", Component.options)
+    hotAPI.createRecord("data-v-4777dd00", Component.options)
   } else {
-    hotAPI.reload("data-v-5d923f93", Component.options)
+    hotAPI.reload("data-v-4777dd00", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -42711,7 +42726,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -42749,11 +42771,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var _this2 = this;
 
 			axios.post("api/tasks", this.task).then(function (res) {
+				_this2.fetchTaskList();
 				_this2.task.title = "";
 				_this2.task.body = "";
 			}).catch(function (err) {
 				return console.error(err);
 			});
+		},
+		setVal: function setVal(id, title, body) {
+			this.id = id;
+			this.title = title;
+			this.body = body;
+		},
+		editItem: function editItem() {
+			var t_val = document.getElementById("e_title");
+			var b_val = document.getElementById("e_body");
+			axios.post(api / tasks, this.task.title = t_val, this.task.body = b_val).then(function (res) {});
 		},
 		deleteTask: function deleteTask(id) {
 			var _this3 = this;
@@ -42953,11 +42986,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-3272dbc0",
+  "data-v-532265da",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Circle.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Circle.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Circle.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -42968,9 +43001,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3272dbc0", Component.options)
+    hotAPI.createRecord("data-v-532265da", Component.options)
   } else {
-    hotAPI.reload("data-v-3272dbc0", Component.options)
+    hotAPI.reload("data-v-532265da", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -42991,13 +43024,13 @@ var content = __webpack_require__(44);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("7f65b740", content, false, {});
+var update = __webpack_require__(2)("4638566b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3272dbc0\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3272dbc0\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-532265da\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-532265da\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -43015,7 +43048,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-3272dbc0] {\n  animation: circle-rotator-data-v-3272dbc0 1.4s linear infinite;\n}\n.spinner *[data-v-3272dbc0] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n@keyframes circle-rotator-data-v-3272dbc0 {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(270deg);\n}\n}\n.path[data-v-3272dbc0] {\n  stroke-dasharray: 187;\n  stroke-dashoffset: 0;\n  transform-origin: center;\n  animation: circle-dash-data-v-3272dbc0 1.4s ease-in-out infinite, circle-colors 5.6s ease-in-out infinite;\n}\n@keyframes circle-colors-data-v-3272dbc0 {\n0% {\n    stroke: #35495e;\n}\n25% {\n    stroke: #DE3E35;\n}\n50% {\n    stroke: #F7C223;\n}\n75% {\n    stroke: #41b883;\n}\n100% {\n    stroke: #35495e;\n}\n}\n@keyframes circle-dash-data-v-3272dbc0 {\n0% {\n    stroke-dashoffset: 187;\n}\n50% {\n    stroke-dashoffset: 46.75;\n    transform: rotate(135deg);\n}\n100% {\n    stroke-dashoffset: 187;\n    transform: rotate(450deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-532265da] {\n  animation: circle-rotator-data-v-532265da 1.4s linear infinite;\n}\n.spinner *[data-v-532265da] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n@keyframes circle-rotator-data-v-532265da {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(270deg);\n}\n}\n.path[data-v-532265da] {\n  stroke-dasharray: 187;\n  stroke-dashoffset: 0;\n  transform-origin: center;\n  animation: circle-dash-data-v-532265da 1.4s ease-in-out infinite, circle-colors 5.6s ease-in-out infinite;\n}\n@keyframes circle-colors-data-v-532265da {\n0% {\n    stroke: #35495e;\n}\n25% {\n    stroke: #DE3E35;\n}\n50% {\n    stroke: #F7C223;\n}\n75% {\n    stroke: #41b883;\n}\n100% {\n    stroke: #35495e;\n}\n}\n@keyframes circle-dash-data-v-532265da {\n0% {\n    stroke-dashoffset: 187;\n}\n50% {\n    stroke-dashoffset: 46.75;\n    transform: rotate(135deg);\n}\n100% {\n    stroke-dashoffset: 187;\n    transform: rotate(450deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -43109,7 +43142,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3272dbc0", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-532265da", module.exports)
   }
 }
 
@@ -43130,11 +43163,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-1bb9497c",
+  "data-v-10fb02a2",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Circle2.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Circle2.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Circle2.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -43145,9 +43178,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1bb9497c", Component.options)
+    hotAPI.createRecord("data-v-10fb02a2", Component.options)
   } else {
-    hotAPI.reload("data-v-1bb9497c", Component.options)
+    hotAPI.reload("data-v-10fb02a2", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -43168,13 +43201,13 @@ var content = __webpack_require__(50);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("130a0d0e", content, false, {});
+var update = __webpack_require__(2)("5892f519", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1bb9497c\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle2.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1bb9497c\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle2.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-10fb02a2\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle2.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-10fb02a2\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle2.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -43192,7 +43225,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-1bb9497c] {\n  box-sizing: border-box;\n  border-radius: 100%;\n  border: 10px solid rgba(255, 255, 255, 0.2);\n  animation: circle-2-spin-data-v-1bb9497c 1s infinite linear;\n}\n@keyframes circle-2-spin-data-v-1bb9497c {\n100% {\n    transform: rotate(360deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-10fb02a2] {\n  box-sizing: border-box;\n  border-radius: 100%;\n  border: 10px solid rgba(255, 255, 255, 0.2);\n  animation: circle-2-spin-data-v-10fb02a2 1s infinite linear;\n}\n@keyframes circle-2-spin-data-v-10fb02a2 {\n100% {\n    transform: rotate(360deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -43248,7 +43281,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-1bb9497c", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-10fb02a2", module.exports)
   }
 }
 
@@ -43269,11 +43302,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-1b9d1a7a",
+  "data-v-10ded3a0",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Circle3.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Circle3.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Circle3.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -43284,9 +43317,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1b9d1a7a", Component.options)
+    hotAPI.createRecord("data-v-10ded3a0", Component.options)
   } else {
-    hotAPI.reload("data-v-1b9d1a7a", Component.options)
+    hotAPI.reload("data-v-10ded3a0", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -43307,13 +43340,13 @@ var content = __webpack_require__(55);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("08865933", content, false, {});
+var update = __webpack_require__(2)("1be2cf8b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b9d1a7a\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle3.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b9d1a7a\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle3.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-10ded3a0\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle3.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-10ded3a0\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle3.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -43331,7 +43364,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-1b9d1a7a] {\n  box-sizing: border-box;\n  border-radius: 50%;\n  animation: circle-3-rotate-data-v-1b9d1a7a 1s infinite linear;\n}\n@keyframes circle-3-rotate-data-v-1b9d1a7a {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-10ded3a0] {\n  box-sizing: border-box;\n  border-radius: 50%;\n  animation: circle-3-rotate-data-v-10ded3a0 1s infinite linear;\n}\n@keyframes circle-3-rotate-data-v-10ded3a0 {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -43389,7 +43422,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-1b9d1a7a", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-10ded3a0", module.exports)
   }
 }
 
@@ -43410,11 +43443,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-1b80eb78",
+  "data-v-10c2a49e",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Circle4.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Circle4.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Circle4.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -43425,9 +43458,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1b80eb78", Component.options)
+    hotAPI.createRecord("data-v-10c2a49e", Component.options)
   } else {
-    hotAPI.reload("data-v-1b80eb78", Component.options)
+    hotAPI.reload("data-v-10c2a49e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -43448,13 +43481,13 @@ var content = __webpack_require__(60);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("27a84bf8", content, false, {});
+var update = __webpack_require__(2)("02b4dd7e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b80eb78\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle4.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b80eb78\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle4.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-10c2a49e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle4.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-10c2a49e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle4.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -43472,7 +43505,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-1b80eb78] {\n  box-sizing: border-box;\n  position: relative;\n  border: 3px solid transparent;\n  border-top-color: #f7484e;\n  border-radius: 50%;\n  animation: circle-4-spin-data-v-1b80eb78 2s linear infinite;\n}\n.spinner[data-v-1b80eb78]:before, .spinner[data-v-1b80eb78]:after {\n    content: '';\n    box-sizing: border-box;\n    position: absolute;\n    border: 3px solid transparent;\n    border-radius: 50%;\n}\n.spinner[data-v-1b80eb78]:before {\n    border-top-color: #f8b334;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    animation: circle-4-spin-data-v-1b80eb78 3s linear infinite;\n}\n.spinner[data-v-1b80eb78]:after {\n    border-top-color: #41b883;\n    top: 6px;\n    left: 6px;\n    right: 6px;\n    bottom: 6px;\n    animation: spin 4s linear infinite;\n}\n@keyframes circle-4-spin-data-v-1b80eb78 {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-10c2a49e] {\n  box-sizing: border-box;\n  position: relative;\n  border: 3px solid transparent;\n  border-top-color: #f7484e;\n  border-radius: 50%;\n  animation: circle-4-spin-data-v-10c2a49e 2s linear infinite;\n}\n.spinner[data-v-10c2a49e]:before, .spinner[data-v-10c2a49e]:after {\n    content: '';\n    box-sizing: border-box;\n    position: absolute;\n    border: 3px solid transparent;\n    border-radius: 50%;\n}\n.spinner[data-v-10c2a49e]:before {\n    border-top-color: #f8b334;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    animation: circle-4-spin-data-v-10c2a49e 3s linear infinite;\n}\n.spinner[data-v-10c2a49e]:after {\n    border-top-color: #41b883;\n    top: 6px;\n    left: 6px;\n    right: 6px;\n    bottom: 6px;\n    animation: spin 4s linear infinite;\n}\n@keyframes circle-4-spin-data-v-10c2a49e {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -43517,7 +43550,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-1b80eb78", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-10c2a49e", module.exports)
   }
 }
 
@@ -43538,11 +43571,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-1b64bc76",
+  "data-v-10a6759c",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Circle5.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Circle5.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Circle5.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -43553,9 +43586,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1b64bc76", Component.options)
+    hotAPI.createRecord("data-v-10a6759c", Component.options)
   } else {
-    hotAPI.reload("data-v-1b64bc76", Component.options)
+    hotAPI.reload("data-v-10a6759c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -43576,13 +43609,13 @@ var content = __webpack_require__(65);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("00aa1f44", content, false, {});
+var update = __webpack_require__(2)("0efe959e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b64bc76\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle5.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b64bc76\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle5.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-10a6759c\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle5.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-10a6759c\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle5.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -43600,7 +43633,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-1b64bc76] {\n  transform: translate3d(0, 0, 0);\n  position: relative;\n  background: rgba(25, 165, 152, 0.5);\n  border-radius: 50%;\n  overflow: hidden;\n}\n.spinner[data-v-1b64bc76]:before, .spinner[data-v-1b64bc76]:after {\n  content: '';\n  position: absolute;\n  top: 0;\n  display: inline-block;\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n}\n.spinner[data-v-1b64bc76]:before {\n  animation: circle-5-spinner-data-v-1b64bc76 3s infinite;\n  transform-origin: 0 50%;\n  left: 0;\n  background: #c7efcf;\n}\n.spinner[data-v-1b64bc76]:after {\n  animation: circle-5-spinner-data-v-1b64bc76 3s 0.2s reverse infinite;\n  transform-origin: 100% 50%;\n  right: 0;\n  background: #eef5db;\n}\n@keyframes circle-5-spinner-data-v-1b64bc76 {\n0% {\n    transform: rotate(0deg);\n}\n50% {\n    transform: rotate(360deg);\n}\n100% {\n    transform: rotate(0deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-10a6759c] {\n  transform: translate3d(0, 0, 0);\n  position: relative;\n  background: rgba(25, 165, 152, 0.5);\n  border-radius: 50%;\n  overflow: hidden;\n}\n.spinner[data-v-10a6759c]:before, .spinner[data-v-10a6759c]:after {\n  content: '';\n  position: absolute;\n  top: 0;\n  display: inline-block;\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n}\n.spinner[data-v-10a6759c]:before {\n  animation: circle-5-spinner-data-v-10a6759c 3s infinite;\n  transform-origin: 0 50%;\n  left: 0;\n  background: #c7efcf;\n}\n.spinner[data-v-10a6759c]:after {\n  animation: circle-5-spinner-data-v-10a6759c 3s 0.2s reverse infinite;\n  transform-origin: 100% 50%;\n  right: 0;\n  background: #eef5db;\n}\n@keyframes circle-5-spinner-data-v-10a6759c {\n0% {\n    transform: rotate(0deg);\n}\n50% {\n    transform: rotate(360deg);\n}\n100% {\n    transform: rotate(0deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -43645,7 +43678,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-1b64bc76", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-10a6759c", module.exports)
   }
 }
 
@@ -43666,11 +43699,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-1b488d74",
+  "data-v-108a469a",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Circle6.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Circle6.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Circle6.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -43681,9 +43714,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1b488d74", Component.options)
+    hotAPI.createRecord("data-v-108a469a", Component.options)
   } else {
-    hotAPI.reload("data-v-1b488d74", Component.options)
+    hotAPI.reload("data-v-108a469a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -43704,13 +43737,13 @@ var content = __webpack_require__(70);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("15126fde", content, false, {});
+var update = __webpack_require__(2)("26d630dd", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b488d74\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle6.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b488d74\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle6.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-108a469a\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle6.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-108a469a\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle6.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -43728,7 +43761,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "/* Generated with Bounce.js. Edit at http://goo.gl/hYAzd9 */\n@keyframes circle-6-rotateAll-data-v-1b488d74 {\n0% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n77.777778% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n78.518519% {\n    transform: matrix3d(0.80259, 0.59653, 0, 0, -0.59653, 0.80259, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n79.259259% {\n    transform: matrix3d(0.52673, 0.85004, 0, 0, -0.85004, 0.52673, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n80% {\n    transform: matrix3d(0.60234, 0.79824, 0, 0, -0.79824, 0.60234, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n80.740741% {\n    transform: matrix3d(0.72936, 0.68413, 0, 0, -0.68413, 0.72936, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n81.481481% {\n    transform: matrix3d(0.7498, 0.66167, 0, 0, -0.66167, 0.7498, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n82.222222% {\n    transform: matrix3d(0.71527, 0.69885, 0, 0, -0.69885, 0.71527, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n82.962963% {\n    transform: matrix3d(0.69404, 0.71994, 0, 0, -0.71994, 0.69404, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n83.703704% {\n    transform: matrix3d(0.69926, 0.71487, 0, 0, -0.71487, 0.69926, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n84.444444% {\n    transform: matrix3d(0.7089, 0.70531, 0, 0, -0.70531, 0.7089, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n85.185185% {\n    transform: matrix3d(0.7106, 0.7036, 0, 0, -0.7036, 0.7106, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n85.925926% {\n    transform: matrix3d(0.70776, 0.70645, 0, 0, -0.70645, 0.70776, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n86.666667% {\n    transform: matrix3d(0.70608, 0.70813, 0, 0, -0.70813, 0.70608, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n87.407407% {\n    transform: matrix3d(0.70649, 0.70773, 0, 0, -0.70773, 0.70649, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n88.148148% {\n    transform: matrix3d(0.70725, 0.70696, 0, 0, -0.70696, 0.70725, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(0.70738, 0.70683, 0, 0, -0.70683, 0.70738, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(0.70711, 0.70711, 0, 0, -0.70711, 0.70711, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n100% {\n    transform: matrix3d(0.70711, 0.70711, 0, 0, -0.70711, 0.70711, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/DEm6fe */\n@keyframes circle-6-anim-1-circle-data-v-1b488d74 {\n0% {\n    transform: scale(0);\n}\n0.740741% {\n    transform: matrix3d(0.32778, 0, 0, 0, 0, 0.32778, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n1.481481% {\n    transform: matrix3d(0.69875, 0, 0, 0, 0, 0.69875, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n2.222222% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n2.962963% {\n    transform: matrix3d(1.1815, 0, 0, 0, 0, 1.1815, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n3.703704% {\n    transform: matrix3d(1.24402, 0, 0, 0, 0, 1.24402, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n4.444444% {\n    transform: matrix3d(1.21871, 0, 0, 0, 0, 1.21871, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n5.185185% {\n    transform: matrix3d(1.14702, 0, 0, 0, 0, 1.14702, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n5.925926% {\n    transform: matrix3d(1.06589, 0, 0, 0, 0, 1.06589, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n6.666667% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n7.407407% {\n    transform: matrix3d(0.9603, 0, 0, 0, 0, 0.9603, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n8.148148% {\n    transform: matrix3d(0.94663, 0, 0, 0, 0, 0.94663, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n8.888889% {\n    transform: matrix3d(0.95217, 0, 0, 0, 0, 0.95217, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n9.62963% {\n    transform: matrix3d(0.96784, 0, 0, 0, 0, 0.96784, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n10.37037% {\n    transform: matrix3d(0.98559, 0, 0, 0, 0, 0.98559, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n11.111111% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n11.851852% {\n    transform: matrix3d(1.00868, 0, 0, 0, 0, 1.00868, 0, 0, 0, 0, 1, 0, -9.51676, 0, 0, 1);\n}\n12.592593% {\n    transform: matrix3d(1.01167, 0, 0, 0, 0, 1.01167, 0, 0, 0, 0, 1, 0, -18.75576, 0, 0, 1);\n}\n13.333333% {\n    transform: matrix3d(1.01046, 0, 0, 0, 0, 1.01046, 0, 0, 0, 0, 1, 0, -25.26155, 0, 0, 1);\n}\n14.074074% {\n    transform: matrix3d(1.00703, 0, 0, 0, 0, 1.00703, 0, 0, 0, 0, 1, 0, -28.53849, 0, 0, 1);\n}\n14.814815% {\n    transform: matrix3d(1.00315, 0, 0, 0, 0, 1.00315, 0, 0, 0, 0, 1, 0, -29.2499, 0, 0, 1);\n}\n15.555556% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -28.45173, 0, 0, 1);\n}\n16.296296% {\n    transform: matrix3d(0.9981, 0, 0, 0, 0, 0.9981, 0, 0, 0, 0, 1, 0, -27.09752, 0, 0, 1);\n}\n17.037037% {\n    transform: matrix3d(0.99745, 0, 0, 0, 0, 0.99745, 0, 0, 0, 0, 1, 0, -25.82591, 0, 0, 1);\n}\n17.777778% {\n    transform: matrix3d(0.99771, 0, 0, 0, 0, 0.99771, 0, 0, 0, 0, 1, 0, -24.9428, 0, 0, 1);\n}\n18.518519% {\n    transform: matrix3d(0.99846, 0, 0, 0, 0, 0.99846, 0, 0, 0, 0, 1, 0, -24.50122, 0, 0, 1);\n}\n19.259259% {\n    transform: matrix3d(0.99931, 0, 0, 0, 0, 0.99931, 0, 0, 0, 0, 1, 0, -24.40907, 0, 0, 1);\n}\n20% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.52342, 0, 0, 1);\n}\n20.740741% {\n    transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, -24.71354, 0, 0, 1);\n}\n21.481481% {\n    transform: matrix3d(1.00056, 0, 0, 0, 0, 1.00056, 0, 0, 0, 0, 1, 0, -24.89073, 0, 0, 1);\n}\n22.222222% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n22.962963% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.06366, 0, 0, 1);\n}\n23.703704% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.07926, 0, 0, 1);\n}\n24.444444% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.0658, 0, 0, 1);\n}\n25.185185% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.04097, 0, 0, 1);\n}\n25.925926% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.017, 0, 0, 1);\n}\n26.666667% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n27.407407% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.99121, 0, 0, 1);\n}\n28.148148% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.98906, 0, 0, 1);\n}\n28.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.99091, 0, 0, 1);\n}\n29.62963% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.99434, 0, 0, 1);\n}\n30.37037% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.99765, 0, 0, 1);\n}\n31.111111% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n31.851852% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.00121, 0, 0, 1);\n}\n32.592593% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.00151, 0, 0, 1);\n}\n33.333333% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(0.32628, 0, 0, 0, 0, 0.32628, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(0.10646, 0, 0, 0, 0, 0.10646, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(0.03474, 0, 0, 0, 0, 0.03474, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(0.01133, 0, 0, 0, 0, 0.01133, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(0.0037, 0, 0, 0, 0, 0.0037, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(0.00121, 0, 0, 0, 0, 0.00121, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(0.00039, 0, 0, 0, 0, 0.00039, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(0.00013, 0, 0, 0, 0, 0.00013, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(0.00004, 0, 0, 0, 0, 0.00004, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(0.00001, 0, 0, 0, 0, 0.00001, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n97.037037% {\n    transform: scale(0) translateX(-25px);\n}\n100% {\n    transform: scale(0) translateX(-25px);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/e10ASq */\n@keyframes circle-6-anim-3-circle-data-v-1b488d74 {\n0% {\n    transform: scale(0);\n}\n44.444444% {\n    transform: scale(0);\n}\n45.185185% {\n    transform: matrix3d(0.32778, 0, 0, 0, 0, 0.32778, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n45.925926% {\n    transform: matrix3d(0.69875, 0, 0, 0, 0, 0.69875, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n46.666667% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n47.407407% {\n    transform: matrix3d(1.1815, 0, 0, 0, 0, 1.1815, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n48.148148% {\n    transform: matrix3d(1.24402, 0, 0, 0, 0, 1.24402, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n48.888889% {\n    transform: matrix3d(1.21871, 0, 0, 0, 0, 1.21871, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n49.62963% {\n    transform: matrix3d(1.14702, 0, 0, 0, 0, 1.14702, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n50.37037% {\n    transform: matrix3d(1.06589, 0, 0, 0, 0, 1.06589, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n51.111111% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n51.851852% {\n    transform: matrix3d(0.9603, 0, 0, 0, 0, 0.9603, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n52.592593% {\n    transform: matrix3d(0.94663, 0, 0, 0, 0, 0.94663, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n53.333333% {\n    transform: matrix3d(0.95217, 0, 0, 0, 0, 0.95217, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n54.074074% {\n    transform: matrix3d(0.96784, 0, 0, 0, 0, 0.96784, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n54.814815% {\n    transform: matrix3d(0.98559, 0, 0, 0, 0, 0.98559, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n55.555556% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n56.296296% {\n    transform: matrix3d(1.00868, 0, 0, 0, 0, 1.00868, 0, 0, 0, 0, 1, 0, -15.05076, 0, 0, 1);\n}\n57.037037% {\n    transform: matrix3d(1.01167, 0, 0, 0, 0, 1.01167, 0, 0, 0, 0, 1, 0, -26.2515, 0, 0, 1);\n}\n57.777778% {\n    transform: matrix3d(1.01046, 0, 0, 0, 0, 1.01046, 0, 0, 0, 0, 1, 0, -29.73137, 0, 0, 1);\n}\n58.518519% {\n    transform: matrix3d(1.00703, 0, 0, 0, 0, 1.00703, 0, 0, 0, 0, 1, 0, -28.42084, 0, 0, 1);\n}\n59.259259% {\n    transform: matrix3d(1.00315, 0, 0, 0, 0, 1.00315, 0, 0, 0, 0, 1, 0, -26.07434, 0, 0, 1);\n}\n60% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.63046, 0, 0, 1);\n}\n60.740741% {\n    transform: matrix3d(0.9981, 0, 0, 0, 0, 0.9981, 0, 0, 0, 0, 1, 0, -24.29556, 0, 0, 1);\n}\n61.481481% {\n    transform: matrix3d(0.99745, 0, 0, 0, 0, 0.99745, 0, 0, 0, 0, 1, 0, -24.54061, 0, 0, 1);\n}\n62.222222% {\n    transform: matrix3d(0.99771, 0, 0, 0, 0, 0.99771, 0, 0, 0, 0, 1, 0, -24.86216, 0, 0, 1);\n}\n62.962963% {\n    transform: matrix3d(0.99846, 0, 0, 0, 0, 0.99846, 0, 0, 0, 0, 1, 0, -25.04022, 0, 0, 1);\n}\n63.703704% {\n    transform: matrix3d(0.99931, 0, 0, 0, 0, 0.99931, 0, 0, 0, 0, 1, 0, -25.07557, 0, 0, 1);\n}\n64.444444% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.04628, 0, 0, 1);\n}\n65.185185% {\n    transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, -25.01399, 0, 0, 1);\n}\n65.925926% {\n    transform: matrix3d(1.00056, 0, 0, 0, 0, 1.00056, 0, 0, 0, 0, 1, 0, -25.00006, 0, 0, 1);\n}\n66.666667% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.98749, 0, 0, 1);\n}\n67.407407% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(0.32628, 0, 0, 0, 0, 0.32628, 0, 0, 0, 0, 1, 0, -8.15699, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(0.10646, 0, 0, 0, 0, 0.10646, 0, 0, 0, 0, 1, 0, -2.66146, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(0.03474, 0, 0, 0, 0, 0.03474, 0, 0, 0, 0, 1, 0, -0.86838, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(0.01133, 0, 0, 0, 0, 0.01133, 0, 0, 0, 0, 1, 0, -0.28334, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(0.0037, 0, 0, 0, 0, 0.0037, 0, 0, 0, 0, 1, 0, -0.09245, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(0.00121, 0, 0, 0, 0, 0.00121, 0, 0, 0, 0, 1, 0, -0.03016, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(0.00039, 0, 0, 0, 0, 0.00039, 0, 0, 0, 0, 1, 0, -0.00984, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(0.00013, 0, 0, 0, 0, 0.00013, 0, 0, 0, 0, 1, 0, -0.00321, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(0.00004, 0, 0, 0, 0, 0.00004, 0, 0, 0, 0, 1, 0, -0.00105, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(0.00001, 0, 0, 0, 0, 0.00001, 0, 0, 0, 0, 1, 0, -0.00034, 0, 0, 1);\n}\n97.037037% {\n    transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, -0.00011, 0, 0, 1);\n}\n97.777778% {\n    transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, -0.00004, 0, 0, 1);\n}\n98.518519% {\n    transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, -0.00001, 0, 0, 1);\n}\n99.259259% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(0);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/uIqwYq */\n@keyframes circle-6-anim-2-circle-data-v-1b488d74 {\n0% {\n    transform: scale(0);\n}\n22.222222% {\n    transform: scale(0);\n}\n22.962963% {\n    transform: matrix3d(0.32778, 0, 0, 0, 0, 0.32778, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n23.703704% {\n    transform: matrix3d(0.69875, 0, 0, 0, 0, 0.69875, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n24.444444% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n25.185185% {\n    transform: matrix3d(1.1815, 0, 0, 0, 0, 1.1815, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n25.925926% {\n    transform: matrix3d(1.24402, 0, 0, 0, 0, 1.24402, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n26.666667% {\n    transform: matrix3d(1.21871, 0, 0, 0, 0, 1.21871, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n27.407407% {\n    transform: matrix3d(1.14702, 0, 0, 0, 0, 1.14702, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n28.148148% {\n    transform: matrix3d(1.06589, 0, 0, 0, 0, 1.06589, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n28.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n29.62963% {\n    transform: matrix3d(0.9603, 0, 0, 0, 0, 0.9603, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n30.37037% {\n    transform: matrix3d(0.94663, 0, 0, 0, 0, 0.94663, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n31.111111% {\n    transform: matrix3d(0.95217, 0, 0, 0, 0, 0.95217, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n31.851852% {\n    transform: matrix3d(0.96784, 0, 0, 0, 0, 0.96784, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n32.592593% {\n    transform: matrix3d(0.98559, 0, 0, 0, 0, 0.98559, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n33.333333% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n34.074074% {\n    transform: matrix3d(1.00868, 0, 0, 0, 0, 1.00868, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n34.814815% {\n    transform: matrix3d(1.01167, 0, 0, 0, 0, 1.01167, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n35.555556% {\n    transform: matrix3d(1.01046, 0, 0, 0, 0, 1.01046, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n36.296296% {\n    transform: matrix3d(1.00703, 0, 0, 0, 0, 1.00703, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n37.037037% {\n    transform: matrix3d(1.00315, 0, 0, 0, 0, 1.00315, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n37.777778% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n38.518519% {\n    transform: matrix3d(0.9981, 0, 0, 0, 0, 0.9981, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n39.259259% {\n    transform: matrix3d(0.99745, 0, 0, 0, 0, 0.99745, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n40% {\n    transform: matrix3d(0.99771, 0, 0, 0, 0, 0.99771, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n40.740741% {\n    transform: matrix3d(0.99846, 0, 0, 0, 0, 0.99846, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n41.481481% {\n    transform: matrix3d(0.99931, 0, 0, 0, 0, 0.99931, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n42.222222% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n42.962963% {\n    transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n43.703704% {\n    transform: matrix3d(1.00056, 0, 0, 0, 0, 1.00056, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n44.444444% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(0.32628, 0, 0, 0, 0, 0.32628, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(0.10646, 0, 0, 0, 0, 0.10646, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(0.03474, 0, 0, 0, 0, 0.03474, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(0.01133, 0, 0, 0, 0, 0.01133, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(0.0037, 0, 0, 0, 0, 0.0037, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(0.00121, 0, 0, 0, 0, 0.00121, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(0.00039, 0, 0, 0, 0, 0.00039, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(0.00013, 0, 0, 0, 0, 0.00013, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(0.00004, 0, 0, 0, 0, 0.00004, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(0.00001, 0, 0, 0, 0, 0.00001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n97.037037% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(0);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/Kdj66E */\n@keyframes circle-6-anim-4-circle-data-v-1b488d74 {\n0% {\n    transform: scale(0);\n}\n66.666667% {\n    transform: scale(0);\n}\n67.407407% {\n    transform: matrix3d(0.32778, 0, 0, 0, 0, 0.32778, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n68.148148% {\n    transform: matrix3d(0.69875, 0, 0, 0, 0, 0.69875, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n68.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n69.62963% {\n    transform: matrix3d(1.1815, 0, 0, 0, 0, 1.1815, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n70.37037% {\n    transform: matrix3d(1.24402, 0, 0, 0, 0, 1.24402, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n71.111111% {\n    transform: matrix3d(1.21871, 0, 0, 0, 0, 1.21871, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n71.851852% {\n    transform: matrix3d(1.14702, 0, 0, 0, 0, 1.14702, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n72.592593% {\n    transform: matrix3d(1.06589, 0, 0, 0, 0, 1.06589, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n73.333333% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n74.074074% {\n    transform: matrix3d(0.9603, 0, 0, 0, 0, 0.9603, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n74.814815% {\n    transform: matrix3d(0.94663, 0, 0, 0, 0, 0.94663, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n75.555556% {\n    transform: matrix3d(0.95217, 0, 0, 0, 0, 0.95217, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n76.296296% {\n    transform: matrix3d(0.96784, 0, 0, 0, 0, 0.96784, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n77.037037% {\n    transform: matrix3d(0.98559, 0, 0, 0, 0, 0.98559, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n77.777778% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n78.518519% {\n    transform: matrix3d(1.00868, 0, 0, 0, 0, 1.00868, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n79.259259% {\n    transform: matrix3d(1.01167, 0, 0, 0, 0, 1.01167, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n80% {\n    transform: matrix3d(1.01046, 0, 0, 0, 0, 1.01046, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n80.740741% {\n    transform: matrix3d(1.00703, 0, 0, 0, 0, 1.00703, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n81.481481% {\n    transform: matrix3d(1.00315, 0, 0, 0, 0, 1.00315, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n82.222222% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n82.962963% {\n    transform: matrix3d(0.9981, 0, 0, 0, 0, 0.9981, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n83.703704% {\n    transform: matrix3d(0.99745, 0, 0, 0, 0, 0.99745, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n84.444444% {\n    transform: matrix3d(0.99771, 0, 0, 0, 0, 0.99771, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n85.185185% {\n    transform: matrix3d(0.99846, 0, 0, 0, 0, 0.99846, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n85.925926% {\n    transform: matrix3d(0.99931, 0, 0, 0, 0, 0.99931, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n86.666667% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n87.407407% {\n    transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n88.148148% {\n    transform: matrix3d(1.00056, 0, 0, 0, 0, 1.00056, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(0.32628, 0, 0, 0, 0, 0.32628, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(0.10646, 0, 0, 0, 0, 0.10646, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(0.03474, 0, 0, 0, 0, 0.03474, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(0.01133, 0, 0, 0, 0, 0.01133, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(0.0037, 0, 0, 0, 0, 0.0037, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(0.00121, 0, 0, 0, 0, 0.00121, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(0.00039, 0, 0, 0, 0, 0.00039, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(0.00013, 0, 0, 0, 0, 0.00013, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(0.00004, 0, 0, 0, 0, 0.00004, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(0.00001, 0, 0, 0, 0, 0.00001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n97.037037% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(0);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/2SMi6x */\n@keyframes circle-6-g-move-bottom-data-v-1b488d74 {\n0% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n33.333333% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n34.074074% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 16.35397, 0, 1);\n}\n34.814815% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25.69808, 0, 1);\n}\n35.555556% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 27.79251, 0, 1);\n}\n36.296296% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 26.74505, 0, 1);\n}\n37.037037% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25.46104, 0, 1);\n}\n37.777778% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 24.85273, 0, 1);\n}\n38.518519% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 24.77498, 0, 1);\n}\n39.259259% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 24.8837, 0, 1);\n}\n40% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 24.97967, 0, 1);\n}\n40.740741% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25.017, 0, 1);\n}\n41.481481% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25.01719, 0, 1);\n}\n42.222222% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25.00735, 0, 1);\n}\n42.962963% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25.00049, 0, 1);\n}\n43.703704% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 24.99838, 0, 1);\n}\n44.444444% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25, 0, 1);\n}\n100% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25, 0, 1);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/pKqSyP */\n@keyframes circle-6-line-grow-horizontal-1-data-v-1b488d74 {\n0% {\n    transform: scaleX(0);\n}\n27.407407% {\n    transform: scaleX(0);\n}\n28.148148% {\n    transform: matrix3d(0.34323, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n28.888889% {\n    transform: matrix3d(0.88518, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n29.62963% {\n    transform: matrix3d(1.09602, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n30.37037% {\n    transform: matrix3d(1.09709, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n31.111111% {\n    transform: matrix3d(1.04151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n31.851852% {\n    transform: matrix3d(1.00277, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n32.592593% {\n    transform: matrix3d(0.99083, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n33.333333% {\n    transform: matrix3d(0.99292, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n34.074074% {\n    transform: matrix3d(0.99755, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n34.814815% {\n    transform: matrix3d(1.0002, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n35.555556% {\n    transform: matrix3d(1.00079, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n36.296296% {\n    transform: matrix3d(1.00049, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n37.037037% {\n    transform: matrix3d(1.00013, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n37.777778% {\n    transform: matrix3d(0.99996, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n38.518519% {\n    transform: matrix3d(0.99994, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n39.259259% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(0.32628, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(0.10646, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(0.03474, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(0.01133, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(0.0037, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(0.00121, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(0.00039, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(0.00013, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(0.00004, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(0.00001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n97.037037% {\n    transform: scaleX(0);\n}\n100% {\n    transform: scaleX(0);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/NHi83y */\n@keyframes circle-6-line-grow-horizontal-2-data-v-1b488d74 {\n0% {\n    transform: scaleX(0);\n}\n71.851852% {\n    transform: scaleX(0);\n}\n72.592593% {\n    transform: matrix3d(0.34323, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n73.333333% {\n    transform: matrix3d(0.88518, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n74.074074% {\n    transform: matrix3d(1.09602, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n74.814815% {\n    transform: matrix3d(1.09709, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n75.555556% {\n    transform: matrix3d(1.04151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n76.296296% {\n    transform: matrix3d(1.00277, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n77.037037% {\n    transform: matrix3d(0.99083, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n77.777778% {\n    transform: matrix3d(0.99292, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n78.518519% {\n    transform: matrix3d(0.99755, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n79.259259% {\n    transform: matrix3d(1.0002, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n80% {\n    transform: matrix3d(1.00079, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n80.740741% {\n    transform: matrix3d(1.00049, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n81.481481% {\n    transform: matrix3d(1.00013, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n82.222222% {\n    transform: matrix3d(0.99996, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n82.962963% {\n    transform: matrix3d(0.99994, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n83.703704% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(0.58933, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(0.33162, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(0.17694, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(0.08817, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(0.0397, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(0.01478, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(0.00301, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(-0.00182, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(-0.00323, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(-0.00315, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n97.037037% {\n    transform: matrix3d(-0.00254, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n97.777778% {\n    transform: matrix3d(-0.00185, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n98.518519% {\n    transform: matrix3d(-0.00126, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n99.259259% {\n    transform: matrix3d(-0.00081, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n100% {\n    transform: scaleX(0);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/21oylQ */\n@keyframes circle-6-line-grow-vertical-1-data-v-1b488d74 {\n0% {\n    transform: scaleY(0);\n}\n49.62963% {\n    transform: scaleY(0);\n}\n50.37037% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.34323, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n51.111111% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.88518, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n51.851852% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.09602, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n52.592593% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.09709, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n53.333333% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.04151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n54.074074% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.00277, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n54.814815% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.99083, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n55.555556% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.99292, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n56.296296% {\n    transform: matrix3d(1, 0, 0, 0, 0.28328, 0.99755, 0, 0, 0, 0, 1, 0, -14.92121, 0, 0, 1);\n}\n57.037037% {\n    transform: matrix3d(1, 0, 0, 0, 0.52069, 1.0002, 0, 0, 0, 0, 1, 0, -25.94861, 0, 0, 1);\n}\n57.777778% {\n    transform: matrix3d(1, 0, 0, 0, 0.60536, 1.00079, 0, 0, 0, 0, 1, 0, -29.42354, 0, 0, 1);\n}\n58.518519% {\n    transform: matrix3d(1, 0, 0, 0, 0.57539, 1.00049, 0, 0, 0, 0, 1, 0, -28.22236, 0, 0, 1);\n}\n59.259259% {\n    transform: matrix3d(1, 0, 0, 0, 0.52172, 1.00013, 0, 0, 0, 0, 1, 0, -25.99242, 0, 0, 1);\n}\n60% {\n    transform: matrix3d(1, 0, 0, 0, 0.49007, 0.99996, 0, 0, 0, 0, 1, 0, -24.63046, 0, 0, 1);\n}\n60.740741% {\n    transform: matrix3d(1, 0, 0, 0, 0.48347, 0.99994, 0, 0, 0, 0, 1, 0, -24.34178, 0, 0, 1);\n}\n61.481481% {\n    transform: matrix3d(1, 0, 0, 0, 0.48945, 1, 0, 0, 0, 0, 1, 0, -24.60342, 0, 0, 1);\n}\n62.222222% {\n    transform: matrix3d(1, 0, 0, 0, 0.49672, 1, 0, 0, 0, 0, 1, 0, -24.91918, 0, 0, 1);\n}\n62.962963% {\n    transform: matrix3d(1, 0, 0, 0, 0.5004, 1, 0, 0, 0, 0, 1, 0, -25.07879, 0, 0, 1);\n}\n63.703704% {\n    transform: matrix3d(1, 0, 0, 0, 0.50073, 1, 0, 0, 0, 0, 1, 0, -25.09287, 0, 0, 1);\n}\n64.444444% {\n    transform: matrix3d(1, 0, 0, 0, 0.49965, 1, 0, 0, 0, 0, 1, 0, -25.04628, 0, 0, 1);\n}\n65.185185% {\n    transform: matrix3d(1, 0, 0, 0, 0.49866, 1, 0, 0, 0, 0, 1, 0, -25.0036, 0, 0, 1);\n}\n65.925926% {\n    transform: matrix3d(1, 0, 0, 0, 0.49826, 1, 0, 0, 0, 0, 1, 0, -24.98611, 0, 0, 1);\n}\n66.666667% {\n    transform: matrix3d(1, 0, 0, 0, 0.49829, 1, 0, 0, 0, 0, 1, 0, -24.98749, 0, 0, 1);\n}\n67.407407% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.51685, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.26714, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.13807, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.07136, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.03688, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.01906, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.00985, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.00509, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.00263, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.00136, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n97.037037% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.0007, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n97.777778% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.00036, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n98.518519% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.00019, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n99.259259% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.0001, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n100% {\n    transform: scaleY(0) skewX(26.5deg);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/taI49K */\n@keyframes circle-6-line-grow-vertical-2-data-v-1b488d74 {\n0% {\n    transform: scaleY(0);\n}\n49.62963% {\n    transform: scaleY(0);\n}\n50.37037% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.34323, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n51.111111% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.88518, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n51.851852% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.09602, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n52.592593% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.09709, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n53.333333% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.04151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n54.074074% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.00277, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n54.814815% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.99083, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n55.555556% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.99292, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n56.296296% {\n    transform: matrix3d(1, 0, 0, 0, -0.28328, 0.99755, 0, 0, 0, 0, 1, 0, 14.92121, 0, 0, 1);\n}\n57.037037% {\n    transform: matrix3d(1, 0, 0, 0, -0.52069, 1.0002, 0, 0, 0, 0, 1, 0, 25.94861, 0, 0, 1);\n}\n57.777778% {\n    transform: matrix3d(1, 0, 0, 0, -0.60536, 1.00079, 0, 0, 0, 0, 1, 0, 29.42354, 0, 0, 1);\n}\n58.518519% {\n    transform: matrix3d(1, 0, 0, 0, -0.57539, 1.00049, 0, 0, 0, 0, 1, 0, 28.22236, 0, 0, 1);\n}\n59.259259% {\n    transform: matrix3d(1, 0, 0, 0, -0.52172, 1.00013, 0, 0, 0, 0, 1, 0, 25.99242, 0, 0, 1);\n}\n60% {\n    transform: matrix3d(1, 0, 0, 0, -0.49007, 0.99996, 0, 0, 0, 0, 1, 0, 24.63046, 0, 0, 1);\n}\n60.740741% {\n    transform: matrix3d(1, 0, 0, 0, -0.48347, 0.99994, 0, 0, 0, 0, 1, 0, 24.34178, 0, 0, 1);\n}\n61.481481% {\n    transform: matrix3d(1, 0, 0, 0, -0.48945, 1, 0, 0, 0, 0, 1, 0, 24.60342, 0, 0, 1);\n}\n62.222222% {\n    transform: matrix3d(1, 0, 0, 0, -0.49672, 1, 0, 0, 0, 0, 1, 0, 24.91918, 0, 0, 1);\n}\n62.962963% {\n    transform: matrix3d(1, 0, 0, 0, -0.5004, 1, 0, 0, 0, 0, 1, 0, 25.07879, 0, 0, 1);\n}\n63.703704% {\n    transform: matrix3d(1, 0, 0, 0, -0.50073, 1, 0, 0, 0, 0, 1, 0, 25.09287, 0, 0, 1);\n}\n64.444444% {\n    transform: matrix3d(1, 0, 0, 0, -0.49965, 1, 0, 0, 0, 0, 1, 0, 25.04628, 0, 0, 1);\n}\n65.185185% {\n    transform: matrix3d(1, 0, 0, 0, -0.49866, 1, 0, 0, 0, 0, 1, 0, 25.0036, 0, 0, 1);\n}\n65.925926% {\n    transform: matrix3d(1, 0, 0, 0, -0.49826, 1, 0, 0, 0, 0, 1, 0, 24.98611, 0, 0, 1);\n}\n66.666667% {\n    transform: matrix3d(1, 0, 0, 0, -0.49829, 1, 0, 0, 0, 0, 1, 0, 24.98749, 0, 0, 1);\n}\n67.407407% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n68.148148% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n68.888889% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n69.62963% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n70.37037% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n71.111111% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n71.851852% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n72.592593% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n73.333333% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n74.074074% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n74.814815% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n75.555556% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n76.296296% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n77.037037% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n77.777778% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n78.518519% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n79.259259% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n80% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n80.740741% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n81.481481% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n82.222222% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n82.962963% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n83.703704% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n84.444444% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n85.185185% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n85.925926% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n86.666667% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n87.407407% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n88.148148% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.51685, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.26714, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.13807, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.07136, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.03688, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.01906, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.00985, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.00509, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.00263, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.00136, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n97.037037% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.0007, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n97.777778% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.00036, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n98.518519% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.00019, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n99.259259% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.0001, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n100% {\n    transform: scaleY(0) skewX(-26.5deg);\n}\n}\n.spinner[data-v-1b488d74] {\n  animation: circle-6-rotateAll-data-v-1b488d74 4.5s linear infinite both;\n}\n.anim-1[data-v-1b488d74] {\n  animation: circle-6-g-move-bottom-data-v-1b488d74 4.5s linear infinite both;\n}\n.anim-1 circle[data-v-1b488d74] {\n    animation: circle-6-anim-1-circle-data-v-1b488d74 4.5s linear infinite both;\n    transform-origin: 50% 50%;\n}\n.anim-2[data-v-1b488d74] {\n  animation: circle-6-g-move-bottom-data-v-1b488d74 4.5s linear infinite both;\n}\n.anim-2 circle[data-v-1b488d74] {\n    animation: circle-6-anim-2-circle-data-v-1b488d74 4.5s linear infinite both;\n    transform-origin: 50% 50%;\n}\n.anim-2 line[data-v-1b488d74] {\n    animation: circle-6-line-grow-horizontal-1-data-v-1b488d74 4.5s linear infinite both;\n    transform-origin: 100% 50%;\n}\n.anim-3 circle[data-v-1b488d74] {\n  animation: circle-6-anim-3-circle-data-v-1b488d74 4.5s linear infinite both;\n  transform-origin: 50% 50%;\n}\n.anim-3 line[data-v-1b488d74]:first-of-type {\n  animation: circle-6-line-grow-vertical-1-data-v-1b488d74 4.5s linear infinite both;\n  transform-origin: 50% 0%;\n}\n.anim-3 line[data-v-1b488d74]:last-of-type {\n  animation: circle-6-line-grow-vertical-2-data-v-1b488d74 4.5s linear infinite both;\n  transform-origin: 50% 0%;\n}\n.anim-4 circle[data-v-1b488d74] {\n  animation: circle-6-anim-4-circle-data-v-1b488d74 4.5s linear infinite both;\n  transform-origin: 50% 50%;\n}\n.anim-4 line[data-v-1b488d74] {\n  animation: circle-6-line-grow-horizontal-2-data-v-1b488d74 4.5s linear infinite both;\n  transform-origin: 100% 50%;\n}\n", ""]);
+exports.push([module.i, "/* Generated with Bounce.js. Edit at http://goo.gl/hYAzd9 */\n@keyframes circle-6-rotateAll-data-v-108a469a {\n0% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n77.777778% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n78.518519% {\n    transform: matrix3d(0.80259, 0.59653, 0, 0, -0.59653, 0.80259, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n79.259259% {\n    transform: matrix3d(0.52673, 0.85004, 0, 0, -0.85004, 0.52673, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n80% {\n    transform: matrix3d(0.60234, 0.79824, 0, 0, -0.79824, 0.60234, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n80.740741% {\n    transform: matrix3d(0.72936, 0.68413, 0, 0, -0.68413, 0.72936, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n81.481481% {\n    transform: matrix3d(0.7498, 0.66167, 0, 0, -0.66167, 0.7498, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n82.222222% {\n    transform: matrix3d(0.71527, 0.69885, 0, 0, -0.69885, 0.71527, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n82.962963% {\n    transform: matrix3d(0.69404, 0.71994, 0, 0, -0.71994, 0.69404, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n83.703704% {\n    transform: matrix3d(0.69926, 0.71487, 0, 0, -0.71487, 0.69926, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n84.444444% {\n    transform: matrix3d(0.7089, 0.70531, 0, 0, -0.70531, 0.7089, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n85.185185% {\n    transform: matrix3d(0.7106, 0.7036, 0, 0, -0.7036, 0.7106, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n85.925926% {\n    transform: matrix3d(0.70776, 0.70645, 0, 0, -0.70645, 0.70776, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n86.666667% {\n    transform: matrix3d(0.70608, 0.70813, 0, 0, -0.70813, 0.70608, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n87.407407% {\n    transform: matrix3d(0.70649, 0.70773, 0, 0, -0.70773, 0.70649, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n88.148148% {\n    transform: matrix3d(0.70725, 0.70696, 0, 0, -0.70696, 0.70725, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(0.70738, 0.70683, 0, 0, -0.70683, 0.70738, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(0.70711, 0.70711, 0, 0, -0.70711, 0.70711, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n100% {\n    transform: matrix3d(0.70711, 0.70711, 0, 0, -0.70711, 0.70711, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/DEm6fe */\n@keyframes circle-6-anim-1-circle-data-v-108a469a {\n0% {\n    transform: scale(0);\n}\n0.740741% {\n    transform: matrix3d(0.32778, 0, 0, 0, 0, 0.32778, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n1.481481% {\n    transform: matrix3d(0.69875, 0, 0, 0, 0, 0.69875, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n2.222222% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n2.962963% {\n    transform: matrix3d(1.1815, 0, 0, 0, 0, 1.1815, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n3.703704% {\n    transform: matrix3d(1.24402, 0, 0, 0, 0, 1.24402, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n4.444444% {\n    transform: matrix3d(1.21871, 0, 0, 0, 0, 1.21871, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n5.185185% {\n    transform: matrix3d(1.14702, 0, 0, 0, 0, 1.14702, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n5.925926% {\n    transform: matrix3d(1.06589, 0, 0, 0, 0, 1.06589, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n6.666667% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n7.407407% {\n    transform: matrix3d(0.9603, 0, 0, 0, 0, 0.9603, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n8.148148% {\n    transform: matrix3d(0.94663, 0, 0, 0, 0, 0.94663, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n8.888889% {\n    transform: matrix3d(0.95217, 0, 0, 0, 0, 0.95217, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n9.62963% {\n    transform: matrix3d(0.96784, 0, 0, 0, 0, 0.96784, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n10.37037% {\n    transform: matrix3d(0.98559, 0, 0, 0, 0, 0.98559, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n11.111111% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n11.851852% {\n    transform: matrix3d(1.00868, 0, 0, 0, 0, 1.00868, 0, 0, 0, 0, 1, 0, -9.51676, 0, 0, 1);\n}\n12.592593% {\n    transform: matrix3d(1.01167, 0, 0, 0, 0, 1.01167, 0, 0, 0, 0, 1, 0, -18.75576, 0, 0, 1);\n}\n13.333333% {\n    transform: matrix3d(1.01046, 0, 0, 0, 0, 1.01046, 0, 0, 0, 0, 1, 0, -25.26155, 0, 0, 1);\n}\n14.074074% {\n    transform: matrix3d(1.00703, 0, 0, 0, 0, 1.00703, 0, 0, 0, 0, 1, 0, -28.53849, 0, 0, 1);\n}\n14.814815% {\n    transform: matrix3d(1.00315, 0, 0, 0, 0, 1.00315, 0, 0, 0, 0, 1, 0, -29.2499, 0, 0, 1);\n}\n15.555556% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -28.45173, 0, 0, 1);\n}\n16.296296% {\n    transform: matrix3d(0.9981, 0, 0, 0, 0, 0.9981, 0, 0, 0, 0, 1, 0, -27.09752, 0, 0, 1);\n}\n17.037037% {\n    transform: matrix3d(0.99745, 0, 0, 0, 0, 0.99745, 0, 0, 0, 0, 1, 0, -25.82591, 0, 0, 1);\n}\n17.777778% {\n    transform: matrix3d(0.99771, 0, 0, 0, 0, 0.99771, 0, 0, 0, 0, 1, 0, -24.9428, 0, 0, 1);\n}\n18.518519% {\n    transform: matrix3d(0.99846, 0, 0, 0, 0, 0.99846, 0, 0, 0, 0, 1, 0, -24.50122, 0, 0, 1);\n}\n19.259259% {\n    transform: matrix3d(0.99931, 0, 0, 0, 0, 0.99931, 0, 0, 0, 0, 1, 0, -24.40907, 0, 0, 1);\n}\n20% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.52342, 0, 0, 1);\n}\n20.740741% {\n    transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, -24.71354, 0, 0, 1);\n}\n21.481481% {\n    transform: matrix3d(1.00056, 0, 0, 0, 0, 1.00056, 0, 0, 0, 0, 1, 0, -24.89073, 0, 0, 1);\n}\n22.222222% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n22.962963% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.06366, 0, 0, 1);\n}\n23.703704% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.07926, 0, 0, 1);\n}\n24.444444% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.0658, 0, 0, 1);\n}\n25.185185% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.04097, 0, 0, 1);\n}\n25.925926% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.017, 0, 0, 1);\n}\n26.666667% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n27.407407% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.99121, 0, 0, 1);\n}\n28.148148% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.98906, 0, 0, 1);\n}\n28.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.99091, 0, 0, 1);\n}\n29.62963% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.99434, 0, 0, 1);\n}\n30.37037% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.99765, 0, 0, 1);\n}\n31.111111% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n31.851852% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.00121, 0, 0, 1);\n}\n32.592593% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.00151, 0, 0, 1);\n}\n33.333333% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(0.32628, 0, 0, 0, 0, 0.32628, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(0.10646, 0, 0, 0, 0, 0.10646, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(0.03474, 0, 0, 0, 0, 0.03474, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(0.01133, 0, 0, 0, 0, 0.01133, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(0.0037, 0, 0, 0, 0, 0.0037, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(0.00121, 0, 0, 0, 0, 0.00121, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(0.00039, 0, 0, 0, 0, 0.00039, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(0.00013, 0, 0, 0, 0, 0.00013, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(0.00004, 0, 0, 0, 0, 0.00004, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(0.00001, 0, 0, 0, 0, 0.00001, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n97.037037% {\n    transform: scale(0) translateX(-25px);\n}\n100% {\n    transform: scale(0) translateX(-25px);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/e10ASq */\n@keyframes circle-6-anim-3-circle-data-v-108a469a {\n0% {\n    transform: scale(0);\n}\n44.444444% {\n    transform: scale(0);\n}\n45.185185% {\n    transform: matrix3d(0.32778, 0, 0, 0, 0, 0.32778, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n45.925926% {\n    transform: matrix3d(0.69875, 0, 0, 0, 0, 0.69875, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n46.666667% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n47.407407% {\n    transform: matrix3d(1.1815, 0, 0, 0, 0, 1.1815, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n48.148148% {\n    transform: matrix3d(1.24402, 0, 0, 0, 0, 1.24402, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n48.888889% {\n    transform: matrix3d(1.21871, 0, 0, 0, 0, 1.21871, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n49.62963% {\n    transform: matrix3d(1.14702, 0, 0, 0, 0, 1.14702, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n50.37037% {\n    transform: matrix3d(1.06589, 0, 0, 0, 0, 1.06589, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n51.111111% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n51.851852% {\n    transform: matrix3d(0.9603, 0, 0, 0, 0, 0.9603, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n52.592593% {\n    transform: matrix3d(0.94663, 0, 0, 0, 0, 0.94663, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n53.333333% {\n    transform: matrix3d(0.95217, 0, 0, 0, 0, 0.95217, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n54.074074% {\n    transform: matrix3d(0.96784, 0, 0, 0, 0, 0.96784, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n54.814815% {\n    transform: matrix3d(0.98559, 0, 0, 0, 0, 0.98559, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n55.555556% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n56.296296% {\n    transform: matrix3d(1.00868, 0, 0, 0, 0, 1.00868, 0, 0, 0, 0, 1, 0, -15.05076, 0, 0, 1);\n}\n57.037037% {\n    transform: matrix3d(1.01167, 0, 0, 0, 0, 1.01167, 0, 0, 0, 0, 1, 0, -26.2515, 0, 0, 1);\n}\n57.777778% {\n    transform: matrix3d(1.01046, 0, 0, 0, 0, 1.01046, 0, 0, 0, 0, 1, 0, -29.73137, 0, 0, 1);\n}\n58.518519% {\n    transform: matrix3d(1.00703, 0, 0, 0, 0, 1.00703, 0, 0, 0, 0, 1, 0, -28.42084, 0, 0, 1);\n}\n59.259259% {\n    transform: matrix3d(1.00315, 0, 0, 0, 0, 1.00315, 0, 0, 0, 0, 1, 0, -26.07434, 0, 0, 1);\n}\n60% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.63046, 0, 0, 1);\n}\n60.740741% {\n    transform: matrix3d(0.9981, 0, 0, 0, 0, 0.9981, 0, 0, 0, 0, 1, 0, -24.29556, 0, 0, 1);\n}\n61.481481% {\n    transform: matrix3d(0.99745, 0, 0, 0, 0, 0.99745, 0, 0, 0, 0, 1, 0, -24.54061, 0, 0, 1);\n}\n62.222222% {\n    transform: matrix3d(0.99771, 0, 0, 0, 0, 0.99771, 0, 0, 0, 0, 1, 0, -24.86216, 0, 0, 1);\n}\n62.962963% {\n    transform: matrix3d(0.99846, 0, 0, 0, 0, 0.99846, 0, 0, 0, 0, 1, 0, -25.04022, 0, 0, 1);\n}\n63.703704% {\n    transform: matrix3d(0.99931, 0, 0, 0, 0, 0.99931, 0, 0, 0, 0, 1, 0, -25.07557, 0, 0, 1);\n}\n64.444444% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.04628, 0, 0, 1);\n}\n65.185185% {\n    transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, -25.01399, 0, 0, 1);\n}\n65.925926% {\n    transform: matrix3d(1.00056, 0, 0, 0, 0, 1.00056, 0, 0, 0, 0, 1, 0, -25.00006, 0, 0, 1);\n}\n66.666667% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -24.98749, 0, 0, 1);\n}\n67.407407% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(0.32628, 0, 0, 0, 0, 0.32628, 0, 0, 0, 0, 1, 0, -8.15699, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(0.10646, 0, 0, 0, 0, 0.10646, 0, 0, 0, 0, 1, 0, -2.66146, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(0.03474, 0, 0, 0, 0, 0.03474, 0, 0, 0, 0, 1, 0, -0.86838, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(0.01133, 0, 0, 0, 0, 0.01133, 0, 0, 0, 0, 1, 0, -0.28334, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(0.0037, 0, 0, 0, 0, 0.0037, 0, 0, 0, 0, 1, 0, -0.09245, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(0.00121, 0, 0, 0, 0, 0.00121, 0, 0, 0, 0, 1, 0, -0.03016, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(0.00039, 0, 0, 0, 0, 0.00039, 0, 0, 0, 0, 1, 0, -0.00984, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(0.00013, 0, 0, 0, 0, 0.00013, 0, 0, 0, 0, 1, 0, -0.00321, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(0.00004, 0, 0, 0, 0, 0.00004, 0, 0, 0, 0, 1, 0, -0.00105, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(0.00001, 0, 0, 0, 0, 0.00001, 0, 0, 0, 0, 1, 0, -0.00034, 0, 0, 1);\n}\n97.037037% {\n    transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, -0.00011, 0, 0, 1);\n}\n97.777778% {\n    transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, -0.00004, 0, 0, 1);\n}\n98.518519% {\n    transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, -0.00001, 0, 0, 1);\n}\n99.259259% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(0);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/uIqwYq */\n@keyframes circle-6-anim-2-circle-data-v-108a469a {\n0% {\n    transform: scale(0);\n}\n22.222222% {\n    transform: scale(0);\n}\n22.962963% {\n    transform: matrix3d(0.32778, 0, 0, 0, 0, 0.32778, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n23.703704% {\n    transform: matrix3d(0.69875, 0, 0, 0, 0, 0.69875, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n24.444444% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n25.185185% {\n    transform: matrix3d(1.1815, 0, 0, 0, 0, 1.1815, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n25.925926% {\n    transform: matrix3d(1.24402, 0, 0, 0, 0, 1.24402, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n26.666667% {\n    transform: matrix3d(1.21871, 0, 0, 0, 0, 1.21871, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n27.407407% {\n    transform: matrix3d(1.14702, 0, 0, 0, 0, 1.14702, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n28.148148% {\n    transform: matrix3d(1.06589, 0, 0, 0, 0, 1.06589, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n28.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n29.62963% {\n    transform: matrix3d(0.9603, 0, 0, 0, 0, 0.9603, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n30.37037% {\n    transform: matrix3d(0.94663, 0, 0, 0, 0, 0.94663, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n31.111111% {\n    transform: matrix3d(0.95217, 0, 0, 0, 0, 0.95217, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n31.851852% {\n    transform: matrix3d(0.96784, 0, 0, 0, 0, 0.96784, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n32.592593% {\n    transform: matrix3d(0.98559, 0, 0, 0, 0, 0.98559, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n33.333333% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n34.074074% {\n    transform: matrix3d(1.00868, 0, 0, 0, 0, 1.00868, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n34.814815% {\n    transform: matrix3d(1.01167, 0, 0, 0, 0, 1.01167, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n35.555556% {\n    transform: matrix3d(1.01046, 0, 0, 0, 0, 1.01046, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n36.296296% {\n    transform: matrix3d(1.00703, 0, 0, 0, 0, 1.00703, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n37.037037% {\n    transform: matrix3d(1.00315, 0, 0, 0, 0, 1.00315, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n37.777778% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n38.518519% {\n    transform: matrix3d(0.9981, 0, 0, 0, 0, 0.9981, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n39.259259% {\n    transform: matrix3d(0.99745, 0, 0, 0, 0, 0.99745, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n40% {\n    transform: matrix3d(0.99771, 0, 0, 0, 0, 0.99771, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n40.740741% {\n    transform: matrix3d(0.99846, 0, 0, 0, 0, 0.99846, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n41.481481% {\n    transform: matrix3d(0.99931, 0, 0, 0, 0, 0.99931, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n42.222222% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n42.962963% {\n    transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n43.703704% {\n    transform: matrix3d(1.00056, 0, 0, 0, 0, 1.00056, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n44.444444% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(0.32628, 0, 0, 0, 0, 0.32628, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(0.10646, 0, 0, 0, 0, 0.10646, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(0.03474, 0, 0, 0, 0, 0.03474, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(0.01133, 0, 0, 0, 0, 0.01133, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(0.0037, 0, 0, 0, 0, 0.0037, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(0.00121, 0, 0, 0, 0, 0.00121, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(0.00039, 0, 0, 0, 0, 0.00039, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(0.00013, 0, 0, 0, 0, 0.00013, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(0.00004, 0, 0, 0, 0, 0.00004, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(0.00001, 0, 0, 0, 0, 0.00001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n97.037037% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(0);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/Kdj66E */\n@keyframes circle-6-anim-4-circle-data-v-108a469a {\n0% {\n    transform: scale(0);\n}\n66.666667% {\n    transform: scale(0);\n}\n67.407407% {\n    transform: matrix3d(0.32778, 0, 0, 0, 0, 0.32778, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n68.148148% {\n    transform: matrix3d(0.69875, 0, 0, 0, 0, 0.69875, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n68.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n69.62963% {\n    transform: matrix3d(1.1815, 0, 0, 0, 0, 1.1815, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n70.37037% {\n    transform: matrix3d(1.24402, 0, 0, 0, 0, 1.24402, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n71.111111% {\n    transform: matrix3d(1.21871, 0, 0, 0, 0, 1.21871, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n71.851852% {\n    transform: matrix3d(1.14702, 0, 0, 0, 0, 1.14702, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n72.592593% {\n    transform: matrix3d(1.06589, 0, 0, 0, 0, 1.06589, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n73.333333% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n74.074074% {\n    transform: matrix3d(0.9603, 0, 0, 0, 0, 0.9603, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n74.814815% {\n    transform: matrix3d(0.94663, 0, 0, 0, 0, 0.94663, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n75.555556% {\n    transform: matrix3d(0.95217, 0, 0, 0, 0, 0.95217, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n76.296296% {\n    transform: matrix3d(0.96784, 0, 0, 0, 0, 0.96784, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n77.037037% {\n    transform: matrix3d(0.98559, 0, 0, 0, 0, 0.98559, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n77.777778% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n78.518519% {\n    transform: matrix3d(1.00868, 0, 0, 0, 0, 1.00868, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n79.259259% {\n    transform: matrix3d(1.01167, 0, 0, 0, 0, 1.01167, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n80% {\n    transform: matrix3d(1.01046, 0, 0, 0, 0, 1.01046, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n80.740741% {\n    transform: matrix3d(1.00703, 0, 0, 0, 0, 1.00703, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n81.481481% {\n    transform: matrix3d(1.00315, 0, 0, 0, 0, 1.00315, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n82.222222% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n82.962963% {\n    transform: matrix3d(0.9981, 0, 0, 0, 0, 0.9981, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n83.703704% {\n    transform: matrix3d(0.99745, 0, 0, 0, 0, 0.99745, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n84.444444% {\n    transform: matrix3d(0.99771, 0, 0, 0, 0, 0.99771, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n85.185185% {\n    transform: matrix3d(0.99846, 0, 0, 0, 0, 0.99846, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n85.925926% {\n    transform: matrix3d(0.99931, 0, 0, 0, 0, 0.99931, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n86.666667% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n87.407407% {\n    transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n88.148148% {\n    transform: matrix3d(1.00056, 0, 0, 0, 0, 1.00056, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(0.32628, 0, 0, 0, 0, 0.32628, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(0.10646, 0, 0, 0, 0, 0.10646, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(0.03474, 0, 0, 0, 0, 0.03474, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(0.01133, 0, 0, 0, 0, 0.01133, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(0.0037, 0, 0, 0, 0, 0.0037, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(0.00121, 0, 0, 0, 0, 0.00121, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(0.00039, 0, 0, 0, 0, 0.00039, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(0.00013, 0, 0, 0, 0, 0.00013, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(0.00004, 0, 0, 0, 0, 0.00004, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(0.00001, 0, 0, 0, 0, 0.00001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n97.037037% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(0);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/2SMi6x */\n@keyframes circle-6-g-move-bottom-data-v-108a469a {\n0% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n33.333333% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n34.074074% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 16.35397, 0, 1);\n}\n34.814815% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25.69808, 0, 1);\n}\n35.555556% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 27.79251, 0, 1);\n}\n36.296296% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 26.74505, 0, 1);\n}\n37.037037% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25.46104, 0, 1);\n}\n37.777778% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 24.85273, 0, 1);\n}\n38.518519% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 24.77498, 0, 1);\n}\n39.259259% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 24.8837, 0, 1);\n}\n40% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 24.97967, 0, 1);\n}\n40.740741% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25.017, 0, 1);\n}\n41.481481% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25.01719, 0, 1);\n}\n42.222222% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25.00735, 0, 1);\n}\n42.962963% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25.00049, 0, 1);\n}\n43.703704% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 24.99838, 0, 1);\n}\n44.444444% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25, 0, 1);\n}\n100% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25, 0, 1);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/pKqSyP */\n@keyframes circle-6-line-grow-horizontal-1-data-v-108a469a {\n0% {\n    transform: scaleX(0);\n}\n27.407407% {\n    transform: scaleX(0);\n}\n28.148148% {\n    transform: matrix3d(0.34323, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n28.888889% {\n    transform: matrix3d(0.88518, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n29.62963% {\n    transform: matrix3d(1.09602, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n30.37037% {\n    transform: matrix3d(1.09709, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n31.111111% {\n    transform: matrix3d(1.04151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n31.851852% {\n    transform: matrix3d(1.00277, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n32.592593% {\n    transform: matrix3d(0.99083, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n33.333333% {\n    transform: matrix3d(0.99292, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n34.074074% {\n    transform: matrix3d(0.99755, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n34.814815% {\n    transform: matrix3d(1.0002, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n35.555556% {\n    transform: matrix3d(1.00079, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n36.296296% {\n    transform: matrix3d(1.00049, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n37.037037% {\n    transform: matrix3d(1.00013, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n37.777778% {\n    transform: matrix3d(0.99996, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n38.518519% {\n    transform: matrix3d(0.99994, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n39.259259% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(0.32628, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(0.10646, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(0.03474, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(0.01133, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(0.0037, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(0.00121, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(0.00039, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(0.00013, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(0.00004, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(0.00001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n97.037037% {\n    transform: scaleX(0);\n}\n100% {\n    transform: scaleX(0);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/NHi83y */\n@keyframes circle-6-line-grow-horizontal-2-data-v-108a469a {\n0% {\n    transform: scaleX(0);\n}\n71.851852% {\n    transform: scaleX(0);\n}\n72.592593% {\n    transform: matrix3d(0.34323, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n73.333333% {\n    transform: matrix3d(0.88518, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n74.074074% {\n    transform: matrix3d(1.09602, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n74.814815% {\n    transform: matrix3d(1.09709, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n75.555556% {\n    transform: matrix3d(1.04151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n76.296296% {\n    transform: matrix3d(1.00277, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n77.037037% {\n    transform: matrix3d(0.99083, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n77.777778% {\n    transform: matrix3d(0.99292, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n78.518519% {\n    transform: matrix3d(0.99755, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n79.259259% {\n    transform: matrix3d(1.0002, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n80% {\n    transform: matrix3d(1.00079, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n80.740741% {\n    transform: matrix3d(1.00049, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n81.481481% {\n    transform: matrix3d(1.00013, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n82.222222% {\n    transform: matrix3d(0.99996, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n82.962963% {\n    transform: matrix3d(0.99994, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n83.703704% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(0.58933, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(0.33162, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(0.17694, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(0.08817, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(0.0397, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(0.01478, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(0.00301, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(-0.00182, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(-0.00323, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(-0.00315, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n97.037037% {\n    transform: matrix3d(-0.00254, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n97.777778% {\n    transform: matrix3d(-0.00185, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n98.518519% {\n    transform: matrix3d(-0.00126, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n99.259259% {\n    transform: matrix3d(-0.00081, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n100% {\n    transform: scaleX(0);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/21oylQ */\n@keyframes circle-6-line-grow-vertical-1-data-v-108a469a {\n0% {\n    transform: scaleY(0);\n}\n49.62963% {\n    transform: scaleY(0);\n}\n50.37037% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.34323, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n51.111111% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.88518, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n51.851852% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.09602, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n52.592593% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.09709, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n53.333333% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.04151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n54.074074% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.00277, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n54.814815% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.99083, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n55.555556% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.99292, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n56.296296% {\n    transform: matrix3d(1, 0, 0, 0, 0.28328, 0.99755, 0, 0, 0, 0, 1, 0, -14.92121, 0, 0, 1);\n}\n57.037037% {\n    transform: matrix3d(1, 0, 0, 0, 0.52069, 1.0002, 0, 0, 0, 0, 1, 0, -25.94861, 0, 0, 1);\n}\n57.777778% {\n    transform: matrix3d(1, 0, 0, 0, 0.60536, 1.00079, 0, 0, 0, 0, 1, 0, -29.42354, 0, 0, 1);\n}\n58.518519% {\n    transform: matrix3d(1, 0, 0, 0, 0.57539, 1.00049, 0, 0, 0, 0, 1, 0, -28.22236, 0, 0, 1);\n}\n59.259259% {\n    transform: matrix3d(1, 0, 0, 0, 0.52172, 1.00013, 0, 0, 0, 0, 1, 0, -25.99242, 0, 0, 1);\n}\n60% {\n    transform: matrix3d(1, 0, 0, 0, 0.49007, 0.99996, 0, 0, 0, 0, 1, 0, -24.63046, 0, 0, 1);\n}\n60.740741% {\n    transform: matrix3d(1, 0, 0, 0, 0.48347, 0.99994, 0, 0, 0, 0, 1, 0, -24.34178, 0, 0, 1);\n}\n61.481481% {\n    transform: matrix3d(1, 0, 0, 0, 0.48945, 1, 0, 0, 0, 0, 1, 0, -24.60342, 0, 0, 1);\n}\n62.222222% {\n    transform: matrix3d(1, 0, 0, 0, 0.49672, 1, 0, 0, 0, 0, 1, 0, -24.91918, 0, 0, 1);\n}\n62.962963% {\n    transform: matrix3d(1, 0, 0, 0, 0.5004, 1, 0, 0, 0, 0, 1, 0, -25.07879, 0, 0, 1);\n}\n63.703704% {\n    transform: matrix3d(1, 0, 0, 0, 0.50073, 1, 0, 0, 0, 0, 1, 0, -25.09287, 0, 0, 1);\n}\n64.444444% {\n    transform: matrix3d(1, 0, 0, 0, 0.49965, 1, 0, 0, 0, 0, 1, 0, -25.04628, 0, 0, 1);\n}\n65.185185% {\n    transform: matrix3d(1, 0, 0, 0, 0.49866, 1, 0, 0, 0, 0, 1, 0, -25.0036, 0, 0, 1);\n}\n65.925926% {\n    transform: matrix3d(1, 0, 0, 0, 0.49826, 1, 0, 0, 0, 0, 1, 0, -24.98611, 0, 0, 1);\n}\n66.666667% {\n    transform: matrix3d(1, 0, 0, 0, 0.49829, 1, 0, 0, 0, 0, 1, 0, -24.98749, 0, 0, 1);\n}\n67.407407% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 1, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.51685, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.26714, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.13807, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.07136, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.03688, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.01906, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.00985, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.00509, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.00263, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.00136, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n97.037037% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.0007, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n97.777778% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.00036, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n98.518519% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.00019, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n99.259259% {\n    transform: matrix3d(1, 0, 0, 0, 0.49858, 0.0001, 0, 0, 0, 0, 1, 0, -25, 0, 0, 1);\n}\n100% {\n    transform: scaleY(0) skewX(26.5deg);\n}\n}\n\n/* Generated with Bounce.js. Edit at http://goo.gl/taI49K */\n@keyframes circle-6-line-grow-vertical-2-data-v-108a469a {\n0% {\n    transform: scaleY(0);\n}\n49.62963% {\n    transform: scaleY(0);\n}\n50.37037% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.34323, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n51.111111% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.88518, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n51.851852% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.09602, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n52.592593% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.09709, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n53.333333% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.04151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n54.074074% {\n    transform: matrix3d(1, 0, 0, 0, 0, 1.00277, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n54.814815% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.99083, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n55.555556% {\n    transform: matrix3d(1, 0, 0, 0, 0, 0.99292, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\n}\n56.296296% {\n    transform: matrix3d(1, 0, 0, 0, -0.28328, 0.99755, 0, 0, 0, 0, 1, 0, 14.92121, 0, 0, 1);\n}\n57.037037% {\n    transform: matrix3d(1, 0, 0, 0, -0.52069, 1.0002, 0, 0, 0, 0, 1, 0, 25.94861, 0, 0, 1);\n}\n57.777778% {\n    transform: matrix3d(1, 0, 0, 0, -0.60536, 1.00079, 0, 0, 0, 0, 1, 0, 29.42354, 0, 0, 1);\n}\n58.518519% {\n    transform: matrix3d(1, 0, 0, 0, -0.57539, 1.00049, 0, 0, 0, 0, 1, 0, 28.22236, 0, 0, 1);\n}\n59.259259% {\n    transform: matrix3d(1, 0, 0, 0, -0.52172, 1.00013, 0, 0, 0, 0, 1, 0, 25.99242, 0, 0, 1);\n}\n60% {\n    transform: matrix3d(1, 0, 0, 0, -0.49007, 0.99996, 0, 0, 0, 0, 1, 0, 24.63046, 0, 0, 1);\n}\n60.740741% {\n    transform: matrix3d(1, 0, 0, 0, -0.48347, 0.99994, 0, 0, 0, 0, 1, 0, 24.34178, 0, 0, 1);\n}\n61.481481% {\n    transform: matrix3d(1, 0, 0, 0, -0.48945, 1, 0, 0, 0, 0, 1, 0, 24.60342, 0, 0, 1);\n}\n62.222222% {\n    transform: matrix3d(1, 0, 0, 0, -0.49672, 1, 0, 0, 0, 0, 1, 0, 24.91918, 0, 0, 1);\n}\n62.962963% {\n    transform: matrix3d(1, 0, 0, 0, -0.5004, 1, 0, 0, 0, 0, 1, 0, 25.07879, 0, 0, 1);\n}\n63.703704% {\n    transform: matrix3d(1, 0, 0, 0, -0.50073, 1, 0, 0, 0, 0, 1, 0, 25.09287, 0, 0, 1);\n}\n64.444444% {\n    transform: matrix3d(1, 0, 0, 0, -0.49965, 1, 0, 0, 0, 0, 1, 0, 25.04628, 0, 0, 1);\n}\n65.185185% {\n    transform: matrix3d(1, 0, 0, 0, -0.49866, 1, 0, 0, 0, 0, 1, 0, 25.0036, 0, 0, 1);\n}\n65.925926% {\n    transform: matrix3d(1, 0, 0, 0, -0.49826, 1, 0, 0, 0, 0, 1, 0, 24.98611, 0, 0, 1);\n}\n66.666667% {\n    transform: matrix3d(1, 0, 0, 0, -0.49829, 1, 0, 0, 0, 0, 1, 0, 24.98749, 0, 0, 1);\n}\n67.407407% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n68.148148% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n68.888889% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n69.62963% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n70.37037% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n71.111111% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n71.851852% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n72.592593% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n73.333333% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n74.074074% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n74.814815% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n75.555556% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n76.296296% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n77.037037% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n77.777778% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n78.518519% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n79.259259% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n80% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n80.740741% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n81.481481% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n82.222222% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n82.962963% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n83.703704% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n84.444444% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n85.185185% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n85.925926% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n86.666667% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n87.407407% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n88.148148% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n88.888889% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 1, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n89.62963% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.51685, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n90.37037% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.26714, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n91.111111% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.13807, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n91.851852% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.07136, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n92.592593% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.03688, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n93.333333% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.01906, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n94.074074% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.00985, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n94.814815% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.00509, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n95.555556% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.00263, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n96.296296% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.00136, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n97.037037% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.0007, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n97.777778% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.00036, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n98.518519% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.00019, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n99.259259% {\n    transform: matrix3d(1, 0, 0, 0, -0.49858, 0.0001, 0, 0, 0, 0, 1, 0, 25, 0, 0, 1);\n}\n100% {\n    transform: scaleY(0) skewX(-26.5deg);\n}\n}\n.spinner[data-v-108a469a] {\n  animation: circle-6-rotateAll-data-v-108a469a 4.5s linear infinite both;\n}\n.anim-1[data-v-108a469a] {\n  animation: circle-6-g-move-bottom-data-v-108a469a 4.5s linear infinite both;\n}\n.anim-1 circle[data-v-108a469a] {\n    animation: circle-6-anim-1-circle-data-v-108a469a 4.5s linear infinite both;\n    transform-origin: 50% 50%;\n}\n.anim-2[data-v-108a469a] {\n  animation: circle-6-g-move-bottom-data-v-108a469a 4.5s linear infinite both;\n}\n.anim-2 circle[data-v-108a469a] {\n    animation: circle-6-anim-2-circle-data-v-108a469a 4.5s linear infinite both;\n    transform-origin: 50% 50%;\n}\n.anim-2 line[data-v-108a469a] {\n    animation: circle-6-line-grow-horizontal-1-data-v-108a469a 4.5s linear infinite both;\n    transform-origin: 100% 50%;\n}\n.anim-3 circle[data-v-108a469a] {\n  animation: circle-6-anim-3-circle-data-v-108a469a 4.5s linear infinite both;\n  transform-origin: 50% 50%;\n}\n.anim-3 line[data-v-108a469a]:first-of-type {\n  animation: circle-6-line-grow-vertical-1-data-v-108a469a 4.5s linear infinite both;\n  transform-origin: 50% 0%;\n}\n.anim-3 line[data-v-108a469a]:last-of-type {\n  animation: circle-6-line-grow-vertical-2-data-v-108a469a 4.5s linear infinite both;\n  transform-origin: 50% 0%;\n}\n.anim-4 circle[data-v-108a469a] {\n  animation: circle-6-anim-4-circle-data-v-108a469a 4.5s linear infinite both;\n  transform-origin: 50% 50%;\n}\n.anim-4 line[data-v-108a469a] {\n  animation: circle-6-line-grow-horizontal-2-data-v-108a469a 4.5s linear infinite both;\n  transform-origin: 100% 50%;\n}\n", ""]);
 
 // exports
 
@@ -43881,7 +43914,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-1b488d74", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-108a469a", module.exports)
   }
 }
 
@@ -43902,11 +43935,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-1b2c5e72",
+  "data-v-106e1798",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Circle7.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Circle7.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Circle7.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -43917,9 +43950,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1b2c5e72", Component.options)
+    hotAPI.createRecord("data-v-106e1798", Component.options)
   } else {
-    hotAPI.reload("data-v-1b2c5e72", Component.options)
+    hotAPI.reload("data-v-106e1798", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -43940,13 +43973,13 @@ var content = __webpack_require__(75);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("bcab16b8", content, false, {});
+var update = __webpack_require__(2)("b61aa704", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b2c5e72\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle7.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b2c5e72\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle7.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-106e1798\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle7.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-106e1798\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle7.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -43964,7 +43997,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-1b2c5e72] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-1b2c5e72] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-1b2c5e72] {\n  display: inline-block;\n  position: relative;\n  border-radius: 100%;\n  animation: circle-7-spin-data-v-1b2c5e72 3.25s infinite;\n  transform: rotate(0deg);\n  animation-delay: -.5s;\n}\n.spinner-inner[data-v-1b2c5e72]:after, .spinner-inner[data-v-1b2c5e72]:before {\n    position: absolute;\n    content: '';\n    height: 20px;\n    width: 20px;\n    display: block;\n    background: #41b883;\n    border-radius: 100%;\n    animation: circle-7-shrink-data-v-1b2c5e72 3.25s infinite;\n    animation-delay: -.5s;\n}\n.spinner-inner[data-v-1b2c5e72]:before {\n    left: 70%;\n}\n.spinner-inner[data-v-1b2c5e72]:after {\n    top: 70%;\n}\n@keyframes circle-7-spin-data-v-1b2c5e72 {\n0% {\n    transform: rotate(0deg);\n    height: 100%;\n    width: 100%;\n}\n33% {\n    height: 0;\n    width: 0;\n}\n55% {\n    transform: rotate(720deg);\n    height: 0;\n    width: 0;\n}\n70% {\n    height: 100%;\n    width: 100%;\n    margin-top: 0;\n}\n100% {\n    height: 100%;\n    width: 100%;\n    transform: rotate(360deg);\n    margin-top: 0;\n}\n}\n@keyframes circle-7-shrink-data-v-1b2c5e72 {\n0%, 100% {\n    height: 20px;\n    width: 20px;\n}\n33%, 55% {\n    height: 0;\n    width: 0;\n}\n70% {\n    height: 20px;\n    width: 20px;\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-106e1798] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-106e1798] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-106e1798] {\n  display: inline-block;\n  position: relative;\n  border-radius: 100%;\n  animation: circle-7-spin-data-v-106e1798 3.25s infinite;\n  transform: rotate(0deg);\n  animation-delay: -.5s;\n}\n.spinner-inner[data-v-106e1798]:after, .spinner-inner[data-v-106e1798]:before {\n    position: absolute;\n    content: '';\n    height: 20px;\n    width: 20px;\n    display: block;\n    background: #41b883;\n    border-radius: 100%;\n    animation: circle-7-shrink-data-v-106e1798 3.25s infinite;\n    animation-delay: -.5s;\n}\n.spinner-inner[data-v-106e1798]:before {\n    left: 70%;\n}\n.spinner-inner[data-v-106e1798]:after {\n    top: 70%;\n}\n@keyframes circle-7-spin-data-v-106e1798 {\n0% {\n    transform: rotate(0deg);\n    height: 100%;\n    width: 100%;\n}\n33% {\n    height: 0;\n    width: 0;\n}\n55% {\n    transform: rotate(720deg);\n    height: 0;\n    width: 0;\n}\n70% {\n    height: 100%;\n    width: 100%;\n    margin-top: 0;\n}\n100% {\n    height: 100%;\n    width: 100%;\n    transform: rotate(360deg);\n    margin-top: 0;\n}\n}\n@keyframes circle-7-shrink-data-v-106e1798 {\n0%, 100% {\n    height: 20px;\n    width: 20px;\n}\n33%, 55% {\n    height: 0;\n    width: 0;\n}\n70% {\n    height: 20px;\n    width: 20px;\n}\n}\n", ""]);
 
 // exports
 
@@ -44017,7 +44050,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-1b2c5e72", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-106e1798", module.exports)
   }
 }
 
@@ -44038,11 +44071,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-1b102f70",
+  "data-v-1051e896",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Circle8.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Circle8.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Circle8.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -44053,9 +44086,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1b102f70", Component.options)
+    hotAPI.createRecord("data-v-1051e896", Component.options)
   } else {
-    hotAPI.reload("data-v-1b102f70", Component.options)
+    hotAPI.reload("data-v-1051e896", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -44076,13 +44109,13 @@ var content = __webpack_require__(80);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("6ae1cc16", content, false, {});
+var update = __webpack_require__(2)("1dfac808", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b102f70\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle8.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b102f70\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle8.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1051e896\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle8.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1051e896\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle8.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -44100,7 +44133,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-1b102f70] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-1b102f70] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.ball-container[data-v-1b102f70] {\n  animation: animball_two-data-v-1b102f70 1.5s infinite;\n  width: 44px;\n  height: 44px;\n  flex-shrink: 0;\n  position: relative;\n}\n.contener_mixte[data-v-1b102f70] {\n  width: 44px;\n  height: 44px;\n  position: absolute;\n}\n.ballcolor[data-v-1b102f70] {\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n}\n.ball_1[data-v-1b102f70], .ball_2[data-v-1b102f70], .ball_3[data-v-1b102f70], .ball_4[data-v-1b102f70] {\n  position: absolute;\n  animation: animball_one-data-v-1b102f70 1.5s infinite ease;\n}\n.ball_1[data-v-1b102f70] {\n  background-color: #f7484e;\n  top: 0;\n  left: 0;\n}\n.ball_2[data-v-1b102f70] {\n  background-color: #f8b334;\n  top: 0;\n  left: 24px;\n}\n.ball_3[data-v-1b102f70] {\n  background-color: #41b883;\n  top: 24px;\n  left: 0;\n}\n.ball_4[data-v-1b102f70] {\n  background-color: #34495e;\n  top: 24px;\n  left: 24px;\n}\n@keyframes animball_one-data-v-1b102f70 {\n0% {\n    position: absolute;\n}\n50% {\n    top: 12px;\n    left: 12px;\n    position: absolute;\n    opacity: 0.5;\n}\n100% {\n    position: absolute;\n}\n}\n@keyframes animball_two-data-v-1b102f70 {\n0% {\n    transform: rotate(0deg) scale(1);\n}\n50% {\n    transform: rotate(360deg) scale(1.3);\n}\n100% {\n    transform: rotate(720deg) scale(1);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-1051e896] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-1051e896] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.ball-container[data-v-1051e896] {\n  animation: animball_two-data-v-1051e896 1.5s infinite;\n  width: 44px;\n  height: 44px;\n  flex-shrink: 0;\n  position: relative;\n}\n.contener_mixte[data-v-1051e896] {\n  width: 44px;\n  height: 44px;\n  position: absolute;\n}\n.ballcolor[data-v-1051e896] {\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n}\n.ball_1[data-v-1051e896], .ball_2[data-v-1051e896], .ball_3[data-v-1051e896], .ball_4[data-v-1051e896] {\n  position: absolute;\n  animation: animball_one-data-v-1051e896 1.5s infinite ease;\n}\n.ball_1[data-v-1051e896] {\n  background-color: #f7484e;\n  top: 0;\n  left: 0;\n}\n.ball_2[data-v-1051e896] {\n  background-color: #f8b334;\n  top: 0;\n  left: 24px;\n}\n.ball_3[data-v-1051e896] {\n  background-color: #41b883;\n  top: 24px;\n  left: 0;\n}\n.ball_4[data-v-1051e896] {\n  background-color: #34495e;\n  top: 24px;\n  left: 24px;\n}\n@keyframes animball_one-data-v-1051e896 {\n0% {\n    position: absolute;\n}\n50% {\n    top: 12px;\n    left: 12px;\n    position: absolute;\n    opacity: 0.5;\n}\n100% {\n    position: absolute;\n}\n}\n@keyframes animball_two-data-v-1051e896 {\n0% {\n    transform: rotate(0deg) scale(1);\n}\n50% {\n    transform: rotate(360deg) scale(1.3);\n}\n100% {\n    transform: rotate(720deg) scale(1);\n}\n}\n", ""]);
 
 // exports
 
@@ -44183,7 +44216,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-1b102f70", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-1051e896", module.exports)
   }
 }
 
@@ -44204,11 +44237,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-1af4006e",
+  "data-v-1035b994",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Circle9.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Circle9.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Circle9.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -44219,9 +44252,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1af4006e", Component.options)
+    hotAPI.createRecord("data-v-1035b994", Component.options)
   } else {
-    hotAPI.reload("data-v-1af4006e", Component.options)
+    hotAPI.reload("data-v-1035b994", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -44242,13 +44275,13 @@ var content = __webpack_require__(85);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("72221a88", content, false, {});
+var update = __webpack_require__(2)("3179de62", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1af4006e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle9.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1af4006e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle9.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1035b994\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle9.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1035b994\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle9.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -44266,7 +44299,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-1af4006e] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-1af4006e] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-1af4006e] {\n  width: 120px;\n  height: 120px;\n}\n@keyframes circle-9-loading-data-v-1af4006e {\n0% {\n    transform: rotate(0deg);\n}\n25% {\n    transform: rotate(160deg);\n}\n50% {\n    transform: rotate(0deg);\n}\n75% {\n    transform: rotate(160deg);\n}\n100% {\n    transform: rotate(0deg);\n}\n}\n.loading[data-v-1af4006e] {\n  background-color: transparent;\n  border-radius: 50%;\n  margin: 5px auto;\n  animation: circle-9-loading-data-v-1af4006e 5s infinite linear;\n}\n.spin-1[data-v-1af4006e] {\n  border: 5px solid #f7484e;\n  border-top: 5px solid transparent;\n  border-left: 5px solid transparent;\n  width: 120px;\n  height: 120px;\n}\n.spin-2[data-v-1af4006e] {\n  border: 5px solid #41b883;\n  border-top: 5px solid transparent;\n  border-left: 5px solid transparent;\n  width: 100px;\n  height: 100px;\n  animation-delay: 1s;\n}\n.spin-3[data-v-1af4006e] {\n  border: 5px solid #d2d947;\n  border-top: 5px solid transparent;\n  border-left: 5px solid transparent;\n  width: 80px;\n  height: 80px;\n  animation-delay: 1s;\n}\n.spin-4[data-v-1af4006e] {\n  border: 5px solid #f2a342;\n  border-top: 5px solid transparent;\n  border-left: 5px solid transparent;\n  width: 60px;\n  height: 60px;\n  animation-delay: 1s;\n}\n.spin-5[data-v-1af4006e] {\n  border: 5px solid #34495e;\n  border-top: 5px solid transparent;\n  border-left: 5px solid transparent;\n  width: 40px;\n  height: 40px;\n  animation-delay: 1s;\n}\n.spin-6[data-v-1af4006e] {\n  border: 5px solid #fff;\n  width: 20px;\n  height: 20px;\n  animation-delay: 1s;\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-1035b994] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-1035b994] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-1035b994] {\n  width: 120px;\n  height: 120px;\n}\n@keyframes circle-9-loading-data-v-1035b994 {\n0% {\n    transform: rotate(0deg);\n}\n25% {\n    transform: rotate(160deg);\n}\n50% {\n    transform: rotate(0deg);\n}\n75% {\n    transform: rotate(160deg);\n}\n100% {\n    transform: rotate(0deg);\n}\n}\n.loading[data-v-1035b994] {\n  background-color: transparent;\n  border-radius: 50%;\n  margin: 5px auto;\n  animation: circle-9-loading-data-v-1035b994 5s infinite linear;\n}\n.spin-1[data-v-1035b994] {\n  border: 5px solid #f7484e;\n  border-top: 5px solid transparent;\n  border-left: 5px solid transparent;\n  width: 120px;\n  height: 120px;\n}\n.spin-2[data-v-1035b994] {\n  border: 5px solid #41b883;\n  border-top: 5px solid transparent;\n  border-left: 5px solid transparent;\n  width: 100px;\n  height: 100px;\n  animation-delay: 1s;\n}\n.spin-3[data-v-1035b994] {\n  border: 5px solid #d2d947;\n  border-top: 5px solid transparent;\n  border-left: 5px solid transparent;\n  width: 80px;\n  height: 80px;\n  animation-delay: 1s;\n}\n.spin-4[data-v-1035b994] {\n  border: 5px solid #f2a342;\n  border-top: 5px solid transparent;\n  border-left: 5px solid transparent;\n  width: 60px;\n  height: 60px;\n  animation-delay: 1s;\n}\n.spin-5[data-v-1035b994] {\n  border: 5px solid #34495e;\n  border-top: 5px solid transparent;\n  border-left: 5px solid transparent;\n  width: 40px;\n  height: 40px;\n  animation-delay: 1s;\n}\n.spin-6[data-v-1035b994] {\n  border: 5px solid #fff;\n  width: 20px;\n  height: 20px;\n  animation-delay: 1s;\n}\n", ""]);
 
 // exports
 
@@ -44348,7 +44381,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-1af4006e", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-1035b994", module.exports)
   }
 }
 
@@ -44369,11 +44402,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-508eaebf",
+  "data-v-11d80e1c",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Circle10.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Circle10.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Circle10.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -44384,9 +44417,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-508eaebf", Component.options)
+    hotAPI.createRecord("data-v-11d80e1c", Component.options)
   } else {
-    hotAPI.reload("data-v-508eaebf", Component.options)
+    hotAPI.reload("data-v-11d80e1c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -44407,13 +44440,13 @@ var content = __webpack_require__(90);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("bd72bb16", content, false, {});
+var update = __webpack_require__(2)("cab6f96c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-508eaebf\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle10.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-508eaebf\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle10.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-11d80e1c\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle10.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-11d80e1c\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle10.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -44431,7 +44464,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-508eaebf] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-508eaebf] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-508eaebf] {\n  width: 100px;\n  height: 100px;\n  flex-shrink: 0;\n}\n.loader-xbox[data-v-508eaebf], .loader-xbox[data-v-508eaebf]:before, .loader-xbox[data-v-508eaebf]:after {\n  position: absolute;\n  border: 3px solid transparent;\n  border-top: 3px solid #41b883;\n  border-radius: 50%;\n  animation: rotate-data-v-508eaebf linear infinite;\n  content: '';\n}\n.loader-xbox[data-v-508eaebf] {\n  height: 100px;\n  width: 100px;\n  animation-duration: 1.05s;\n}\n.loader-xbox[data-v-508eaebf]:before {\n  height: 75px;\n  width: 75px;\n  top: 10px;\n  left: 10px;\n  border-top: 3px solid #f7484e;\n  animation-duration: 10s;\n}\n.loader-xbox[data-v-508eaebf]:after {\n  height: 50px;\n  width: 50px;\n  top: 22px;\n  left: 22px;\n  border-top: 3px solid #f8b334;\n  animation-duration: 4s;\n}\n@keyframes rotate-data-v-508eaebf {\nfrom {\n    transform: rotateZ(360deg);\n}\nto {\n    transform: rotateZ(0deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-11d80e1c] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-11d80e1c] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-11d80e1c] {\n  width: 100px;\n  height: 100px;\n  flex-shrink: 0;\n}\n.loader-xbox[data-v-11d80e1c], .loader-xbox[data-v-11d80e1c]:before, .loader-xbox[data-v-11d80e1c]:after {\n  position: absolute;\n  border: 3px solid transparent;\n  border-top: 3px solid #41b883;\n  border-radius: 50%;\n  animation: rotate-data-v-11d80e1c linear infinite;\n  content: '';\n}\n.loader-xbox[data-v-11d80e1c] {\n  height: 100px;\n  width: 100px;\n  animation-duration: 1.05s;\n}\n.loader-xbox[data-v-11d80e1c]:before {\n  height: 75px;\n  width: 75px;\n  top: 10px;\n  left: 10px;\n  border-top: 3px solid #f7484e;\n  animation-duration: 10s;\n}\n.loader-xbox[data-v-11d80e1c]:after {\n  height: 50px;\n  width: 50px;\n  top: 22px;\n  left: 22px;\n  border-top: 3px solid #f8b334;\n  animation-duration: 4s;\n}\n@keyframes rotate-data-v-11d80e1c {\nfrom {\n    transform: rotateZ(360deg);\n}\nto {\n    transform: rotateZ(0deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -44491,7 +44524,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-508eaebf", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-11d80e1c", module.exports)
   }
 }
 
@@ -44512,11 +44545,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-509cc640",
+  "data-v-11bbdf1a",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Circle11.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Circle11.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Circle11.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -44527,9 +44560,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-509cc640", Component.options)
+    hotAPI.createRecord("data-v-11bbdf1a", Component.options)
   } else {
-    hotAPI.reload("data-v-509cc640", Component.options)
+    hotAPI.reload("data-v-11bbdf1a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -44550,13 +44583,13 @@ var content = __webpack_require__(95);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("bff7939e", content, false, {});
+var update = __webpack_require__(2)("a3ccc95a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-509cc640\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle11.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-509cc640\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle11.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-11bbdf1a\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle11.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-11bbdf1a\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Circle11.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -44574,7 +44607,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-509cc640] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-509cc640] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-509cc640] {\n  width: calc(100% - 14px);\n  height: calc(100% - 14px);\n  flex-shrink: 0;\n  border: 1px solid;\n  animation: rotate 1.3s linear 0s infinite;\n  border-radius: 50%;\n}\n.spinner-inner[data-v-509cc640]:after {\n    content: '';\n    position: absolute;\n    width: 14px;\n    height: 14px;\n    background: #41b883;\n    border-radius: 100%;\n    left: 50%;\n    transform: translateX(-50%) translateY(-50%);\n    top: 0;\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-11bbdf1a] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-11bbdf1a] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-11bbdf1a] {\n  width: calc(100% - 14px);\n  height: calc(100% - 14px);\n  flex-shrink: 0;\n  border: 1px solid;\n  animation: rotate 1.3s linear 0s infinite;\n  border-radius: 50%;\n}\n.spinner-inner[data-v-11bbdf1a]:after {\n    content: '';\n    position: absolute;\n    width: 14px;\n    height: 14px;\n    background: #41b883;\n    border-radius: 100%;\n    left: 50%;\n    transform: translateX(-50%) translateY(-50%);\n    top: 0;\n}\n", ""]);
 
 // exports
 
@@ -44623,7 +44656,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-509cc640", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-11bbdf1a", module.exports)
   }
 }
 
@@ -44644,11 +44677,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-642fa6f6",
+  "data-v-2f789410",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\CubeShadow.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\CubeShadow.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CubeShadow.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -44659,9 +44692,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-642fa6f6", Component.options)
+    hotAPI.createRecord("data-v-2f789410", Component.options)
   } else {
-    hotAPI.reload("data-v-642fa6f6", Component.options)
+    hotAPI.reload("data-v-2f789410", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -44682,13 +44715,13 @@ var content = __webpack_require__(100);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("4f48224e", content, false, {});
+var update = __webpack_require__(2)("43ac5af6", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-642fa6f6\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./CubeShadow.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-642fa6f6\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./CubeShadow.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2f789410\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./CubeShadow.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2f789410\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./CubeShadow.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -44706,7 +44739,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-642fa6f6] {\n  animation: cube-shadow-spinner-data-v-642fa6f6 1.8s cubic-bezier(0.75, 0, 0.5, 1) infinite;\n}\n@keyframes cube-shadow-spinner-data-v-642fa6f6 {\n50% {\n    border-radius: 50%;\n    transform: scale(0.5) rotate(360deg);\n}\n100% {\n    transform: scale(1) rotate(720deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-2f789410] {\n  animation: cube-shadow-spinner-data-v-2f789410 1.8s cubic-bezier(0.75, 0, 0.5, 1) infinite;\n}\n@keyframes cube-shadow-spinner-data-v-2f789410 {\n50% {\n    border-radius: 50%;\n    transform: scale(0.5) rotate(360deg);\n}\n100% {\n    transform: scale(1) rotate(720deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -44760,7 +44793,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-642fa6f6", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-2f789410", module.exports)
   }
 }
 
@@ -44781,11 +44814,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-6e175634",
+  "data-v-737679a1",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Diamond.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Diamond.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Diamond.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -44796,9 +44829,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6e175634", Component.options)
+    hotAPI.createRecord("data-v-737679a1", Component.options)
   } else {
-    hotAPI.reload("data-v-6e175634", Component.options)
+    hotAPI.reload("data-v-737679a1", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -44819,13 +44852,13 @@ var content = __webpack_require__(105);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("567d3d14", content, false, {});
+var update = __webpack_require__(2)("7550e7de", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6e175634\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Diamond.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6e175634\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Diamond.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-737679a1\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Diamond.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-737679a1\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Diamond.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -44843,7 +44876,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-6e175634] {\n  position: relative;\n}\n.spinner *[data-v-6e175634] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner .diamond[data-v-6e175634] {\n    position: absolute;\n    left: 0;\n    top: 0;\n    border-radius: 2px;\n    background: #41b883;\n    transform: translateX(-50%) rotate(45deg) scale(0);\n    animation: diamonds-data-v-6e175634 1500ms linear infinite;\n}\n.spinner .diamond[data-v-6e175634]:nth-child(1) {\n      animation-delay: -1000ms;\n}\n.spinner .diamond[data-v-6e175634]:nth-child(2) {\n      animation-delay: -2000ms;\n}\n.spinner .diamond[data-v-6e175634]:nth-child(3) {\n      animation-delay: -3000ms;\n}\n.spinner .diamond[data-v-6e175634]:nth-child(4) {\n      animation-delay: -4000ms;\n}\n@keyframes diamonds-data-v-6e175634 {\n50% {\n    left: 50%;\n    transform: translateX(-50%) rotate(45deg) scale(1);\n}\n100% {\n    left: 100%;\n    transform: translateX(-50%) rotate(45deg) scale(0);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-737679a1] {\n  position: relative;\n}\n.spinner *[data-v-737679a1] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner .diamond[data-v-737679a1] {\n    position: absolute;\n    left: 0;\n    top: 0;\n    border-radius: 2px;\n    background: #41b883;\n    transform: translateX(-50%) rotate(45deg) scale(0);\n    animation: diamonds-data-v-737679a1 1500ms linear infinite;\n}\n.spinner .diamond[data-v-737679a1]:nth-child(1) {\n      animation-delay: -1000ms;\n}\n.spinner .diamond[data-v-737679a1]:nth-child(2) {\n      animation-delay: -2000ms;\n}\n.spinner .diamond[data-v-737679a1]:nth-child(3) {\n      animation-delay: -3000ms;\n}\n.spinner .diamond[data-v-737679a1]:nth-child(4) {\n      animation-delay: -4000ms;\n}\n@keyframes diamonds-data-v-737679a1 {\n50% {\n    left: 50%;\n    transform: translateX(-50%) rotate(45deg) scale(1);\n}\n100% {\n    left: 100%;\n    transform: translateX(-50%) rotate(45deg) scale(0);\n}\n}\n", ""]);
 
 // exports
 
@@ -44913,7 +44946,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-6e175634", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-737679a1", module.exports)
   }
 }
 
@@ -44934,11 +44967,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-6b30cc89",
+  "data-v-5ccfc53c",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\DoubleBounce.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\DoubleBounce.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] DoubleBounce.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -44949,9 +44982,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6b30cc89", Component.options)
+    hotAPI.createRecord("data-v-5ccfc53c", Component.options)
   } else {
-    hotAPI.reload("data-v-6b30cc89", Component.options)
+    hotAPI.reload("data-v-5ccfc53c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -44972,13 +45005,13 @@ var content = __webpack_require__(110);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("0eb28b3b", content, false, {});
+var update = __webpack_require__(2)("dccaed5c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6b30cc89\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./DoubleBounce.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6b30cc89\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./DoubleBounce.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5ccfc53c\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./DoubleBounce.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5ccfc53c\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./DoubleBounce.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -44996,7 +45029,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-6b30cc89] {\n  position: relative;\n  display: inline-block;\n}\n.spinner *[data-v-6b30cc89] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.double-bounce1[data-v-6b30cc89], .double-bounce2[data-v-6b30cc89] {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  opacity: 0.6;\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: double-bounce-data-v-6b30cc89 2.0s ease-in-out infinite;\n}\n.double-bounce2[data-v-6b30cc89] {\n  animation-delay: -1.0s;\n}\n@keyframes double-bounce-data-v-6b30cc89 {\n0%, 100% {\n    transform: scale(0);\n}\n50% {\n    transform: scale(1);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-5ccfc53c] {\n  position: relative;\n  display: inline-block;\n}\n.spinner *[data-v-5ccfc53c] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.double-bounce1[data-v-5ccfc53c], .double-bounce2[data-v-5ccfc53c] {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  opacity: 0.6;\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: double-bounce-data-v-5ccfc53c 2.0s ease-in-out infinite;\n}\n.double-bounce2[data-v-5ccfc53c] {\n  animation-delay: -1.0s;\n}\n@keyframes double-bounce-data-v-5ccfc53c {\n0%, 100% {\n    transform: scale(0);\n}\n50% {\n    transform: scale(1);\n}\n}\n", ""]);
 
 // exports
 
@@ -45063,7 +45096,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-6b30cc89", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-5ccfc53c", module.exports)
   }
 }
 
@@ -45084,11 +45117,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-42a69d59",
+  "data-v-4a61b806",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Gauge.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Gauge.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Gauge.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -45099,9 +45132,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-42a69d59", Component.options)
+    hotAPI.createRecord("data-v-4a61b806", Component.options)
   } else {
-    hotAPI.reload("data-v-42a69d59", Component.options)
+    hotAPI.reload("data-v-4a61b806", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45122,13 +45155,13 @@ var content = __webpack_require__(115);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("a5cf5d1a", content, false, {});
+var update = __webpack_require__(2)("a261fade", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42a69d59\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Gauge.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42a69d59\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Gauge.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4a61b806\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Gauge.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4a61b806\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Gauge.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -45146,7 +45179,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-42a69d59] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-42a69d59] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-42a69d59] {\n  width: 60px;\n  height: 30px;\n  flex-shrink: 0;\n  background: #6ca;\n  border-top-left-radius: 32px;\n  border-top-right-radius: 32px;\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n  text-indent: -9999px;\n}\n.spinner-inner[data-v-42a69d59]::before {\n  animation: gauge-spinner-data-v-42a69d59 4000ms infinite ease;\n  background: white;\n  border-radius: 2px;\n  content: '';\n  position: absolute;\n  left: 30px;\n  top: 5.33333px;\n  width: 4px;\n  height: 26.66667px;\n  transform-origin: 50% 100%;\n}\n.spinner-inner[data-v-42a69d59]::after {\n  content: '';\n  background: white;\n  border-radius: 8px;\n  position: absolute;\n  left: 25.6px;\n  top: 25.6px;\n  width: 12.8px;\n  height: 12.8px;\n}\n@keyframes gauge-spinner-data-v-42a69d59 {\n0% {\n    transform: rotate(-50deg);\n}\n10% {\n    transform: rotate(20deg);\n}\n20% {\n    transform: rotate(60deg);\n}\n24% {\n    transform: rotate(60deg);\n}\n40% {\n    transform: rotate(-20deg);\n}\n54% {\n    transform: rotate(70deg);\n}\n56% {\n    transform: rotate(78deg);\n}\n58% {\n    transform: rotate(73deg);\n}\n60% {\n    transform: rotate(75deg);\n}\n62% {\n    transform: rotate(70deg);\n}\n70% {\n    transform: rotate(-20deg);\n}\n80% {\n    transform: rotate(20deg);\n}\n83% {\n    transform: rotate(25deg);\n}\n86% {\n    transform: rotate(20deg);\n}\n89% {\n    transform: rotate(25deg);\n}\n100% {\n    transform: rotate(-50deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-4a61b806] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-4a61b806] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-4a61b806] {\n  width: 60px;\n  height: 30px;\n  flex-shrink: 0;\n  background: #6ca;\n  border-top-left-radius: 32px;\n  border-top-right-radius: 32px;\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n  text-indent: -9999px;\n}\n.spinner-inner[data-v-4a61b806]::before {\n  animation: gauge-spinner-data-v-4a61b806 4000ms infinite ease;\n  background: white;\n  border-radius: 2px;\n  content: '';\n  position: absolute;\n  left: 30px;\n  top: 5.33333px;\n  width: 4px;\n  height: 26.66667px;\n  transform-origin: 50% 100%;\n}\n.spinner-inner[data-v-4a61b806]::after {\n  content: '';\n  background: white;\n  border-radius: 8px;\n  position: absolute;\n  left: 25.6px;\n  top: 25.6px;\n  width: 12.8px;\n  height: 12.8px;\n}\n@keyframes gauge-spinner-data-v-4a61b806 {\n0% {\n    transform: rotate(-50deg);\n}\n10% {\n    transform: rotate(20deg);\n}\n20% {\n    transform: rotate(60deg);\n}\n24% {\n    transform: rotate(60deg);\n}\n40% {\n    transform: rotate(-20deg);\n}\n54% {\n    transform: rotate(70deg);\n}\n56% {\n    transform: rotate(78deg);\n}\n58% {\n    transform: rotate(73deg);\n}\n60% {\n    transform: rotate(75deg);\n}\n62% {\n    transform: rotate(70deg);\n}\n70% {\n    transform: rotate(-20deg);\n}\n80% {\n    transform: rotate(20deg);\n}\n83% {\n    transform: rotate(25deg);\n}\n86% {\n    transform: rotate(20deg);\n}\n89% {\n    transform: rotate(25deg);\n}\n100% {\n    transform: rotate(-50deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -45203,7 +45236,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-42a69d59", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-4a61b806", module.exports)
   }
 }
 
@@ -45224,11 +45257,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-650751ee",
+  "data-v-85b6dc08",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Google.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Google.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Google.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -45239,9 +45272,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-650751ee", Component.options)
+    hotAPI.createRecord("data-v-85b6dc08", Component.options)
   } else {
-    hotAPI.reload("data-v-650751ee", Component.options)
+    hotAPI.reload("data-v-85b6dc08", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45262,13 +45295,13 @@ var content = __webpack_require__(120);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("763aefba", content, false, {});
+var update = __webpack_require__(2)("0d5a0d8d", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-650751ee\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Google.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-650751ee\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Google.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-85b6dc08\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Google.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-85b6dc08\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Google.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -45286,7 +45319,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-650751ee] {\n  overflow: hidden;\n  position: relative;\n  text-indent: -9999px;\n  display: inline-block;\n  background: #f86;\n  border-radius: 50%;\n  transform: rotateZ(90deg);\n  transform-origin: 50% 50%;\n  animation: plus-loader-background-data-v-650751ee 3s infinite ease-in-out;\n}\n.spinner[data-v-650751ee]::after {\n  background: #f86;\n  border-radius: 50% 0 0 50%;\n  content: '';\n  position: absolute;\n  right: 50%;\n  top: 0;\n  width: 50%;\n  height: 100%;\n  transform-origin: 100% 50%;\n  animation: plus-loader-top-data-v-650751ee 3s infinite linear;\n}\n.spinner[data-v-650751ee]::before {\n  background: #fc6;\n  border-radius: 50% 0 0 50%;\n  content: '';\n  position: absolute;\n  right: 50%;\n  top: 0;\n  width: 50%;\n  height: 100%;\n  transform-origin: 100% 50%;\n  animation: plus-loader-bottom-data-v-650751ee 3s infinite linear;\n}\n@keyframes plus-loader-top-data-v-650751ee {\n2.5% {\n    background: #f86;\n    transform: rotateY(0deg);\n    animation-timing-function: ease-in;\n}\n13.75% {\n    background: #ff430d;\n    transform: rotateY(90deg);\n    animation-timing-function: step-start;\n}\n13.76% {\n    background: #ffae0d;\n    transform: rotateY(90deg);\n    animation-timing-function: ease-out;\n}\n25% {\n    background: #fc6;\n    transform: rotateY(180deg);\n}\n27.5% {\n    background: #fc6;\n    transform: rotateY(180deg);\n    animation-timing-function: ease-in;\n}\n41.25% {\n    background: #ffae0d;\n    transform: rotateY(90deg);\n    animation-timing-function: step-start;\n}\n41.26% {\n    background: #2cc642;\n    transform: rotateY(90deg);\n    animation-timing-function: ease-out;\n}\n50% {\n    background: #6d7;\n    transform: rotateY(0deg);\n}\n52.5% {\n    background: #6d7;\n    transform: rotateY(0deg);\n    animation-timing-function: ease-in;\n}\n63.75% {\n    background: #2cc642;\n    transform: rotateY(90deg);\n    animation-timing-function: step-start;\n}\n63.76% {\n    background: #1386d2;\n    transform: rotateY(90deg);\n    animation-timing-function: ease-out;\n}\n75% {\n    background: #4ae;\n    transform: rotateY(180deg);\n}\n77.5% {\n    background: #4ae;\n    transform: rotateY(180deg);\n    animation-timing-function: ease-in;\n}\n91.25% {\n    background: #1386d2;\n    transform: rotateY(90deg);\n    animation-timing-function: step-start;\n}\n91.26% {\n    background: #ff430d;\n    transform: rotateY(90deg);\n    animation-timing-function: ease-in;\n}\n100% {\n    background: #f86;\n    transform: rotateY(0deg);\n    animation-timing-function: step-start;\n}\n}\n@keyframes plus-loader-bottom-data-v-650751ee {\n0% {\n    background: #fc6;\n    animation-timing-function: step-start;\n}\n50% {\n    background: #fc6;\n    animation-timing-function: step-start;\n}\n75% {\n    background: #4ae;\n    animation-timing-function: step-start;\n}\n100% {\n    background: #4ae;\n    animation-timing-function: step-start;\n}\n}\n@keyframes plus-loader-background-data-v-650751ee {\n0% {\n    background: #f86;\n    transform: rotateZ(180deg);\n}\n25% {\n    background: #f86;\n    transform: rotateZ(180deg);\n    animation-timing-function: step-start;\n}\n27.5% {\n    background: #6d7;\n    transform: rotateZ(90deg);\n}\n50% {\n    background: #6d7;\n    transform: rotateZ(90deg);\n    animation-timing-function: step-start;\n}\n52.5% {\n    background: #6d7;\n    transform: rotateZ(0deg);\n}\n75% {\n    background: #6d7;\n    transform: rotateZ(0deg);\n    animation-timing-function: step-start;\n}\n77.5% {\n    background: #f86;\n    transform: rotateZ(270deg);\n}\n100% {\n    background: #f86;\n    transform: rotateZ(270deg);\n    animation-timing-function: step-start;\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-85b6dc08] {\n  overflow: hidden;\n  position: relative;\n  text-indent: -9999px;\n  display: inline-block;\n  background: #f86;\n  border-radius: 50%;\n  transform: rotateZ(90deg);\n  transform-origin: 50% 50%;\n  animation: plus-loader-background-data-v-85b6dc08 3s infinite ease-in-out;\n}\n.spinner[data-v-85b6dc08]::after {\n  background: #f86;\n  border-radius: 50% 0 0 50%;\n  content: '';\n  position: absolute;\n  right: 50%;\n  top: 0;\n  width: 50%;\n  height: 100%;\n  transform-origin: 100% 50%;\n  animation: plus-loader-top-data-v-85b6dc08 3s infinite linear;\n}\n.spinner[data-v-85b6dc08]::before {\n  background: #fc6;\n  border-radius: 50% 0 0 50%;\n  content: '';\n  position: absolute;\n  right: 50%;\n  top: 0;\n  width: 50%;\n  height: 100%;\n  transform-origin: 100% 50%;\n  animation: plus-loader-bottom-data-v-85b6dc08 3s infinite linear;\n}\n@keyframes plus-loader-top-data-v-85b6dc08 {\n2.5% {\n    background: #f86;\n    transform: rotateY(0deg);\n    animation-timing-function: ease-in;\n}\n13.75% {\n    background: #ff430d;\n    transform: rotateY(90deg);\n    animation-timing-function: step-start;\n}\n13.76% {\n    background: #ffae0d;\n    transform: rotateY(90deg);\n    animation-timing-function: ease-out;\n}\n25% {\n    background: #fc6;\n    transform: rotateY(180deg);\n}\n27.5% {\n    background: #fc6;\n    transform: rotateY(180deg);\n    animation-timing-function: ease-in;\n}\n41.25% {\n    background: #ffae0d;\n    transform: rotateY(90deg);\n    animation-timing-function: step-start;\n}\n41.26% {\n    background: #2cc642;\n    transform: rotateY(90deg);\n    animation-timing-function: ease-out;\n}\n50% {\n    background: #6d7;\n    transform: rotateY(0deg);\n}\n52.5% {\n    background: #6d7;\n    transform: rotateY(0deg);\n    animation-timing-function: ease-in;\n}\n63.75% {\n    background: #2cc642;\n    transform: rotateY(90deg);\n    animation-timing-function: step-start;\n}\n63.76% {\n    background: #1386d2;\n    transform: rotateY(90deg);\n    animation-timing-function: ease-out;\n}\n75% {\n    background: #4ae;\n    transform: rotateY(180deg);\n}\n77.5% {\n    background: #4ae;\n    transform: rotateY(180deg);\n    animation-timing-function: ease-in;\n}\n91.25% {\n    background: #1386d2;\n    transform: rotateY(90deg);\n    animation-timing-function: step-start;\n}\n91.26% {\n    background: #ff430d;\n    transform: rotateY(90deg);\n    animation-timing-function: ease-in;\n}\n100% {\n    background: #f86;\n    transform: rotateY(0deg);\n    animation-timing-function: step-start;\n}\n}\n@keyframes plus-loader-bottom-data-v-85b6dc08 {\n0% {\n    background: #fc6;\n    animation-timing-function: step-start;\n}\n50% {\n    background: #fc6;\n    animation-timing-function: step-start;\n}\n75% {\n    background: #4ae;\n    animation-timing-function: step-start;\n}\n100% {\n    background: #4ae;\n    animation-timing-function: step-start;\n}\n}\n@keyframes plus-loader-background-data-v-85b6dc08 {\n0% {\n    background: #f86;\n    transform: rotateZ(180deg);\n}\n25% {\n    background: #f86;\n    transform: rotateZ(180deg);\n    animation-timing-function: step-start;\n}\n27.5% {\n    background: #6d7;\n    transform: rotateZ(90deg);\n}\n50% {\n    background: #6d7;\n    transform: rotateZ(90deg);\n    animation-timing-function: step-start;\n}\n52.5% {\n    background: #6d7;\n    transform: rotateZ(0deg);\n}\n75% {\n    background: #6d7;\n    transform: rotateZ(0deg);\n    animation-timing-function: step-start;\n}\n77.5% {\n    background: #f86;\n    transform: rotateZ(270deg);\n}\n100% {\n    background: #f86;\n    transform: rotateZ(270deg);\n    animation-timing-function: step-start;\n}\n}\n", ""]);
 
 // exports
 
@@ -45331,7 +45364,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-650751ee", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-85b6dc08", module.exports)
   }
 }
 
@@ -45352,11 +45385,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-81a7b600",
+  "data-v-76e96f26",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Hexagon.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Hexagon.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Hexagon.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -45367,9 +45400,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-81a7b600", Component.options)
+    hotAPI.createRecord("data-v-76e96f26", Component.options)
   } else {
-    hotAPI.reload("data-v-81a7b600", Component.options)
+    hotAPI.reload("data-v-76e96f26", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45390,13 +45423,13 @@ var content = __webpack_require__(125);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("7229fa80", content, false, {});
+var update = __webpack_require__(2)("35b3c1fc", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-81a7b600\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Hexagon.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-81a7b600\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Hexagon.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-76e96f26\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Hexagon.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-76e96f26\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Hexagon.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -45414,7 +45447,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-81a7b600] {\n  overflow: hidden;\n}\n.spinner-inner[data-v-81a7b600] {\n  position: relative;\n  width: 160px;\n  height: 160px;\n  background-color: transparent;\n  border-radius: 50%;\n  border: 2px solid #a5a69e;\n  transform-origin: top left;\n  display: block;\n}\n.spinner-inner[data-v-81a7b600]:before {\n    content: '';\n    width: 164px;\n    height: 164px;\n    display: block;\n    position: absolute;\n    border: 7px solid #41b883;\n    border-radius: 50%;\n    top: -2px;\n    left: -2px;\n    box-sizing: border-box;\n    clip: rect(0px, 35px, 35px, 0px);\n    z-index: 10;\n    animation: hexagon-rotate-data-v-81a7b600 infinite;\n    animation-duration: 3s;\n    animation-timing-function: linear;\n}\n.spinner-inner[data-v-81a7b600]:after {\n    content: '';\n    width: 164px;\n    height: 164px;\n    display: block;\n    position: absolute;\n    border: 2px solid #c1bebb;\n    border-radius: 50%;\n    top: -2px;\n    left: -2px;\n    box-sizing: border-box;\n    clip: rect(0px, 164px, 150px, 0px);\n    z-index: 9;\n    animation: hexagon-rotate2-data-v-81a7b600 3s linear infinite;\n}\n.hexagon-container[data-v-81a7b600] {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n  position: relative;\n  top: 33px;\n  left: 41px;\n  border-radius: 50%;\n}\n.hexagon[data-v-81a7b600] {\n  position: absolute;\n  width: 40px;\n  height: 23px;\n  background-color: #41b883;\n}\n.hexagon[data-v-81a7b600]:before {\n    content: \"\";\n    position: absolute;\n    top: -11px;\n    left: 0;\n    width: 0;\n    height: 0;\n    border-left: 20px solid transparent;\n    border-right: 20px solid transparent;\n    border-bottom: 11.5px solid #41b883;\n}\n.hexagon[data-v-81a7b600]:after {\n    content: \"\";\n    position: absolute;\n    top: 23px;\n    left: 0;\n    width: 0;\n    height: 0;\n    border-left: 20px solid transparent;\n    border-right: 20px solid transparent;\n    border-top: 11.5px solid #41b883;\n}\n.hexagon.hex_1[data-v-81a7b600] {\n  top: 0px;\n  left: 0px;\n  animation: hexagon-Animasearch-data-v-81a7b600 3s ease-in-out infinite;\n  animation-delay: 0.21429s;\n}\n.hexagon.hex_2[data-v-81a7b600] {\n  top: 0px;\n  left: 42px;\n  animation: hexagon-Animasearch-data-v-81a7b600 3s ease-in-out infinite;\n  animation-delay: 0.42857s;\n}\n.hexagon.hex_3[data-v-81a7b600] {\n  top: 36px;\n  left: 63px;\n  animation: hexagon-Animasearch-data-v-81a7b600 3s ease-in-out infinite;\n  animation-delay: 0.64286s;\n}\n.hexagon.hex_4[data-v-81a7b600] {\n  top: 72px;\n  left: 42px;\n  animation: hexagon-Animasearch-data-v-81a7b600 3s ease-in-out infinite;\n  animation-delay: 0.85714s;\n}\n.hexagon.hex_5[data-v-81a7b600] {\n  top: 72px;\n  left: 0px;\n  animation: hexagon-Animasearch-data-v-81a7b600 3s ease-in-out infinite;\n  animation-delay: 1.07143s;\n}\n.hexagon.hex_6[data-v-81a7b600] {\n  top: 36px;\n  left: -21px;\n  animation: hexagon-Animasearch-data-v-81a7b600 3s ease-in-out infinite;\n  animation-delay: 1.28571s;\n}\n.hexagon.hex_7[data-v-81a7b600] {\n  top: 36px;\n  left: 21px;\n  animation: hexagon-Animasearch-data-v-81a7b600 3s ease-in-out infinite;\n  animation-delay: 1.5s;\n}\n@keyframes hexagon-Animasearch-data-v-81a7b600 {\n0% {\n    transform: scale(1);\n    opacity: 1;\n}\n15%,\n  50% {\n    transform: scale(0.5);\n    opacity: 0;\n}\n65% {\n    transform: scale(1);\n    opacity: 1;\n}\n}\n@keyframes hexagon-rotate-data-v-81a7b600 {\n0% {\n    transform: rotate(0);\n    clip: rect(0px, 35px, 35px, 0px);\n}\n50% {\n    clip: rect(0px, 40px, 40px, 0px);\n}\n100% {\n    transform: rotate(360deg);\n    clip: rect(0px, 35px, 35px, 0px);\n}\n}\n@keyframes hexagon-rotate2-data-v-81a7b600 {\n0% {\n    transform: rotate(0deg);\n    clip: rect(0px, 164px, 150px, 0px);\n}\n50% {\n    clip: rect(0px, 164px, 0px, 0px);\n    transform: rotate(360deg);\n}\n100% {\n    transform: rotate(720deg);\n    clip: rect(0px, 164px, 150px, 0px);\n}\n}\n@keyframes hexagon-rotate3-data-v-81a7b600 {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-76e96f26] {\n  overflow: hidden;\n}\n.spinner-inner[data-v-76e96f26] {\n  position: relative;\n  width: 160px;\n  height: 160px;\n  background-color: transparent;\n  border-radius: 50%;\n  border: 2px solid #a5a69e;\n  transform-origin: top left;\n  display: block;\n}\n.spinner-inner[data-v-76e96f26]:before {\n    content: '';\n    width: 164px;\n    height: 164px;\n    display: block;\n    position: absolute;\n    border: 7px solid #41b883;\n    border-radius: 50%;\n    top: -2px;\n    left: -2px;\n    box-sizing: border-box;\n    clip: rect(0px, 35px, 35px, 0px);\n    z-index: 10;\n    animation: hexagon-rotate-data-v-76e96f26 infinite;\n    animation-duration: 3s;\n    animation-timing-function: linear;\n}\n.spinner-inner[data-v-76e96f26]:after {\n    content: '';\n    width: 164px;\n    height: 164px;\n    display: block;\n    position: absolute;\n    border: 2px solid #c1bebb;\n    border-radius: 50%;\n    top: -2px;\n    left: -2px;\n    box-sizing: border-box;\n    clip: rect(0px, 164px, 150px, 0px);\n    z-index: 9;\n    animation: hexagon-rotate2-data-v-76e96f26 3s linear infinite;\n}\n.hexagon-container[data-v-76e96f26] {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n  position: relative;\n  top: 33px;\n  left: 41px;\n  border-radius: 50%;\n}\n.hexagon[data-v-76e96f26] {\n  position: absolute;\n  width: 40px;\n  height: 23px;\n  background-color: #41b883;\n}\n.hexagon[data-v-76e96f26]:before {\n    content: \"\";\n    position: absolute;\n    top: -11px;\n    left: 0;\n    width: 0;\n    height: 0;\n    border-left: 20px solid transparent;\n    border-right: 20px solid transparent;\n    border-bottom: 11.5px solid #41b883;\n}\n.hexagon[data-v-76e96f26]:after {\n    content: \"\";\n    position: absolute;\n    top: 23px;\n    left: 0;\n    width: 0;\n    height: 0;\n    border-left: 20px solid transparent;\n    border-right: 20px solid transparent;\n    border-top: 11.5px solid #41b883;\n}\n.hexagon.hex_1[data-v-76e96f26] {\n  top: 0px;\n  left: 0px;\n  animation: hexagon-Animasearch-data-v-76e96f26 3s ease-in-out infinite;\n  animation-delay: 0.21429s;\n}\n.hexagon.hex_2[data-v-76e96f26] {\n  top: 0px;\n  left: 42px;\n  animation: hexagon-Animasearch-data-v-76e96f26 3s ease-in-out infinite;\n  animation-delay: 0.42857s;\n}\n.hexagon.hex_3[data-v-76e96f26] {\n  top: 36px;\n  left: 63px;\n  animation: hexagon-Animasearch-data-v-76e96f26 3s ease-in-out infinite;\n  animation-delay: 0.64286s;\n}\n.hexagon.hex_4[data-v-76e96f26] {\n  top: 72px;\n  left: 42px;\n  animation: hexagon-Animasearch-data-v-76e96f26 3s ease-in-out infinite;\n  animation-delay: 0.85714s;\n}\n.hexagon.hex_5[data-v-76e96f26] {\n  top: 72px;\n  left: 0px;\n  animation: hexagon-Animasearch-data-v-76e96f26 3s ease-in-out infinite;\n  animation-delay: 1.07143s;\n}\n.hexagon.hex_6[data-v-76e96f26] {\n  top: 36px;\n  left: -21px;\n  animation: hexagon-Animasearch-data-v-76e96f26 3s ease-in-out infinite;\n  animation-delay: 1.28571s;\n}\n.hexagon.hex_7[data-v-76e96f26] {\n  top: 36px;\n  left: 21px;\n  animation: hexagon-Animasearch-data-v-76e96f26 3s ease-in-out infinite;\n  animation-delay: 1.5s;\n}\n@keyframes hexagon-Animasearch-data-v-76e96f26 {\n0% {\n    transform: scale(1);\n    opacity: 1;\n}\n15%,\n  50% {\n    transform: scale(0.5);\n    opacity: 0;\n}\n65% {\n    transform: scale(1);\n    opacity: 1;\n}\n}\n@keyframes hexagon-rotate-data-v-76e96f26 {\n0% {\n    transform: rotate(0);\n    clip: rect(0px, 35px, 35px, 0px);\n}\n50% {\n    clip: rect(0px, 40px, 40px, 0px);\n}\n100% {\n    transform: rotate(360deg);\n    clip: rect(0px, 35px, 35px, 0px);\n}\n}\n@keyframes hexagon-rotate2-data-v-76e96f26 {\n0% {\n    transform: rotate(0deg);\n    clip: rect(0px, 164px, 150px, 0px);\n}\n50% {\n    clip: rect(0px, 164px, 0px, 0px);\n    transform: rotate(360deg);\n}\n100% {\n    transform: rotate(720deg);\n    clip: rect(0px, 164px, 150px, 0px);\n}\n}\n@keyframes hexagon-rotate3-data-v-76e96f26 {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -45499,7 +45532,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-81a7b600", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-76e96f26", module.exports)
   }
 }
 
@@ -45520,11 +45553,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-716b80d8",
+  "data-v-c8e105f6",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\HourGlass.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\HourGlass.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] HourGlass.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -45535,9 +45568,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-716b80d8", Component.options)
+    hotAPI.createRecord("data-v-c8e105f6", Component.options)
   } else {
-    hotAPI.reload("data-v-716b80d8", Component.options)
+    hotAPI.reload("data-v-c8e105f6", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45558,13 +45591,13 @@ var content = __webpack_require__(130);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("7e0e6e01", content, false, {});
+var update = __webpack_require__(2)("2afedc46", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-716b80d8\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./HourGlass.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-716b80d8\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./HourGlass.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c8e105f6\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./HourGlass.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c8e105f6\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./HourGlass.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -45582,7 +45615,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-716b80d8] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-716b80d8] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.hourglass[data-v-716b80d8] {\n  display: block;\n  background: #fff;\n  width: 32px;\n  height: 64px;\n  box-shadow: inset #fff 0 0 0 0, inset #41b883 0 32px 0 0, inset #fff 0 0 64px 0;\n  animation: hourglass-data-v-716b80d8 1s linear infinite;\n}\n.outer[data-v-716b80d8] {\n  fill: #41b883;\n}\n.middle[data-v-716b80d8] {\n  fill: #fff;\n}\n@keyframes hourglass-data-v-716b80d8 {\n0% {\n    transform: rotate(0deg);\n    box-shadow: inset #fff 0 0 0 0, inset #41b883 0 32px 0 0, inset #fff 0 64px 0 0, inset #41b883 0 64px 0 0;\n}\n80% {\n    transform: rotate(0deg);\n    box-shadow: inset #fff 0 32px 0 0, inset #41b883 0 32px 0 0, inset #fff 0 32px 0 0, inset #41b883 0 64px 0 0;\n}\n100% {\n    transform: rotate(180deg);\n    box-shadow: inset #fff 0 32px 0 0, inset #41b883 0 32px 0 0, inset #fff 0 32px 0 0, inset #41b883 0 64px 0 0;\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-c8e105f6] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-c8e105f6] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.hourglass[data-v-c8e105f6] {\n  display: block;\n  background: #fff;\n  width: 32px;\n  height: 64px;\n  box-shadow: inset #fff 0 0 0 0, inset #41b883 0 32px 0 0, inset #fff 0 0 64px 0;\n  animation: hourglass-data-v-c8e105f6 1s linear infinite;\n}\n.outer[data-v-c8e105f6] {\n  fill: #41b883;\n}\n.middle[data-v-c8e105f6] {\n  fill: #fff;\n}\n@keyframes hourglass-data-v-c8e105f6 {\n0% {\n    transform: rotate(0deg);\n    box-shadow: inset #fff 0 0 0 0, inset #41b883 0 32px 0 0, inset #fff 0 64px 0 0, inset #41b883 0 64px 0 0;\n}\n80% {\n    transform: rotate(0deg);\n    box-shadow: inset #fff 0 32px 0 0, inset #41b883 0 32px 0 0, inset #fff 0 32px 0 0, inset #41b883 0 64px 0 0;\n}\n100% {\n    transform: rotate(180deg);\n    box-shadow: inset #fff 0 32px 0 0, inset #41b883 0 32px 0 0, inset #fff 0 32px 0 0, inset #41b883 0 64px 0 0;\n}\n}\n", ""]);
 
 // exports
 
@@ -45661,7 +45694,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-716b80d8", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-c8e105f6", module.exports)
   }
 }
 
@@ -45682,11 +45715,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-03afde9e",
+  "data-v-46003a51",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Jawn.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Jawn.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Jawn.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -45697,9 +45730,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-03afde9e", Component.options)
+    hotAPI.createRecord("data-v-46003a51", Component.options)
   } else {
-    hotAPI.reload("data-v-03afde9e", Component.options)
+    hotAPI.reload("data-v-46003a51", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45720,13 +45753,13 @@ var content = __webpack_require__(135);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("a4864c20", content, false, {});
+var update = __webpack_require__(2)("68ff944e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-03afde9e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Jawn.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-03afde9e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Jawn.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-46003a51\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Jawn.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-46003a51\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Jawn.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -45744,7 +45777,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner-inner[data-v-03afde9e] {\n  width: 70px;\n  height: 70px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner-inner *[data-v-03afde9e] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.jawn[data-v-03afde9e] {\n  position: relative;\n  background-color: #41b883;\n  width: 15px;\n  height: 15px;\n  margin: 0 auto;\n  border-radius: 50%;\n}\n.jawn[data-v-03afde9e]:after, .jawn[data-v-03afde9e]:before {\n    content: \"\";\n    position: absolute;\n    width: 6px;\n    height: 6px;\n    border-radius: 50%;\n}\n.jawn[data-v-03afde9e]:after {\n    left: -10px;\n    top: -5px;\n    background-color: #f7484e;\n    transform-origin: 15px 10px;\n    animation: jawn-axis-data-v-03afde9e 1s linear infinite;\n}\n.jawn[data-v-03afde9e]:before {\n    left: -25px;\n    top: -15px;\n    background-color: #34495e;\n    transform-origin: 30px 20px;\n    animation: jawn-axis-data-v-03afde9e 2s linear infinite;\n}\n@keyframes jawn-axis-data-v-03afde9e {\n0% {\n    transform: rotateZ(0deg) translate3d(0, 0, 0);\n}\n100% {\n    transform: rotateZ(360deg) translate3d(0, 0, 0);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner-inner[data-v-46003a51] {\n  width: 70px;\n  height: 70px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner-inner *[data-v-46003a51] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.jawn[data-v-46003a51] {\n  position: relative;\n  background-color: #41b883;\n  width: 15px;\n  height: 15px;\n  margin: 0 auto;\n  border-radius: 50%;\n}\n.jawn[data-v-46003a51]:after, .jawn[data-v-46003a51]:before {\n    content: \"\";\n    position: absolute;\n    width: 6px;\n    height: 6px;\n    border-radius: 50%;\n}\n.jawn[data-v-46003a51]:after {\n    left: -10px;\n    top: -5px;\n    background-color: #f7484e;\n    transform-origin: 15px 10px;\n    animation: jawn-axis-data-v-46003a51 1s linear infinite;\n}\n.jawn[data-v-46003a51]:before {\n    left: -25px;\n    top: -15px;\n    background-color: #34495e;\n    transform-origin: 30px 20px;\n    animation: jawn-axis-data-v-46003a51 2s linear infinite;\n}\n@keyframes jawn-axis-data-v-46003a51 {\n0% {\n    transform: rotateZ(0deg) translate3d(0, 0, 0);\n}\n100% {\n    transform: rotateZ(360deg) translate3d(0, 0, 0);\n}\n}\n", ""]);
 
 // exports
 
@@ -45808,7 +45841,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-03afde9e", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-46003a51", module.exports)
   }
 }
 
@@ -45829,11 +45862,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-250e452b",
+  "data-v-14b6801e",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Jumper.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Jumper.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Jumper.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -45844,9 +45877,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-250e452b", Component.options)
+    hotAPI.createRecord("data-v-14b6801e", Component.options)
   } else {
-    hotAPI.reload("data-v-250e452b", Component.options)
+    hotAPI.reload("data-v-14b6801e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45867,13 +45900,13 @@ var content = __webpack_require__(140);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("85c41948", content, false, {});
+var update = __webpack_require__(2)("5ef57f42", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-250e452b\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Jumper.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-250e452b\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Jumper.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-14b6801e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Jumper.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-14b6801e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Jumper.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -45891,7 +45924,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner *[data-v-250e452b] {\n  line-height: 0;\n  box-sizing: border-box;\n}\n.spinner > div[data-v-250e452b] {\n  background-color: #41b883;\n  border-radius: 100%;\n  animation-fill-mode: both;\n  position: absolute;\n  opacity: 0;\n  width: 50px;\n  height: 50px;\n  animation: jumper-data-v-250e452b 1s 0s linear infinite;\n}\n.spinner > div[data-v-250e452b]:nth-child(2) {\n  animation-delay: 0.33333s;\n}\n.spinner > div[data-v-250e452b]:nth-child(3) {\n  animation-delay: 0.66666s;\n}\n@keyframes jumper-data-v-250e452b {\n0% {\n    opacity: 0;\n    transform: scale(0);\n}\n5% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner *[data-v-14b6801e] {\n  line-height: 0;\n  box-sizing: border-box;\n}\n.spinner > div[data-v-14b6801e] {\n  background-color: #41b883;\n  border-radius: 100%;\n  animation-fill-mode: both;\n  position: absolute;\n  opacity: 0;\n  width: 50px;\n  height: 50px;\n  animation: jumper-data-v-14b6801e 1s 0s linear infinite;\n}\n.spinner > div[data-v-14b6801e]:nth-child(2) {\n  animation-delay: 0.33333s;\n}\n.spinner > div[data-v-14b6801e]:nth-child(3) {\n  animation-delay: 0.66666s;\n}\n@keyframes jumper-data-v-14b6801e {\n0% {\n    opacity: 0;\n    transform: scale(0);\n}\n5% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n", ""]);
 
 // exports
 
@@ -45940,7 +45973,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-250e452b", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-14b6801e", module.exports)
   }
 }
 
@@ -45961,11 +45994,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-51f8454b",
+  "data-v-6c53cebe",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\LetterCube.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\LetterCube.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] LetterCube.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -45976,9 +46009,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-51f8454b", Component.options)
+    hotAPI.createRecord("data-v-6c53cebe", Component.options)
   } else {
-    hotAPI.reload("data-v-51f8454b", Component.options)
+    hotAPI.reload("data-v-6c53cebe", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45999,13 +46032,13 @@ var content = __webpack_require__(145);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("f39ba5b0", content, false, {});
+var update = __webpack_require__(2)("0bda0cf5", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-51f8454b\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./LetterCube.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-51f8454b\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./LetterCube.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6c53cebe\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./LetterCube.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6c53cebe\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./LetterCube.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -46023,7 +46056,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-51f8454b] {\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-51f8454b] {\n    box-sizing: border-box;\n}\n.cube[data-v-51f8454b] {\n  width: 80px;\n  height: 80px;\n  line-height: 80px;\n  text-align: center;\n  transform-style: preserve-3d;\n  transition: transform 0.5s 0.1s;\n  perspective: 9999px;\n  color: #333;\n  opacity: 1;\n  position: relative;\n}\n.cube.panelLoad[data-v-51f8454b] {\n    z-index: 11;\n    top: 50%;\n    animation: letter-cube-panel-data-v-51f8454b 2.2s infinite forwards;\n}\n.cube.panelLoad .cube-face[data-v-51f8454b] {\n      font-family: \"Open Sans\",sans-serif;\n      font-size: 50px;\n      color: #41b883;\n      box-shadow: inset 0 0 0 1px #41b883, 0 0 1px 1px #41b883;\n}\n.cube .cube-face[data-v-51f8454b] {\n    width: inherit;\n    height: inherit;\n    position: absolute;\n    background: white;\n    box-shadow: inset 0 0 0 1px #333, 0 0 1px 1px #333;\n    opacity: 1;\n}\n.cube .cube-face-front[data-v-51f8454b] {\n    transform: translate3d(0, 0, 40px);\n    font-size: 57px;\n}\n.cube .cube-face-back[data-v-51f8454b] {\n    transform: rotateY(180deg) translate3d(0, 0, 40px);\n}\n.cube .cube-face-left[data-v-51f8454b] {\n    transform: rotateY(-90deg) translate3d(0, 0, 40px);\n}\n.cube .cube-face-right[data-v-51f8454b] {\n    transform: rotateY(90deg) translate3d(0, 0, 40px);\n}\n.cube .cube-face-top[data-v-51f8454b] {\n    transform: rotateX(90deg) translate3d(0, 0, 40px);\n}\n.cube .cube-face-bottom[data-v-51f8454b] {\n    transform: rotateX(-90deg) translate3d(0, 0, 40px);\n}\n@keyframes letter-cube-panel-data-v-51f8454b {\n0% {\n    transform: rotateY(0deg) rotateZ(0deg);\n}\n20% {\n    transform: rotateY(90deg) rotateZ(0deg);\n}\n40% {\n    transform: rotateX(45deg) rotateZ(45deg);\n}\n60% {\n    transform: rotateX(90deg) rotateY(180deg) rotateX(90deg);\n}\n80% {\n    transform: rotateX(310deg) rotateZ(230deg);\n}\n100% {\n    transform: rotateX(360deg) rotateZ(360deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-6c53cebe] {\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-6c53cebe] {\n    box-sizing: border-box;\n}\n.cube[data-v-6c53cebe] {\n  width: 80px;\n  height: 80px;\n  line-height: 80px;\n  text-align: center;\n  transform-style: preserve-3d;\n  transition: transform 0.5s 0.1s;\n  perspective: 9999px;\n  color: #333;\n  opacity: 1;\n  position: relative;\n}\n.cube.panelLoad[data-v-6c53cebe] {\n    z-index: 11;\n    top: 50%;\n    animation: letter-cube-panel-data-v-6c53cebe 2.2s infinite forwards;\n}\n.cube.panelLoad .cube-face[data-v-6c53cebe] {\n      font-family: \"Open Sans\",sans-serif;\n      font-size: 50px;\n      color: #41b883;\n      box-shadow: inset 0 0 0 1px #41b883, 0 0 1px 1px #41b883;\n}\n.cube .cube-face[data-v-6c53cebe] {\n    width: inherit;\n    height: inherit;\n    position: absolute;\n    background: white;\n    box-shadow: inset 0 0 0 1px #333, 0 0 1px 1px #333;\n    opacity: 1;\n}\n.cube .cube-face-front[data-v-6c53cebe] {\n    transform: translate3d(0, 0, 40px);\n    font-size: 57px;\n}\n.cube .cube-face-back[data-v-6c53cebe] {\n    transform: rotateY(180deg) translate3d(0, 0, 40px);\n}\n.cube .cube-face-left[data-v-6c53cebe] {\n    transform: rotateY(-90deg) translate3d(0, 0, 40px);\n}\n.cube .cube-face-right[data-v-6c53cebe] {\n    transform: rotateY(90deg) translate3d(0, 0, 40px);\n}\n.cube .cube-face-top[data-v-6c53cebe] {\n    transform: rotateX(90deg) translate3d(0, 0, 40px);\n}\n.cube .cube-face-bottom[data-v-6c53cebe] {\n    transform: rotateX(-90deg) translate3d(0, 0, 40px);\n}\n@keyframes letter-cube-panel-data-v-6c53cebe {\n0% {\n    transform: rotateY(0deg) rotateZ(0deg);\n}\n20% {\n    transform: rotateY(90deg) rotateZ(0deg);\n}\n40% {\n    transform: rotateX(45deg) rotateZ(45deg);\n}\n60% {\n    transform: rotateX(90deg) rotateY(180deg) rotateX(90deg);\n}\n80% {\n    transform: rotateX(310deg) rotateZ(230deg);\n}\n100% {\n    transform: rotateX(360deg) rotateZ(360deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -46105,7 +46138,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-51f8454b", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-6c53cebe", module.exports)
   }
 }
 
@@ -46126,11 +46159,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-547bc93d",
+  "data-v-59daecaa",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Mikepad.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Mikepad.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Mikepad.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -46141,9 +46174,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-547bc93d", Component.options)
+    hotAPI.createRecord("data-v-59daecaa", Component.options)
   } else {
-    hotAPI.reload("data-v-547bc93d", Component.options)
+    hotAPI.reload("data-v-59daecaa", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -46164,13 +46197,13 @@ var content = __webpack_require__(150);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("6ede2f8c", content, false, {});
+var update = __webpack_require__(2)("abeafec4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-547bc93d\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Mikepad.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-547bc93d\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Mikepad.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-59daecaa\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Mikepad.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-59daecaa\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Mikepad.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -46188,7 +46221,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-547bc93d] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n}\n.spinner *[data-v-547bc93d] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-547bc93d] {\n  flex-shrink: 0;\n}\n.spinner-inner .binding[data-v-547bc93d] {\n  content: '';\n  width: 27px;\n  height: 4px;\n  border: 2px solid #41b883;\n  margin: 0 auto;\n}\n.spinner-inner .pad[data-v-547bc93d] {\n  width: 27px;\n  height: 27px;\n  border: 2px solid #41b883;\n  border-top: 0;\n  padding: 4px;\n  margin: 0 auto;\n}\n.spinner-inner .line[data-v-547bc93d] {\n  width: 15px;\n  margin-top: 4px;\n  border-top: 2px solid #41b883;\n  opacity: 0;\n  animation: mikepad-writeline-data-v-547bc93d 3s infinite ease-in;\n}\n.spinner-inner .line[data-v-547bc93d]:first-child {\n  margin-top: 0;\n}\n.spinner-inner .line.line1[data-v-547bc93d] {\n  animation-delay: 0s;\n}\n.spinner-inner .line.line2[data-v-547bc93d] {\n  animation-delay: 0.5s;\n}\n.spinner-inner .line.line3[data-v-547bc93d] {\n  animation-delay: 1s;\n}\n.spinner-inner .text[data-v-547bc93d] {\n  text-align: center;\n  margin-top: 10px;\n  font-size: 14px;\n  color: #41b883;\n}\n@keyframes mikepad-writeline-data-v-547bc93d {\n0% {\n    width: 0px;\n    opacity: 0;\n}\n33% {\n    width: 15px;\n    opacity: 1;\n}\n70% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-59daecaa] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n}\n.spinner *[data-v-59daecaa] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-59daecaa] {\n  flex-shrink: 0;\n}\n.spinner-inner .binding[data-v-59daecaa] {\n  content: '';\n  width: 27px;\n  height: 4px;\n  border: 2px solid #41b883;\n  margin: 0 auto;\n}\n.spinner-inner .pad[data-v-59daecaa] {\n  width: 27px;\n  height: 27px;\n  border: 2px solid #41b883;\n  border-top: 0;\n  padding: 4px;\n  margin: 0 auto;\n}\n.spinner-inner .line[data-v-59daecaa] {\n  width: 15px;\n  margin-top: 4px;\n  border-top: 2px solid #41b883;\n  opacity: 0;\n  animation: mikepad-writeline-data-v-59daecaa 3s infinite ease-in;\n}\n.spinner-inner .line[data-v-59daecaa]:first-child {\n  margin-top: 0;\n}\n.spinner-inner .line.line1[data-v-59daecaa] {\n  animation-delay: 0s;\n}\n.spinner-inner .line.line2[data-v-59daecaa] {\n  animation-delay: 0.5s;\n}\n.spinner-inner .line.line3[data-v-59daecaa] {\n  animation-delay: 1s;\n}\n.spinner-inner .text[data-v-59daecaa] {\n  text-align: center;\n  margin-top: 10px;\n  font-size: 14px;\n  color: #41b883;\n}\n@keyframes mikepad-writeline-data-v-59daecaa {\n0% {\n    width: 0px;\n    opacity: 0;\n}\n33% {\n    width: 15px;\n    opacity: 1;\n}\n70% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n", ""]);
 
 // exports
 
@@ -46263,7 +46296,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-547bc93d", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-59daecaa", module.exports)
   }
 }
 
@@ -46284,11 +46317,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-91526e88",
+  "data-v-869427ae",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Origami.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Origami.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Origami.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -46299,9 +46332,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-91526e88", Component.options)
+    hotAPI.createRecord("data-v-869427ae", Component.options)
   } else {
-    hotAPI.reload("data-v-91526e88", Component.options)
+    hotAPI.reload("data-v-869427ae", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -46322,13 +46355,13 @@ var content = __webpack_require__(155);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("74c0e812", content, false, {});
+var update = __webpack_require__(2)("4c8ebfd9", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-91526e88\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Origami.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-91526e88\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Origami.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-869427ae\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Origami.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-869427ae\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Origami.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -46346,7 +46379,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n@keyframes origami-show-1-data-v-91526e88 {\nfrom {\n    transform: rotateZ(60deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-hide-1-data-v-91526e88 {\nto {\n    transform: rotateZ(60deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-cycle-1-data-v-91526e88 {\n5% {\n    transform: rotateZ(60deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n10%,\n  75% {\n    transform: rotateZ(60deg) rotateY(0) rotateX(0deg);\n    border-left-color: #41b883;\n}\n80%,\n  100% {\n    transform: rotateZ(60deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-show-2-data-v-91526e88 {\nfrom {\n    transform: rotateZ(120deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-hide-2-data-v-91526e88 {\nto {\n    transform: rotateZ(120deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-cycle-2-data-v-91526e88 {\n10% {\n    transform: rotateZ(120deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n15%,\n  70% {\n    transform: rotateZ(120deg) rotateY(0) rotateX(0deg);\n    border-left-color: #41b883;\n}\n75%,\n  100% {\n    transform: rotateZ(120deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-show-3-data-v-91526e88 {\nfrom {\n    transform: rotateZ(180deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-hide-3-data-v-91526e88 {\nto {\n    transform: rotateZ(180deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-cycle-3-data-v-91526e88 {\n15% {\n    transform: rotateZ(180deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n20%,\n  65% {\n    transform: rotateZ(180deg) rotateY(0) rotateX(0deg);\n    border-left-color: #41b883;\n}\n70%,\n  100% {\n    transform: rotateZ(180deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-show-4-data-v-91526e88 {\nfrom {\n    transform: rotateZ(240deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-hide-4-data-v-91526e88 {\nto {\n    transform: rotateZ(240deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-cycle-4-data-v-91526e88 {\n20% {\n    transform: rotateZ(240deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n25%,\n  60% {\n    transform: rotateZ(240deg) rotateY(0) rotateX(0deg);\n    border-left-color: #41b883;\n}\n65%,\n  100% {\n    transform: rotateZ(240deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-show-5-data-v-91526e88 {\nfrom {\n    transform: rotateZ(300deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-hide-5-data-v-91526e88 {\nto {\n    transform: rotateZ(300deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-cycle-5-data-v-91526e88 {\n25% {\n    transform: rotateZ(300deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n30%,\n  55% {\n    transform: rotateZ(300deg) rotateY(0) rotateX(0deg);\n    border-left-color: #41b883;\n}\n60%,\n  100% {\n    transform: rotateZ(300deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-show-6-data-v-91526e88 {\nfrom {\n    transform: rotateZ(360deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-hide-6-data-v-91526e88 {\nto {\n    transform: rotateZ(360deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-cycle-6-data-v-91526e88 {\n30% {\n    transform: rotateZ(360deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n35%,\n  50% {\n    transform: rotateZ(360deg) rotateY(0) rotateX(0deg);\n    border-left-color: #41b883;\n}\n55%,\n  100% {\n    transform: rotateZ(360deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n.spinner[data-v-91526e88] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-91526e88] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-91526e88] {\n  display: block;\n  width: 60px;\n  height: 68px;\n}\n.spinner-inner .slice[data-v-91526e88] {\n    border-top: 18px solid transparent;\n    border-right: none;\n    border-bottom: 16px solid transparent;\n    border-left: 30px solid #f7484e;\n    position: absolute;\n    top: 0px;\n    left: 50%;\n    transform-origin: left bottom;\n    border-radius: 3px 3px 0 0;\n}\n.spinner-inner .slice[data-v-91526e88]:nth-child(1) {\n    transform: rotateZ(60deg) rotateY(0deg) rotateX(0);\n    animation: 0.15s linear 0.82s origami-hide-1 both 1;\n}\n.spinner-inner .slice[data-v-91526e88]:nth-child(2) {\n    transform: rotateZ(120deg) rotateY(0deg) rotateX(0);\n    animation: 0.15s linear 0.74s origami-hide-2 both 1;\n}\n.spinner-inner .slice[data-v-91526e88]:nth-child(3) {\n    transform: rotateZ(180deg) rotateY(0deg) rotateX(0);\n    animation: 0.15s linear 0.66s origami-hide-3 both 1;\n}\n.spinner-inner .slice[data-v-91526e88]:nth-child(4) {\n    transform: rotateZ(240deg) rotateY(0deg) rotateX(0);\n    animation: 0.15s linear 0.58s origami-hide-4 both 1;\n}\n.spinner-inner .slice[data-v-91526e88]:nth-child(5) {\n    transform: rotateZ(300deg) rotateY(0deg) rotateX(0);\n    animation: 0.15s linear 0.5s origami-hide-5 both 1;\n}\n.spinner-inner .slice[data-v-91526e88]:nth-child(6) {\n    transform: rotateZ(360deg) rotateY(0deg) rotateX(0);\n    animation: 0.15s linear 0.42s origami-hide-6 both 1;\n}\n.spinner-inner.loading .slice[data-v-91526e88]:nth-child(1) {\n    transform: rotateZ(60deg) rotateY(90deg) rotateX(0);\n    animation: 2s origami-cycle-1 linear infinite both;\n}\n.spinner-inner.loading .slice[data-v-91526e88]:nth-child(2) {\n    transform: rotateZ(120deg) rotateY(90deg) rotateX(0);\n    animation: 2s origami-cycle-2 linear infinite both;\n}\n.spinner-inner.loading .slice[data-v-91526e88]:nth-child(3) {\n    transform: rotateZ(180deg) rotateY(90deg) rotateX(0);\n    animation: 2s origami-cycle-3 linear infinite both;\n}\n.spinner-inner.loading .slice[data-v-91526e88]:nth-child(4) {\n    transform: rotateZ(240deg) rotateY(90deg) rotateX(0);\n    animation: 2s origami-cycle-4 linear infinite both;\n}\n.spinner-inner.loading .slice[data-v-91526e88]:nth-child(5) {\n    transform: rotateZ(300deg) rotateY(90deg) rotateX(0);\n    animation: 2s origami-cycle-5 linear infinite both;\n}\n.spinner-inner.loading .slice[data-v-91526e88]:nth-child(6) {\n    transform: rotateZ(360deg) rotateY(90deg) rotateX(0);\n    animation: 2s origami-cycle-6 linear infinite both;\n}\n", ""]);
+exports.push([module.i, "\n@keyframes origami-show-1-data-v-869427ae {\nfrom {\n    transform: rotateZ(60deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-hide-1-data-v-869427ae {\nto {\n    transform: rotateZ(60deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-cycle-1-data-v-869427ae {\n5% {\n    transform: rotateZ(60deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n10%,\n  75% {\n    transform: rotateZ(60deg) rotateY(0) rotateX(0deg);\n    border-left-color: #41b883;\n}\n80%,\n  100% {\n    transform: rotateZ(60deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-show-2-data-v-869427ae {\nfrom {\n    transform: rotateZ(120deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-hide-2-data-v-869427ae {\nto {\n    transform: rotateZ(120deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-cycle-2-data-v-869427ae {\n10% {\n    transform: rotateZ(120deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n15%,\n  70% {\n    transform: rotateZ(120deg) rotateY(0) rotateX(0deg);\n    border-left-color: #41b883;\n}\n75%,\n  100% {\n    transform: rotateZ(120deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-show-3-data-v-869427ae {\nfrom {\n    transform: rotateZ(180deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-hide-3-data-v-869427ae {\nto {\n    transform: rotateZ(180deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-cycle-3-data-v-869427ae {\n15% {\n    transform: rotateZ(180deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n20%,\n  65% {\n    transform: rotateZ(180deg) rotateY(0) rotateX(0deg);\n    border-left-color: #41b883;\n}\n70%,\n  100% {\n    transform: rotateZ(180deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-show-4-data-v-869427ae {\nfrom {\n    transform: rotateZ(240deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-hide-4-data-v-869427ae {\nto {\n    transform: rotateZ(240deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-cycle-4-data-v-869427ae {\n20% {\n    transform: rotateZ(240deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n25%,\n  60% {\n    transform: rotateZ(240deg) rotateY(0) rotateX(0deg);\n    border-left-color: #41b883;\n}\n65%,\n  100% {\n    transform: rotateZ(240deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-show-5-data-v-869427ae {\nfrom {\n    transform: rotateZ(300deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-hide-5-data-v-869427ae {\nto {\n    transform: rotateZ(300deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-cycle-5-data-v-869427ae {\n25% {\n    transform: rotateZ(300deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n30%,\n  55% {\n    transform: rotateZ(300deg) rotateY(0) rotateX(0deg);\n    border-left-color: #41b883;\n}\n60%,\n  100% {\n    transform: rotateZ(300deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-show-6-data-v-869427ae {\nfrom {\n    transform: rotateZ(360deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-hide-6-data-v-869427ae {\nto {\n    transform: rotateZ(360deg) rotateY(-90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n@keyframes origami-cycle-6-data-v-869427ae {\n30% {\n    transform: rotateZ(360deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n35%,\n  50% {\n    transform: rotateZ(360deg) rotateY(0) rotateX(0deg);\n    border-left-color: #41b883;\n}\n55%,\n  100% {\n    transform: rotateZ(360deg) rotateY(90deg) rotateX(0deg);\n    border-left-color: #31855e;\n}\n}\n.spinner[data-v-869427ae] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-869427ae] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-869427ae] {\n  display: block;\n  width: 60px;\n  height: 68px;\n}\n.spinner-inner .slice[data-v-869427ae] {\n    border-top: 18px solid transparent;\n    border-right: none;\n    border-bottom: 16px solid transparent;\n    border-left: 30px solid #f7484e;\n    position: absolute;\n    top: 0px;\n    left: 50%;\n    transform-origin: left bottom;\n    border-radius: 3px 3px 0 0;\n}\n.spinner-inner .slice[data-v-869427ae]:nth-child(1) {\n    transform: rotateZ(60deg) rotateY(0deg) rotateX(0);\n    animation: 0.15s linear 0.82s origami-hide-1 both 1;\n}\n.spinner-inner .slice[data-v-869427ae]:nth-child(2) {\n    transform: rotateZ(120deg) rotateY(0deg) rotateX(0);\n    animation: 0.15s linear 0.74s origami-hide-2 both 1;\n}\n.spinner-inner .slice[data-v-869427ae]:nth-child(3) {\n    transform: rotateZ(180deg) rotateY(0deg) rotateX(0);\n    animation: 0.15s linear 0.66s origami-hide-3 both 1;\n}\n.spinner-inner .slice[data-v-869427ae]:nth-child(4) {\n    transform: rotateZ(240deg) rotateY(0deg) rotateX(0);\n    animation: 0.15s linear 0.58s origami-hide-4 both 1;\n}\n.spinner-inner .slice[data-v-869427ae]:nth-child(5) {\n    transform: rotateZ(300deg) rotateY(0deg) rotateX(0);\n    animation: 0.15s linear 0.5s origami-hide-5 both 1;\n}\n.spinner-inner .slice[data-v-869427ae]:nth-child(6) {\n    transform: rotateZ(360deg) rotateY(0deg) rotateX(0);\n    animation: 0.15s linear 0.42s origami-hide-6 both 1;\n}\n.spinner-inner.loading .slice[data-v-869427ae]:nth-child(1) {\n    transform: rotateZ(60deg) rotateY(90deg) rotateX(0);\n    animation: 2s origami-cycle-1 linear infinite both;\n}\n.spinner-inner.loading .slice[data-v-869427ae]:nth-child(2) {\n    transform: rotateZ(120deg) rotateY(90deg) rotateX(0);\n    animation: 2s origami-cycle-2 linear infinite both;\n}\n.spinner-inner.loading .slice[data-v-869427ae]:nth-child(3) {\n    transform: rotateZ(180deg) rotateY(90deg) rotateX(0);\n    animation: 2s origami-cycle-3 linear infinite both;\n}\n.spinner-inner.loading .slice[data-v-869427ae]:nth-child(4) {\n    transform: rotateZ(240deg) rotateY(90deg) rotateX(0);\n    animation: 2s origami-cycle-4 linear infinite both;\n}\n.spinner-inner.loading .slice[data-v-869427ae]:nth-child(5) {\n    transform: rotateZ(300deg) rotateY(90deg) rotateX(0);\n    animation: 2s origami-cycle-5 linear infinite both;\n}\n.spinner-inner.loading .slice[data-v-869427ae]:nth-child(6) {\n    transform: rotateZ(360deg) rotateY(90deg) rotateX(0);\n    animation: 2s origami-cycle-6 linear infinite both;\n}\n", ""]);
 
 // exports
 
@@ -46421,7 +46454,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-91526e88", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-869427ae", module.exports)
   }
 }
 
@@ -46442,11 +46475,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-592efbdd",
+  "data-v-48d736d0",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Pencil.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Pencil.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Pencil.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -46457,9 +46490,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-592efbdd", Component.options)
+    hotAPI.createRecord("data-v-48d736d0", Component.options)
   } else {
-    hotAPI.reload("data-v-592efbdd", Component.options)
+    hotAPI.reload("data-v-48d736d0", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -46480,13 +46513,13 @@ var content = __webpack_require__(160);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("6b80941c", content, false, {});
+var update = __webpack_require__(2)("2a929fc2", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-592efbdd\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Pencil.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-592efbdd\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Pencil.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-48d736d0\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Pencil.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-48d736d0\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Pencil.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -46504,7 +46537,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.line[data-v-592efbdd] {\n  animation: linePencil-data-v-592efbdd .8s infinite linear;\n}\n@keyframes linePencil-data-v-592efbdd {\n0% {\n    transform: translateY(0);\n}\n100% {\n    transform: translateY(-150px);\n}\n}\n", ""]);
+exports.push([module.i, "\n.line[data-v-48d736d0] {\n  animation: linePencil-data-v-48d736d0 .8s infinite linear;\n}\n@keyframes linePencil-data-v-48d736d0 {\n0% {\n    transform: translateY(0);\n}\n100% {\n    transform: translateY(-150px);\n}\n}\n", ""]);
 
 // exports
 
@@ -46575,7 +46608,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-592efbdd", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-48d736d0", module.exports)
   }
 }
 
@@ -46596,11 +46629,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-53fc1eda",
+  "data-v-0afd2de6",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\PingPong.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\PingPong.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] PingPong.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -46611,9 +46644,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-53fc1eda", Component.options)
+    hotAPI.createRecord("data-v-0afd2de6", Component.options)
   } else {
-    hotAPI.reload("data-v-53fc1eda", Component.options)
+    hotAPI.reload("data-v-0afd2de6", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -46634,13 +46667,13 @@ var content = __webpack_require__(165);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("4bc33b59", content, false, {});
+var update = __webpack_require__(2)("91526f9a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-53fc1eda\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./PingPong.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-53fc1eda\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./PingPong.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0afd2de6\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./PingPong.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0afd2de6\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./PingPong.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -46658,7 +46691,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-53fc1eda] {\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-53fc1eda] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.board[data-v-53fc1eda] {\n  width: 250px;\n  position: relative;\n}\n.left[data-v-53fc1eda],\n.right[data-v-53fc1eda] {\n  height: 50px;\n  width: 15px;\n  background: #41b883;\n  display: inline-block;\n  position: absolute;\n}\n.left[data-v-53fc1eda] {\n  left: 0;\n  animation: pingpong-position1-data-v-53fc1eda 2s linear infinite;\n}\n.right[data-v-53fc1eda] {\n  right: 0;\n  animation: pingpong-position2-data-v-53fc1eda 2s linear infinite;\n}\n.ball[data-v-53fc1eda] {\n  width: 15px;\n  height: 15px;\n  border-radius: 50%;\n  background: #f7484e;\n  position: absolute;\n  animation: pingpong-bounce-data-v-53fc1eda 2s linear infinite;\n}\n@keyframes pingpong-position1-data-v-53fc1eda {\n0% {\n    top: -60px;\n}\n25% {\n    top: 0;\n}\n50% {\n    top: 60px;\n}\n75% {\n    top: -60px;\n}\n100% {\n    top: -60px;\n}\n}\n@keyframes pingpong-position2-data-v-53fc1eda {\n0% {\n    top: 60px;\n}\n25% {\n    top: 0;\n}\n50% {\n    top: -60px;\n}\n75% {\n    top: -60px;\n}\n100% {\n    top: 60px;\n}\n}\n@keyframes pingpong-bounce-data-v-53fc1eda {\n0% {\n    top: -35px;\n    left: 10px;\n}\n25% {\n    top: 25px;\n    left: 225px;\n}\n50% {\n    top: 75px;\n    left: 10px;\n}\n75% {\n    top: -35px;\n    left: 225px;\n}\n100% {\n    top: -35px;\n    left: 10px;\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-0afd2de6] {\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-0afd2de6] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.board[data-v-0afd2de6] {\n  width: 250px;\n  position: relative;\n}\n.left[data-v-0afd2de6],\n.right[data-v-0afd2de6] {\n  height: 50px;\n  width: 15px;\n  background: #41b883;\n  display: inline-block;\n  position: absolute;\n}\n.left[data-v-0afd2de6] {\n  left: 0;\n  animation: pingpong-position1-data-v-0afd2de6 2s linear infinite;\n}\n.right[data-v-0afd2de6] {\n  right: 0;\n  animation: pingpong-position2-data-v-0afd2de6 2s linear infinite;\n}\n.ball[data-v-0afd2de6] {\n  width: 15px;\n  height: 15px;\n  border-radius: 50%;\n  background: #f7484e;\n  position: absolute;\n  animation: pingpong-bounce-data-v-0afd2de6 2s linear infinite;\n}\n@keyframes pingpong-position1-data-v-0afd2de6 {\n0% {\n    top: -60px;\n}\n25% {\n    top: 0;\n}\n50% {\n    top: 60px;\n}\n75% {\n    top: -60px;\n}\n100% {\n    top: -60px;\n}\n}\n@keyframes pingpong-position2-data-v-0afd2de6 {\n0% {\n    top: 60px;\n}\n25% {\n    top: 0;\n}\n50% {\n    top: -60px;\n}\n75% {\n    top: -60px;\n}\n100% {\n    top: 60px;\n}\n}\n@keyframes pingpong-bounce-data-v-0afd2de6 {\n0% {\n    top: -35px;\n    left: 10px;\n}\n25% {\n    top: 25px;\n    left: 225px;\n}\n50% {\n    top: 75px;\n    left: 10px;\n}\n75% {\n    top: -35px;\n    left: 225px;\n}\n100% {\n    top: -35px;\n    left: 10px;\n}\n}\n", ""]);
 
 // exports
 
@@ -46734,7 +46767,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-53fc1eda", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-0afd2de6", module.exports)
   }
 }
 
@@ -46755,11 +46788,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-4c9e8588",
+  "data-v-3d28502e",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Plane.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Plane.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Plane.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -46770,9 +46803,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4c9e8588", Component.options)
+    hotAPI.createRecord("data-v-3d28502e", Component.options)
   } else {
-    hotAPI.reload("data-v-4c9e8588", Component.options)
+    hotAPI.reload("data-v-3d28502e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -46793,13 +46826,13 @@ var content = __webpack_require__(170);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("6ac75023", content, false, {});
+var update = __webpack_require__(2)("c74afd54", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4c9e8588\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Plane.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4c9e8588\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Plane.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3d28502e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Plane.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3d28502e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Plane.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -46817,7 +46850,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-4c9e8588] {\n  position: relative;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-4c9e8588] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.mask[data-v-4c9e8588] {\n  position: absolute;\n  border-radius: 2px;\n  overflow: hidden;\n  perspective: 1000;\n  backface-visibility: hidden;\n}\n.plane[data-v-4c9e8588] {\n  background: #41b883;\n  width: 400%;\n  height: 100%;\n  position: absolute;\n  transform: translate3d(0px, 0, 0);\n  z-index: 100;\n  perspective: 1000;\n  backface-visibility: hidden;\n}\n.animation[data-v-4c9e8588] {\n  transition: all 0.3s ease;\n}\n#top .plane[data-v-4c9e8588] {\n  z-index: 2000;\n  animation: trans1-data-v-4c9e8588 1.3s ease-in infinite 0s backwards;\n}\n#middle .plane[data-v-4c9e8588] {\n  transform: translate3d(0px, 0, 0);\n  background: #32855f;\n  animation: trans2-data-v-4c9e8588 1.3s linear infinite 0.3s backwards;\n}\n#bottom .plane[data-v-4c9e8588] {\n  z-index: 2000;\n  animation: trans3-data-v-4c9e8588 1.3s ease-out infinite 0.7s backwards;\n}\n#top[data-v-4c9e8588] {\n  width: 53px;\n  height: 20px;\n  left: 20px;\n  top: 5px;\n  transform: skew(-15deg, 0);\n  z-index: 100;\n}\n#middle[data-v-4c9e8588] {\n  width: 33px;\n  height: 20px;\n  left: 20px;\n  top: 21px;\n  transform: skew(-15deg, 40deg);\n}\n#bottom[data-v-4c9e8588] {\n  width: 53px;\n  height: 20px;\n  top: 35px;\n  transform: skew(-15deg, 0);\n}\np[data-v-4c9e8588] {\n  color: #fff;\n  position: absolute;\n  left: -3px;\n  top: 45px;\n  font-family: Arial;\n  text-align: center;\n  font-size: 10px;\n}\n@keyframes trans1-data-v-4c9e8588 {\nfrom {\n    transform: translate3d(53px, 0, 0);\n}\nto {\n    transform: translate3d(-250px, 0, 0);\n}\n}\n@keyframes trans2-data-v-4c9e8588 {\nfrom {\n    transform: translate3d(-160px, 0, 0);\n}\nto {\n    transform: translate3d(53px, 0, 0);\n}\n}\n@keyframes trans3-data-v-4c9e8588 {\nfrom {\n    transform: translate3d(53px, 0, 0);\n}\nto {\n    transform: translate3d(-220px, 0, 0);\n}\n}\n@keyframes animColor-data-v-4c9e8588 {\nfrom {\n    background: red;\n}\n25% {\n    background: yellow;\n}\n50% {\n    background: green;\n}\n75% {\n    background: brown;\n}\nto {\n    background: blue;\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-3d28502e] {\n  position: relative;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-3d28502e] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.mask[data-v-3d28502e] {\n  position: absolute;\n  border-radius: 2px;\n  overflow: hidden;\n  perspective: 1000;\n  backface-visibility: hidden;\n}\n.plane[data-v-3d28502e] {\n  background: #41b883;\n  width: 400%;\n  height: 100%;\n  position: absolute;\n  transform: translate3d(0px, 0, 0);\n  z-index: 100;\n  perspective: 1000;\n  backface-visibility: hidden;\n}\n.animation[data-v-3d28502e] {\n  transition: all 0.3s ease;\n}\n#top .plane[data-v-3d28502e] {\n  z-index: 2000;\n  animation: trans1-data-v-3d28502e 1.3s ease-in infinite 0s backwards;\n}\n#middle .plane[data-v-3d28502e] {\n  transform: translate3d(0px, 0, 0);\n  background: #32855f;\n  animation: trans2-data-v-3d28502e 1.3s linear infinite 0.3s backwards;\n}\n#bottom .plane[data-v-3d28502e] {\n  z-index: 2000;\n  animation: trans3-data-v-3d28502e 1.3s ease-out infinite 0.7s backwards;\n}\n#top[data-v-3d28502e] {\n  width: 53px;\n  height: 20px;\n  left: 20px;\n  top: 5px;\n  transform: skew(-15deg, 0);\n  z-index: 100;\n}\n#middle[data-v-3d28502e] {\n  width: 33px;\n  height: 20px;\n  left: 20px;\n  top: 21px;\n  transform: skew(-15deg, 40deg);\n}\n#bottom[data-v-3d28502e] {\n  width: 53px;\n  height: 20px;\n  top: 35px;\n  transform: skew(-15deg, 0);\n}\np[data-v-3d28502e] {\n  color: #fff;\n  position: absolute;\n  left: -3px;\n  top: 45px;\n  font-family: Arial;\n  text-align: center;\n  font-size: 10px;\n}\n@keyframes trans1-data-v-3d28502e {\nfrom {\n    transform: translate3d(53px, 0, 0);\n}\nto {\n    transform: translate3d(-250px, 0, 0);\n}\n}\n@keyframes trans2-data-v-3d28502e {\nfrom {\n    transform: translate3d(-160px, 0, 0);\n}\nto {\n    transform: translate3d(53px, 0, 0);\n}\n}\n@keyframes trans3-data-v-3d28502e {\nfrom {\n    transform: translate3d(53px, 0, 0);\n}\nto {\n    transform: translate3d(-220px, 0, 0);\n}\n}\n@keyframes animColor-data-v-3d28502e {\nfrom {\n    background: red;\n}\n25% {\n    background: yellow;\n}\n50% {\n    background: green;\n}\n75% {\n    background: brown;\n}\nto {\n    background: blue;\n}\n}\n", ""]);
 
 // exports
 
@@ -46917,7 +46950,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-4c9e8588", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-3d28502e", module.exports)
   }
 }
 
@@ -46938,11 +46971,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-0caf4cb0",
+  "data-v-29715b4a",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\RotateSquare.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\RotateSquare.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] RotateSquare.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -46953,9 +46986,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0caf4cb0", Component.options)
+    hotAPI.createRecord("data-v-29715b4a", Component.options)
   } else {
-    hotAPI.reload("data-v-0caf4cb0", Component.options)
+    hotAPI.reload("data-v-29715b4a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -46976,13 +47009,13 @@ var content = __webpack_require__(175);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("f0950be0", content, false, {});
+var update = __webpack_require__(2)("65e1c1ca", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0caf4cb0\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0caf4cb0\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-29715b4a\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-29715b4a\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -47000,7 +47033,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-0caf4cb0] {\n  display: inline-block;\n  animation: rotateplane-data-v-0caf4cb0 1.2s infinite ease-in-out;\n}\n@keyframes rotateplane-data-v-0caf4cb0 {\n0% {\n    transform: perspective(120px) rotateX(0deg) rotateY(0deg);\n}\n50% {\n    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);\n}\n100% {\n    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-29715b4a] {\n  display: inline-block;\n  animation: rotateplane-data-v-29715b4a 1.2s infinite ease-in-out;\n}\n@keyframes rotateplane-data-v-29715b4a {\n0% {\n    transform: perspective(120px) rotateX(0deg) rotateY(0deg);\n}\n50% {\n    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);\n}\n100% {\n    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -47054,7 +47087,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-0caf4cb0", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-29715b4a", module.exports)
   }
 }
 
@@ -47075,11 +47108,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-3b7a84ba",
+  "data-v-7dbaa267",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\RotateSquare2.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\RotateSquare2.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] RotateSquare2.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -47090,9 +47123,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3b7a84ba", Component.options)
+    hotAPI.createRecord("data-v-7dbaa267", Component.options)
   } else {
-    hotAPI.reload("data-v-3b7a84ba", Component.options)
+    hotAPI.reload("data-v-7dbaa267", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47113,13 +47146,13 @@ var content = __webpack_require__(180);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("6955e583", content, false, {});
+var update = __webpack_require__(2)("4c1e5a4e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3b7a84ba\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare2.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3b7a84ba\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare2.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7dbaa267\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare2.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7dbaa267\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare2.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -47137,7 +47170,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-3b7a84ba] {\n  position: relative;\n}\n.spinner *[data-v-3b7a84ba] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner[data-v-3b7a84ba]:before {\n    content: '';\n    width: 100%;\n    height: 20%;\n    min-width: 5px;\n    background: #000;\n    opacity: 0.1;\n    position: absolute;\n    bottom: 0%;\n    left: 0;\n    border-radius: 50%;\n    animation: rotate-square-2-shadow-data-v-3b7a84ba .5s linear infinite;\n}\n.spinner[data-v-3b7a84ba]:after {\n    content: '';\n    width: 100%;\n    height: 100%;\n    background: #41b883;\n    animation: rotate-square-2-animate-data-v-3b7a84ba .5s linear infinite;\n    position: absolute;\n    bottom: 40%;\n    left: 0;\n    border-radius: 3px;\n}\n@keyframes rotate-square-2-animate-data-v-3b7a84ba {\n17% {\n    border-bottom-right-radius: 3px;\n}\n25% {\n    transform: translateY(20%) rotate(22.5deg);\n}\n50% {\n    transform: translateY(40%) scale(1, 0.9) rotate(45deg);\n    border-bottom-right-radius: 50%;\n}\n75% {\n    transform: translateY(20%) rotate(67.5deg);\n}\n100% {\n    transform: translateY(0) rotate(90deg);\n}\n}\n@keyframes rotate-square-2-shadow-data-v-3b7a84ba {\n0%, 100% {\n    transform: scale(1, 1);\n}\n50% {\n    transform: scale(1.2, 1);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-7dbaa267] {\n  position: relative;\n}\n.spinner *[data-v-7dbaa267] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner[data-v-7dbaa267]:before {\n    content: '';\n    width: 100%;\n    height: 20%;\n    min-width: 5px;\n    background: #000;\n    opacity: 0.1;\n    position: absolute;\n    bottom: 0%;\n    left: 0;\n    border-radius: 50%;\n    animation: rotate-square-2-shadow-data-v-7dbaa267 .5s linear infinite;\n}\n.spinner[data-v-7dbaa267]:after {\n    content: '';\n    width: 100%;\n    height: 100%;\n    background: #41b883;\n    animation: rotate-square-2-animate-data-v-7dbaa267 .5s linear infinite;\n    position: absolute;\n    bottom: 40%;\n    left: 0;\n    border-radius: 3px;\n}\n@keyframes rotate-square-2-animate-data-v-7dbaa267 {\n17% {\n    border-bottom-right-radius: 3px;\n}\n25% {\n    transform: translateY(20%) rotate(22.5deg);\n}\n50% {\n    transform: translateY(40%) scale(1, 0.9) rotate(45deg);\n    border-bottom-right-radius: 50%;\n}\n75% {\n    transform: translateY(20%) rotate(67.5deg);\n}\n100% {\n    transform: translateY(0) rotate(90deg);\n}\n}\n@keyframes rotate-square-2-shadow-data-v-7dbaa267 {\n0%, 100% {\n    transform: scale(1, 1);\n}\n50% {\n    transform: scale(1.2, 1);\n}\n}\n", ""]);
 
 // exports
 
@@ -47186,7 +47219,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3b7a84ba", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-7dbaa267", module.exports)
   }
 }
 
@@ -47207,11 +47240,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-3b889c3b",
+  "data-v-7dc8b9e8",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\RotateSquare3.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\RotateSquare3.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] RotateSquare3.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -47222,9 +47255,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3b889c3b", Component.options)
+    hotAPI.createRecord("data-v-7dc8b9e8", Component.options)
   } else {
-    hotAPI.reload("data-v-3b889c3b", Component.options)
+    hotAPI.reload("data-v-7dc8b9e8", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47245,13 +47278,13 @@ var content = __webpack_require__(185);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("29b331f1", content, false, {});
+var update = __webpack_require__(2)("7907c766", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3b889c3b\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare3.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3b889c3b\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare3.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7dc8b9e8\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare3.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7dc8b9e8\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare3.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -47269,7 +47302,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-3b889c3b] {\n  height: 40px;\n  width: 40px;\n}\n.spinner *[data-v-3b889c3b] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.b0[data-v-3b889c3b] {\n  animation: rotate-square-3-b0-data-v-3b889c3b 4s infinite ease;\n  transform-origin: 250px 250px;\n}\n.b1[data-v-3b889c3b] {\n  animation: rotate-square-3-b1-data-v-3b889c3b 4s infinite ease;\n}\n.b2[data-v-3b889c3b] {\n  animation: rotate-square-3-b2-data-v-3b889c3b 4s infinite ease;\n}\n.b3[data-v-3b889c3b] {\n  animation: rotate-square-3-b3-data-v-3b889c3b 4s infinite ease;\n}\n.b4[data-v-3b889c3b] {\n  animation: rotate-square-3-b4-data-v-3b889c3b 4s infinite ease;\n}\n@keyframes rotate-square-3-b0-data-v-3b889c3b {\n0% {\n    transform: rotate(0);\n}\n25% {\n    transform: rotate(-90deg);\n}\n50% {\n    transform: rotate(-180deg);\n}\n75% {\n    transform: rotate(-270deg);\n}\n100% {\n    transform: rotate(-360deg);\n}\n}\n@keyframes rotate-square-3-b1-data-v-3b889c3b {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(0, 355px);\n}\n50% {\n    transform: translate(355px, 355px);\n}\n75% {\n    transform: translate(355px, 0);\n}\n100% {\n    transform: translate(0, 0);\n}\n}\n@keyframes rotate-square-3-b2-data-v-3b889c3b {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(-355px, 0);\n}\n50% {\n    transform: translate(-355px, 355px);\n}\n75% {\n    transform: translate(0, 355px);\n}\n100% {\n    transform: translate(0, 0);\n}\n}\n@keyframes rotate-square-3-b3-data-v-3b889c3b {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(0, -355px);\n}\n50% {\n    transform: translate(-355px, -355px);\n}\n75% {\n    transform: translate(-355px, 0);\n}\n100% {\n    transform: translate(0, 0);\n}\n}\n@keyframes rotate-square-3-b4-data-v-3b889c3b {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(355px, 0);\n}\n50% {\n    transform: translate(355px, -355px);\n}\n75% {\n    transform: translate(0, -355px);\n}\n100% {\n    transform: translate(0, 0);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-7dc8b9e8] {\n  height: 40px;\n  width: 40px;\n}\n.spinner *[data-v-7dc8b9e8] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.b0[data-v-7dc8b9e8] {\n  animation: rotate-square-3-b0-data-v-7dc8b9e8 4s infinite ease;\n  transform-origin: 250px 250px;\n}\n.b1[data-v-7dc8b9e8] {\n  animation: rotate-square-3-b1-data-v-7dc8b9e8 4s infinite ease;\n}\n.b2[data-v-7dc8b9e8] {\n  animation: rotate-square-3-b2-data-v-7dc8b9e8 4s infinite ease;\n}\n.b3[data-v-7dc8b9e8] {\n  animation: rotate-square-3-b3-data-v-7dc8b9e8 4s infinite ease;\n}\n.b4[data-v-7dc8b9e8] {\n  animation: rotate-square-3-b4-data-v-7dc8b9e8 4s infinite ease;\n}\n@keyframes rotate-square-3-b0-data-v-7dc8b9e8 {\n0% {\n    transform: rotate(0);\n}\n25% {\n    transform: rotate(-90deg);\n}\n50% {\n    transform: rotate(-180deg);\n}\n75% {\n    transform: rotate(-270deg);\n}\n100% {\n    transform: rotate(-360deg);\n}\n}\n@keyframes rotate-square-3-b1-data-v-7dc8b9e8 {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(0, 355px);\n}\n50% {\n    transform: translate(355px, 355px);\n}\n75% {\n    transform: translate(355px, 0);\n}\n100% {\n    transform: translate(0, 0);\n}\n}\n@keyframes rotate-square-3-b2-data-v-7dc8b9e8 {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(-355px, 0);\n}\n50% {\n    transform: translate(-355px, 355px);\n}\n75% {\n    transform: translate(0, 355px);\n}\n100% {\n    transform: translate(0, 0);\n}\n}\n@keyframes rotate-square-3-b3-data-v-7dc8b9e8 {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(0, -355px);\n}\n50% {\n    transform: translate(-355px, -355px);\n}\n75% {\n    transform: translate(-355px, 0);\n}\n100% {\n    transform: translate(0, 0);\n}\n}\n@keyframes rotate-square-3-b4-data-v-7dc8b9e8 {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(355px, 0);\n}\n50% {\n    transform: translate(355px, -355px);\n}\n75% {\n    transform: translate(0, -355px);\n}\n100% {\n    transform: translate(0, 0);\n}\n}\n", ""]);
 
 // exports
 
@@ -47364,7 +47397,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3b889c3b", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-7dc8b9e8", module.exports)
   }
 }
 
@@ -47385,11 +47418,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-3b96b3bc",
+  "data-v-7dd6d169",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\RotateSquare4.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\RotateSquare4.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] RotateSquare4.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -47400,9 +47433,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3b96b3bc", Component.options)
+    hotAPI.createRecord("data-v-7dd6d169", Component.options)
   } else {
-    hotAPI.reload("data-v-3b96b3bc", Component.options)
+    hotAPI.reload("data-v-7dd6d169", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47423,13 +47456,13 @@ var content = __webpack_require__(190);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("dc8c7946", content, false, {});
+var update = __webpack_require__(2)("f3d596e8", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3b96b3bc\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare4.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3b96b3bc\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare4.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7dd6d169\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare4.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7dd6d169\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare4.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -47447,7 +47480,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-3b96b3bc] {\n  position: relative;\n  border: 4px solid #41b883;\n  animation: loader-data-v-3b96b3bc 2s infinite ease;\n}\n.spinner *[data-v-3b96b3bc] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.loader-inner[data-v-3b96b3bc] {\n  vertical-align: top;\n  display: inline-block;\n  width: 100%;\n  background-color: #41b883;\n  animation: loader-inner-data-v-3b96b3bc 2s infinite ease-in;\n}\n@keyframes loader-data-v-3b96b3bc {\n0% {\n    transform: rotate(0deg);\n}\n25% {\n    transform: rotate(180deg);\n}\n50% {\n    transform: rotate(180deg);\n}\n75% {\n    transform: rotate(360deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@keyframes loader-inner-data-v-3b96b3bc {\n0% {\n    height: 0%;\n}\n25% {\n    height: 0%;\n}\n50% {\n    height: 100%;\n}\n75% {\n    height: 100%;\n}\n100% {\n    height: 0%;\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-7dd6d169] {\n  position: relative;\n  border: 4px solid #41b883;\n  animation: loader-data-v-7dd6d169 2s infinite ease;\n}\n.spinner *[data-v-7dd6d169] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.loader-inner[data-v-7dd6d169] {\n  vertical-align: top;\n  display: inline-block;\n  width: 100%;\n  background-color: #41b883;\n  animation: loader-inner-data-v-7dd6d169 2s infinite ease-in;\n}\n@keyframes loader-data-v-7dd6d169 {\n0% {\n    transform: rotate(0deg);\n}\n25% {\n    transform: rotate(180deg);\n}\n50% {\n    transform: rotate(180deg);\n}\n75% {\n    transform: rotate(360deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@keyframes loader-inner-data-v-7dd6d169 {\n0% {\n    height: 0%;\n}\n25% {\n    height: 0%;\n}\n50% {\n    height: 100%;\n}\n75% {\n    height: 100%;\n}\n100% {\n    height: 0%;\n}\n}\n", ""]);
 
 // exports
 
@@ -47500,7 +47533,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3b96b3bc", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-7dd6d169", module.exports)
   }
 }
 
@@ -47521,11 +47554,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-3ba4cb3d",
+  "data-v-7de4e8ea",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\RotateSquare5.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\RotateSquare5.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] RotateSquare5.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -47536,9 +47569,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3ba4cb3d", Component.options)
+    hotAPI.createRecord("data-v-7de4e8ea", Component.options)
   } else {
-    hotAPI.reload("data-v-3ba4cb3d", Component.options)
+    hotAPI.reload("data-v-7de4e8ea", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47559,13 +47592,13 @@ var content = __webpack_require__(195);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("6fcfb22a", content, false, {});
+var update = __webpack_require__(2)("3c4bd3f2", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3ba4cb3d\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare5.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3ba4cb3d\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare5.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7de4e8ea\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare5.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7de4e8ea\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./RotateSquare5.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -47583,7 +47616,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-3ba4cb3d] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  line-height: 0;\n}\n.spinner *[data-v-3ba4cb3d] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-3ba4cb3d] {\n  position: relative;\n  width: 75px;\n  height: 75px;\n}\n.load3-center[data-v-3ba4cb3d] {\n  display: inline-block;\n  position: absolute;\n  background: #41b883;\n  transform: rotate(45deg);\n  height: 30px;\n  width: 30px;\n  left: 23px;\n  top: 23px;\n  border-radius: 3px;\n  animation: rotate-square-5-pulse-data-v-3ba4cb3d 1s ease infinite;\n}\n.load3[data-v-3ba4cb3d] {\n  display: inline-block;\n  position: relative;\n  width: 75px;\n  height: 75px;\n  transform: rotate(45deg);\n}\n.load3[data-v-3ba4cb3d]:after, .load3[data-v-3ba4cb3d]:before {\n    position: absolute;\n    content: '';\n    height: 10px;\n    width: 10px;\n    display: block;\n    top: 0;\n    border-radius: 3px;\n    background: #41b883;\n    animation-delay: -.5s;\n}\n.load3[data-v-3ba4cb3d]:after {\n    right: 0;\n    animation: rotate-square-5-square-tr-data-v-3ba4cb3d 2s ease infinite;\n    animation-delay: .125s;\n}\n.load3[data-v-3ba4cb3d]:before {\n    animation: rotate-square-5-square-tl-data-v-3ba4cb3d 2s ease infinite;\n    animation-delay: .125s;\n}\n.load3.two[data-v-3ba4cb3d] {\n  position: relative;\n  top: -75px;\n}\n.load3.two[data-v-3ba4cb3d]:after, .load3.two[data-v-3ba4cb3d]:before {\n    bottom: 0;\n    top: initial;\n}\n.load3.two[data-v-3ba4cb3d]:after {\n    animation: rotate-square-5-square-br-data-v-3ba4cb3d 2s ease infinite;\n    animation-direction: reverse;\n}\n.load3.two[data-v-3ba4cb3d]:before {\n    animation: rotate-square-5-square-bl-data-v-3ba4cb3d 2s ease infinite;\n    animation-direction: reverse;\n}\n@keyframes rotate-square-5-square-tl-data-v-3ba4cb3d {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(0, 62.5px);\n}\n50% {\n    transform: translate(62.5px, 62.5px);\n}\n75% {\n    transform: translate(62.5px, 0);\n}\n}\n@keyframes rotate-square-5-square-bl-data-v-3ba4cb3d {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(0, -62.5px);\n}\n50% {\n    transform: translate(62.5px, -62.5px);\n}\n75% {\n    transform: translate(62.5px, 0);\n}\n}\n@keyframes rotate-square-5-square-tr-data-v-3ba4cb3d {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(-62.5px, 0);\n}\n50% {\n    transform: translate(-62.5px, 62.5px);\n}\n75% {\n    transform: translate(0, 62.5px);\n}\n}\n@keyframes rotate-square-5-square-br-data-v-3ba4cb3d {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(-62.5px, 0);\n}\n50% {\n    transform: translate(-62.5px, -62.5px);\n}\n75% {\n    transform: translate(0, -62.5px);\n}\n}\n@keyframes rotate-square-5-pulse-data-v-3ba4cb3d {\n0%, 100% {\n    transform: scale(1) rotate(45deg);\n}\n75% {\n    transform: scale(0.25) rotate(45deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-7de4e8ea] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  line-height: 0;\n}\n.spinner *[data-v-7de4e8ea] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-7de4e8ea] {\n  position: relative;\n  width: 75px;\n  height: 75px;\n}\n.load3-center[data-v-7de4e8ea] {\n  display: inline-block;\n  position: absolute;\n  background: #41b883;\n  transform: rotate(45deg);\n  height: 30px;\n  width: 30px;\n  left: 23px;\n  top: 23px;\n  border-radius: 3px;\n  animation: rotate-square-5-pulse-data-v-7de4e8ea 1s ease infinite;\n}\n.load3[data-v-7de4e8ea] {\n  display: inline-block;\n  position: relative;\n  width: 75px;\n  height: 75px;\n  transform: rotate(45deg);\n}\n.load3[data-v-7de4e8ea]:after, .load3[data-v-7de4e8ea]:before {\n    position: absolute;\n    content: '';\n    height: 10px;\n    width: 10px;\n    display: block;\n    top: 0;\n    border-radius: 3px;\n    background: #41b883;\n    animation-delay: -.5s;\n}\n.load3[data-v-7de4e8ea]:after {\n    right: 0;\n    animation: rotate-square-5-square-tr-data-v-7de4e8ea 2s ease infinite;\n    animation-delay: .125s;\n}\n.load3[data-v-7de4e8ea]:before {\n    animation: rotate-square-5-square-tl-data-v-7de4e8ea 2s ease infinite;\n    animation-delay: .125s;\n}\n.load3.two[data-v-7de4e8ea] {\n  position: relative;\n  top: -75px;\n}\n.load3.two[data-v-7de4e8ea]:after, .load3.two[data-v-7de4e8ea]:before {\n    bottom: 0;\n    top: initial;\n}\n.load3.two[data-v-7de4e8ea]:after {\n    animation: rotate-square-5-square-br-data-v-7de4e8ea 2s ease infinite;\n    animation-direction: reverse;\n}\n.load3.two[data-v-7de4e8ea]:before {\n    animation: rotate-square-5-square-bl-data-v-7de4e8ea 2s ease infinite;\n    animation-direction: reverse;\n}\n@keyframes rotate-square-5-square-tl-data-v-7de4e8ea {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(0, 62.5px);\n}\n50% {\n    transform: translate(62.5px, 62.5px);\n}\n75% {\n    transform: translate(62.5px, 0);\n}\n}\n@keyframes rotate-square-5-square-bl-data-v-7de4e8ea {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(0, -62.5px);\n}\n50% {\n    transform: translate(62.5px, -62.5px);\n}\n75% {\n    transform: translate(62.5px, 0);\n}\n}\n@keyframes rotate-square-5-square-tr-data-v-7de4e8ea {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(-62.5px, 0);\n}\n50% {\n    transform: translate(-62.5px, 62.5px);\n}\n75% {\n    transform: translate(0, 62.5px);\n}\n}\n@keyframes rotate-square-5-square-br-data-v-7de4e8ea {\n0% {\n    transform: translate(0, 0);\n}\n25% {\n    transform: translate(-62.5px, 0);\n}\n50% {\n    transform: translate(-62.5px, -62.5px);\n}\n75% {\n    transform: translate(0, -62.5px);\n}\n}\n@keyframes rotate-square-5-pulse-data-v-7de4e8ea {\n0%, 100% {\n    transform: scale(1) rotate(45deg);\n}\n75% {\n    transform: scale(0.25) rotate(45deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -47652,7 +47685,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3ba4cb3d", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-7de4e8ea", module.exports)
   }
 }
 
@@ -47673,11 +47706,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-60aaaef4",
+  "data-v-072ff927",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\ScaleOut.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\ScaleOut.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ScaleOut.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -47688,9 +47721,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-60aaaef4", Component.options)
+    hotAPI.createRecord("data-v-072ff927", Component.options)
   } else {
-    hotAPI.reload("data-v-60aaaef4", Component.options)
+    hotAPI.reload("data-v-072ff927", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47711,13 +47744,13 @@ var content = __webpack_require__(200);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("156a5a39", content, false, {});
+var update = __webpack_require__(2)("4ebecadc", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-60aaaef4\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./ScaleOut.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-60aaaef4\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./ScaleOut.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-072ff927\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./ScaleOut.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-072ff927\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./ScaleOut.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -47735,7 +47768,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-60aaaef4] {\n  border-radius: 100%;\n  display: inline-block;\n  animation: sk-scaleout-data-v-60aaaef4 1s ease-in-out infinite;\n}\n@keyframes sk-scaleout-data-v-60aaaef4 {\n0% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(1);\n    opacity: 0;\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-072ff927] {\n  border-radius: 100%;\n  display: inline-block;\n  animation: sk-scaleout-data-v-072ff927 1s ease-in-out infinite;\n}\n@keyframes sk-scaleout-data-v-072ff927 {\n0% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(1);\n    opacity: 0;\n}\n}\n", ""]);
 
 // exports
 
@@ -47789,7 +47822,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-60aaaef4", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-072ff927", module.exports)
   }
 }
 
@@ -47810,11 +47843,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-2ad9eb43",
+  "data-v-1a822636",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Socket.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Socket.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Socket.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -47825,9 +47858,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2ad9eb43", Component.options)
+    hotAPI.createRecord("data-v-1a822636", Component.options)
   } else {
-    hotAPI.reload("data-v-2ad9eb43", Component.options)
+    hotAPI.reload("data-v-1a822636", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47848,13 +47881,13 @@ var content = __webpack_require__(205);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("01cb7d05", content, false, {});
+var update = __webpack_require__(2)("a9ff5c58", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2ad9eb43\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Socket.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2ad9eb43\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Socket.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1a822636\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Socket.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1a822636\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Socket.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -47872,7 +47905,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-2ad9eb43] {\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-2ad9eb43] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-2ad9eb43] {\n  transform-origin: center center;\n  width: 200px;\n  height: 200px;\n  position: relative;\n}\n.hex-brick[data-v-2ad9eb43] {\n  background: #41b883;\n  width: 30px;\n  height: 17px;\n  position: absolute;\n  top: 5px;\n  animation-name: socket-fade-data-v-2ad9eb43;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n}\n.h2[data-v-2ad9eb43] {\n  transform: rotate(60deg);\n}\n.h3[data-v-2ad9eb43] {\n  transform: rotate(-60deg);\n}\n.gel[data-v-2ad9eb43] {\n  height: 30px;\n  width: 30px;\n  transition: all .3s;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n}\n.center-gel[data-v-2ad9eb43] {\n  margin-left: -15px;\n  margin-top: -15px;\n  animation-name: socket-pulse-data-v-2ad9eb43;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n}\n.c1[data-v-2ad9eb43] {\n  margin-left: -47px;\n  margin-top: -15px;\n}\n.c2[data-v-2ad9eb43] {\n  margin-left: -31px;\n  margin-top: -43px;\n}\n.c3[data-v-2ad9eb43] {\n  margin-left: 1px;\n  margin-top: -43px;\n}\n.c4[data-v-2ad9eb43] {\n  margin-left: 17px;\n  margin-top: -15px;\n}\n.c5[data-v-2ad9eb43] {\n  margin-left: -31px;\n  margin-top: 13px;\n}\n.c6[data-v-2ad9eb43] {\n  margin-left: 1px;\n  margin-top: 13px;\n}\n.c7[data-v-2ad9eb43] {\n  margin-left: -63px;\n  margin-top: -43px;\n}\n.c8[data-v-2ad9eb43] {\n  margin-left: 33px;\n  margin-top: -43px;\n}\n.c9[data-v-2ad9eb43] {\n  margin-left: -15px;\n  margin-top: 41px;\n}\n.c10[data-v-2ad9eb43] {\n  margin-left: -63px;\n  margin-top: 13px;\n}\n.c11[data-v-2ad9eb43] {\n  margin-left: 33px;\n  margin-top: 13px;\n}\n.c12[data-v-2ad9eb43] {\n  margin-left: -15px;\n  margin-top: -71px;\n}\n.c13[data-v-2ad9eb43] {\n  margin-left: -47px;\n  margin-top: -71px;\n}\n.c14[data-v-2ad9eb43] {\n  margin-left: 17px;\n  margin-top: -71px;\n}\n.c15[data-v-2ad9eb43] {\n  margin-left: -47px;\n  margin-top: 41px;\n}\n.c16[data-v-2ad9eb43] {\n  margin-left: 17px;\n  margin-top: 41px;\n}\n.c17[data-v-2ad9eb43] {\n  margin-left: -79px;\n  margin-top: -15px;\n}\n.c18[data-v-2ad9eb43] {\n  margin-left: 49px;\n  margin-top: -15px;\n}\n.c19[data-v-2ad9eb43] {\n  margin-left: -63px;\n  margin-top: -99px;\n}\n.c20[data-v-2ad9eb43] {\n  margin-left: 33px;\n  margin-top: -99px;\n}\n.c21[data-v-2ad9eb43] {\n  margin-left: 1px;\n  margin-top: -99px;\n}\n.c22[data-v-2ad9eb43] {\n  margin-left: -31px;\n  margin-top: -99px;\n}\n.c23[data-v-2ad9eb43] {\n  margin-left: -63px;\n  margin-top: 69px;\n}\n.c24[data-v-2ad9eb43] {\n  margin-left: 33px;\n  margin-top: 69px;\n}\n.c25[data-v-2ad9eb43] {\n  margin-left: 1px;\n  margin-top: 69px;\n}\n.c26[data-v-2ad9eb43] {\n  margin-left: -31px;\n  margin-top: 69px;\n}\n.c27[data-v-2ad9eb43] {\n  margin-left: -79px;\n  margin-top: -15px;\n}\n.c28[data-v-2ad9eb43] {\n  margin-left: -95px;\n  margin-top: -43px;\n}\n.c29[data-v-2ad9eb43] {\n  margin-left: -95px;\n  margin-top: 13px;\n}\n.c30[data-v-2ad9eb43] {\n  margin-left: 49px;\n  margin-top: 41px;\n}\n.c31[data-v-2ad9eb43] {\n  margin-left: -79px;\n  margin-top: -71px;\n}\n.c32[data-v-2ad9eb43] {\n  margin-left: -111px;\n  margin-top: -15px;\n}\n.c33[data-v-2ad9eb43] {\n  margin-left: 65px;\n  margin-top: -43px;\n}\n.c34[data-v-2ad9eb43] {\n  margin-left: 65px;\n  margin-top: 13px;\n}\n.c35[data-v-2ad9eb43] {\n  margin-left: -79px;\n  margin-top: 41px;\n}\n.c36[data-v-2ad9eb43] {\n  margin-left: 49px;\n  margin-top: -71px;\n}\n.c37[data-v-2ad9eb43] {\n  margin-left: 81px;\n  margin-top: -15px;\n}\n.r1[data-v-2ad9eb43] {\n  animation-name: socket-pulse-data-v-2ad9eb43;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n  animation-delay: .2s;\n}\n.r2[data-v-2ad9eb43] {\n  animation-name: socket-pulse-data-v-2ad9eb43;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n  animation-delay: .4s;\n}\n.r3[data-v-2ad9eb43] {\n  animation-name: socket-pulse-data-v-2ad9eb43;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n  animation-delay: .6s;\n}\n.r1 > .hex-brick[data-v-2ad9eb43] {\n  animation-name: socket-fade-data-v-2ad9eb43;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n  animation-delay: .2s;\n}\n.r2 > .hex-brick[data-v-2ad9eb43] {\n  animation-name: socket-fade-data-v-2ad9eb43;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n  animation-delay: .4s;\n}\n.r3 > .hex-brick[data-v-2ad9eb43] {\n  animation-name: socket-fade-data-v-2ad9eb43;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n  animation-delay: .6s;\n}\n@keyframes socket-pulse-data-v-2ad9eb43 {\n0% {\n    transform: scale(1);\n}\n50% {\n    transform: scale(0.01);\n}\n100% {\n    transform: scale(1);\n}\n}\n@keyframes socket-fade-data-v-2ad9eb43 {\n0% {\n    background: #41b883;\n}\n50% {\n    background: #286b4b;\n}\n100% {\n    background: #41b883;\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-1a822636] {\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-1a822636] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-1a822636] {\n  transform-origin: center center;\n  width: 200px;\n  height: 200px;\n  position: relative;\n}\n.hex-brick[data-v-1a822636] {\n  background: #41b883;\n  width: 30px;\n  height: 17px;\n  position: absolute;\n  top: 5px;\n  animation-name: socket-fade-data-v-1a822636;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n}\n.h2[data-v-1a822636] {\n  transform: rotate(60deg);\n}\n.h3[data-v-1a822636] {\n  transform: rotate(-60deg);\n}\n.gel[data-v-1a822636] {\n  height: 30px;\n  width: 30px;\n  transition: all .3s;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n}\n.center-gel[data-v-1a822636] {\n  margin-left: -15px;\n  margin-top: -15px;\n  animation-name: socket-pulse-data-v-1a822636;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n}\n.c1[data-v-1a822636] {\n  margin-left: -47px;\n  margin-top: -15px;\n}\n.c2[data-v-1a822636] {\n  margin-left: -31px;\n  margin-top: -43px;\n}\n.c3[data-v-1a822636] {\n  margin-left: 1px;\n  margin-top: -43px;\n}\n.c4[data-v-1a822636] {\n  margin-left: 17px;\n  margin-top: -15px;\n}\n.c5[data-v-1a822636] {\n  margin-left: -31px;\n  margin-top: 13px;\n}\n.c6[data-v-1a822636] {\n  margin-left: 1px;\n  margin-top: 13px;\n}\n.c7[data-v-1a822636] {\n  margin-left: -63px;\n  margin-top: -43px;\n}\n.c8[data-v-1a822636] {\n  margin-left: 33px;\n  margin-top: -43px;\n}\n.c9[data-v-1a822636] {\n  margin-left: -15px;\n  margin-top: 41px;\n}\n.c10[data-v-1a822636] {\n  margin-left: -63px;\n  margin-top: 13px;\n}\n.c11[data-v-1a822636] {\n  margin-left: 33px;\n  margin-top: 13px;\n}\n.c12[data-v-1a822636] {\n  margin-left: -15px;\n  margin-top: -71px;\n}\n.c13[data-v-1a822636] {\n  margin-left: -47px;\n  margin-top: -71px;\n}\n.c14[data-v-1a822636] {\n  margin-left: 17px;\n  margin-top: -71px;\n}\n.c15[data-v-1a822636] {\n  margin-left: -47px;\n  margin-top: 41px;\n}\n.c16[data-v-1a822636] {\n  margin-left: 17px;\n  margin-top: 41px;\n}\n.c17[data-v-1a822636] {\n  margin-left: -79px;\n  margin-top: -15px;\n}\n.c18[data-v-1a822636] {\n  margin-left: 49px;\n  margin-top: -15px;\n}\n.c19[data-v-1a822636] {\n  margin-left: -63px;\n  margin-top: -99px;\n}\n.c20[data-v-1a822636] {\n  margin-left: 33px;\n  margin-top: -99px;\n}\n.c21[data-v-1a822636] {\n  margin-left: 1px;\n  margin-top: -99px;\n}\n.c22[data-v-1a822636] {\n  margin-left: -31px;\n  margin-top: -99px;\n}\n.c23[data-v-1a822636] {\n  margin-left: -63px;\n  margin-top: 69px;\n}\n.c24[data-v-1a822636] {\n  margin-left: 33px;\n  margin-top: 69px;\n}\n.c25[data-v-1a822636] {\n  margin-left: 1px;\n  margin-top: 69px;\n}\n.c26[data-v-1a822636] {\n  margin-left: -31px;\n  margin-top: 69px;\n}\n.c27[data-v-1a822636] {\n  margin-left: -79px;\n  margin-top: -15px;\n}\n.c28[data-v-1a822636] {\n  margin-left: -95px;\n  margin-top: -43px;\n}\n.c29[data-v-1a822636] {\n  margin-left: -95px;\n  margin-top: 13px;\n}\n.c30[data-v-1a822636] {\n  margin-left: 49px;\n  margin-top: 41px;\n}\n.c31[data-v-1a822636] {\n  margin-left: -79px;\n  margin-top: -71px;\n}\n.c32[data-v-1a822636] {\n  margin-left: -111px;\n  margin-top: -15px;\n}\n.c33[data-v-1a822636] {\n  margin-left: 65px;\n  margin-top: -43px;\n}\n.c34[data-v-1a822636] {\n  margin-left: 65px;\n  margin-top: 13px;\n}\n.c35[data-v-1a822636] {\n  margin-left: -79px;\n  margin-top: 41px;\n}\n.c36[data-v-1a822636] {\n  margin-left: 49px;\n  margin-top: -71px;\n}\n.c37[data-v-1a822636] {\n  margin-left: 81px;\n  margin-top: -15px;\n}\n.r1[data-v-1a822636] {\n  animation-name: socket-pulse-data-v-1a822636;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n  animation-delay: .2s;\n}\n.r2[data-v-1a822636] {\n  animation-name: socket-pulse-data-v-1a822636;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n  animation-delay: .4s;\n}\n.r3[data-v-1a822636] {\n  animation-name: socket-pulse-data-v-1a822636;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n  animation-delay: .6s;\n}\n.r1 > .hex-brick[data-v-1a822636] {\n  animation-name: socket-fade-data-v-1a822636;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n  animation-delay: .2s;\n}\n.r2 > .hex-brick[data-v-1a822636] {\n  animation-name: socket-fade-data-v-1a822636;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n  animation-delay: .4s;\n}\n.r3 > .hex-brick[data-v-1a822636] {\n  animation-name: socket-fade-data-v-1a822636;\n  animation-duration: 2s;\n  animation-iteration-count: infinite;\n  animation-delay: .6s;\n}\n@keyframes socket-pulse-data-v-1a822636 {\n0% {\n    transform: scale(1);\n}\n50% {\n    transform: scale(0.01);\n}\n100% {\n    transform: scale(1);\n}\n}\n@keyframes socket-fade-data-v-1a822636 {\n0% {\n    background: #41b883;\n}\n50% {\n    background: #286b4b;\n}\n100% {\n    background: #41b883;\n}\n}\n", ""]);
 
 // exports
 
@@ -48487,7 +48520,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-2ad9eb43", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-1a822636", module.exports)
   }
 }
 
@@ -48508,11 +48541,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-2e8900b4",
+  "data-v-e17e6c4e",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\SpinLine.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\SpinLine.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] SpinLine.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -48523,9 +48556,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2e8900b4", Component.options)
+    hotAPI.createRecord("data-v-e17e6c4e", Component.options)
   } else {
-    hotAPI.reload("data-v-2e8900b4", Component.options)
+    hotAPI.reload("data-v-e17e6c4e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48546,13 +48579,13 @@ var content = __webpack_require__(210);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("58f79cff", content, false, {});
+var update = __webpack_require__(2)("6e4bb2ad", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2e8900b4\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./SpinLine.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2e8900b4\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./SpinLine.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e17e6c4e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./SpinLine.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e17e6c4e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./SpinLine.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -48570,7 +48603,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-2e8900b4] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-2e8900b4] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-2e8900b4] {\n  transform-origin: center center;\n  animation: spin-line-data-v-2e8900b4 4s ease infinite;\n}\n@keyframes spin-line-data-v-2e8900b4 {\n0% {\n    transform: rotate(-20deg);\n    height: 5px;\n    width: 75px;\n}\n5% {\n    height: 5px;\n    width: 75px;\n}\n30% {\n    transform: rotate(380deg);\n    height: 5px;\n    width: 75px;\n}\n40% {\n    transform: rotate(360deg);\n    height: 5px;\n    width: 75px;\n}\n55% {\n    transform: rotate(0deg);\n    height: 5px;\n    width: 5px;\n}\n65% {\n    transform: rotate(0deg);\n    height: 5px;\n    width: 85px;\n}\n68% {\n    transform: rotate(0deg);\n    height: 5px;\n}\n75% {\n    transform: rotate(0deg);\n    height: 5px;\n    width: 1px;\n}\n78% {\n    height: 5px;\n    width: 5px;\n}\n90% {\n    height: 5px;\n    width: 75px;\n    transform: rotate(0deg);\n}\n99%, 100% {\n    height: 5px;\n    width: 75px;\n    transform: rotate(-20deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-e17e6c4e] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.spinner *[data-v-e17e6c4e] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner-inner[data-v-e17e6c4e] {\n  transform-origin: center center;\n  animation: spin-line-data-v-e17e6c4e 4s ease infinite;\n}\n@keyframes spin-line-data-v-e17e6c4e {\n0% {\n    transform: rotate(-20deg);\n    height: 5px;\n    width: 75px;\n}\n5% {\n    height: 5px;\n    width: 75px;\n}\n30% {\n    transform: rotate(380deg);\n    height: 5px;\n    width: 75px;\n}\n40% {\n    transform: rotate(360deg);\n    height: 5px;\n    width: 75px;\n}\n55% {\n    transform: rotate(0deg);\n    height: 5px;\n    width: 5px;\n}\n65% {\n    transform: rotate(0deg);\n    height: 5px;\n    width: 85px;\n}\n68% {\n    transform: rotate(0deg);\n    height: 5px;\n}\n75% {\n    transform: rotate(0deg);\n    height: 5px;\n    width: 1px;\n}\n78% {\n    height: 5px;\n    width: 5px;\n}\n90% {\n    height: 5px;\n    width: 75px;\n    transform: rotate(0deg);\n}\n99%, 100% {\n    height: 5px;\n    width: 75px;\n    transform: rotate(-20deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -48638,7 +48671,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-2e8900b4", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-e17e6c4e", module.exports)
   }
 }
 
@@ -48659,11 +48692,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-d6472c5a",
+  "data-v-a1901974",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\SquareGrid.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\SquareGrid.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] SquareGrid.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -48674,9 +48707,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-d6472c5a", Component.options)
+    hotAPI.createRecord("data-v-a1901974", Component.options)
   } else {
-    hotAPI.reload("data-v-d6472c5a", Component.options)
+    hotAPI.reload("data-v-a1901974", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48697,13 +48730,13 @@ var content = __webpack_require__(215);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("2ebd6bd3", content, false, {});
+var update = __webpack_require__(2)("58bc34d9", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d6472c5a\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./SquareGrid.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d6472c5a\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./SquareGrid.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a1901974\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./SquareGrid.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a1901974\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./SquareGrid.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -48721,7 +48754,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-d6472c5a] {\n  display: inline-block;\n}\n.spinner *[data-v-d6472c5a] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.sk-cube[data-v-d6472c5a] {\n  width: 33%;\n  height: 33%;\n  float: left;\n  animation: sk-cubeGridScaleDelay-data-v-d6472c5a 1.8s ease-in-out infinite;\n}\n.sk-cube1[data-v-d6472c5a] {\n  -webkit-animation-delay: 0.2s;\n  animation-delay: 0.2s;\n}\n.sk-cube2[data-v-d6472c5a] {\n  -webkit-animation-delay: 0.3s;\n  animation-delay: 0.3s;\n}\n.sk-cube3[data-v-d6472c5a] {\n  -webkit-animation-delay: 0.4s;\n  animation-delay: 0.4s;\n}\n.sk-cube4[data-v-d6472c5a] {\n  -webkit-animation-delay: 0.1s;\n  animation-delay: 0.1s;\n}\n.sk-cube5[data-v-d6472c5a] {\n  -webkit-animation-delay: 0.2s;\n  animation-delay: 0.2s;\n}\n.sk-cube6[data-v-d6472c5a] {\n  -webkit-animation-delay: 0.3s;\n  animation-delay: 0.3s;\n}\n.sk-cube7[data-v-d6472c5a] {\n  -webkit-animation-delay: 0s;\n  animation-delay: 0s;\n}\n.sk-cube8[data-v-d6472c5a] {\n  -webkit-animation-delay: 0.1s;\n  animation-delay: 0.1s;\n}\n.sk-cube9[data-v-d6472c5a] {\n  -webkit-animation-delay: 0.2s;\n  animation-delay: 0.2s;\n}\n@keyframes sk-cubeGridScaleDelay-data-v-d6472c5a {\n0%, 70%, 100% {\n    transform: scale3D(1, 1, 1);\n}\n35% {\n    transform: scale3D(0, 0, 1);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-a1901974] {\n  display: inline-block;\n}\n.spinner *[data-v-a1901974] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.sk-cube[data-v-a1901974] {\n  width: 33%;\n  height: 33%;\n  float: left;\n  animation: sk-cubeGridScaleDelay-data-v-a1901974 1.8s ease-in-out infinite;\n}\n.sk-cube1[data-v-a1901974] {\n  -webkit-animation-delay: 0.2s;\n  animation-delay: 0.2s;\n}\n.sk-cube2[data-v-a1901974] {\n  -webkit-animation-delay: 0.3s;\n  animation-delay: 0.3s;\n}\n.sk-cube3[data-v-a1901974] {\n  -webkit-animation-delay: 0.4s;\n  animation-delay: 0.4s;\n}\n.sk-cube4[data-v-a1901974] {\n  -webkit-animation-delay: 0.1s;\n  animation-delay: 0.1s;\n}\n.sk-cube5[data-v-a1901974] {\n  -webkit-animation-delay: 0.2s;\n  animation-delay: 0.2s;\n}\n.sk-cube6[data-v-a1901974] {\n  -webkit-animation-delay: 0.3s;\n  animation-delay: 0.3s;\n}\n.sk-cube7[data-v-a1901974] {\n  -webkit-animation-delay: 0s;\n  animation-delay: 0s;\n}\n.sk-cube8[data-v-a1901974] {\n  -webkit-animation-delay: 0.1s;\n  animation-delay: 0.1s;\n}\n.sk-cube9[data-v-a1901974] {\n  -webkit-animation-delay: 0.2s;\n  animation-delay: 0.2s;\n}\n@keyframes sk-cubeGridScaleDelay-data-v-a1901974 {\n0%, 70%, 100% {\n    transform: scale3D(1, 1, 1);\n}\n35% {\n    transform: scale3D(0, 0, 1);\n}\n}\n", ""]);
 
 // exports
 
@@ -48816,7 +48849,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-d6472c5a", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-a1901974", module.exports)
   }
 }
 
@@ -48837,11 +48870,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-3619db65",
+  "data-v-3b78fed2",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Stretch.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Stretch.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Stretch.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -48852,9 +48885,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3619db65", Component.options)
+    hotAPI.createRecord("data-v-3b78fed2", Component.options)
   } else {
-    hotAPI.reload("data-v-3619db65", Component.options)
+    hotAPI.reload("data-v-3b78fed2", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48875,13 +48908,13 @@ var content = __webpack_require__(220);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("4eb116e5", content, false, {});
+var update = __webpack_require__(2)("fa7f5ae0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3619db65\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Stretch.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3619db65\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Stretch.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3b78fed2\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Stretch.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3b78fed2\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Stretch.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -48899,7 +48932,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-3619db65] {\n  display: inline-block;\n  text-align: center;\n  font-size: 10px;\n}\n.spinner *[data-v-3619db65] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.rect[data-v-3619db65] {\n  animation: sk-stretchdelay-data-v-3619db65 1.2s ease-in-out infinite;\n}\n.spinner > div[data-v-3619db65] {\n  height: 100%;\n  width: 10%;\n  display: inline-block;\n}\n.spinner .rect-2[data-v-3619db65] {\n  animation-delay: -1.1s;\n}\n.spinner .rect-3[data-v-3619db65] {\n  animation-delay: -1.0s;\n}\n.spinner .rect-4[data-v-3619db65] {\n  animation-delay: -0.9s;\n}\n.spinner .rect-5[data-v-3619db65] {\n  animation-delay: -0.8s;\n}\n@keyframes sk-stretchdelay-data-v-3619db65 {\n0%, 40%, 100% {\n    transform: scaleY(0.4);\n}\n20% {\n    transform: scaleY(1);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-3b78fed2] {\n  display: inline-block;\n  text-align: center;\n  font-size: 10px;\n}\n.spinner *[data-v-3b78fed2] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.rect[data-v-3b78fed2] {\n  animation: sk-stretchdelay-data-v-3b78fed2 1.2s ease-in-out infinite;\n}\n.spinner > div[data-v-3b78fed2] {\n  height: 100%;\n  width: 10%;\n  display: inline-block;\n}\n.spinner .rect-2[data-v-3b78fed2] {\n  animation-delay: -1.1s;\n}\n.spinner .rect-3[data-v-3b78fed2] {\n  animation-delay: -1.0s;\n}\n.spinner .rect-4[data-v-3b78fed2] {\n  animation-delay: -0.9s;\n}\n.spinner .rect-5[data-v-3b78fed2] {\n  animation-delay: -0.8s;\n}\n@keyframes sk-stretchdelay-data-v-3b78fed2 {\n0%, 40%, 100% {\n    transform: scaleY(0.4);\n}\n20% {\n    transform: scaleY(1);\n}\n}\n", ""]);
 
 // exports
 
@@ -48978,7 +49011,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3619db65", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-3b78fed2", module.exports)
   }
 }
 
@@ -48999,11 +49032,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-58d1ce7b",
+  "data-v-5e30f1e8",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Texture.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Texture.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Texture.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -49014,9 +49047,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-58d1ce7b", Component.options)
+    hotAPI.createRecord("data-v-5e30f1e8", Component.options)
   } else {
-    hotAPI.reload("data-v-58d1ce7b", Component.options)
+    hotAPI.reload("data-v-5e30f1e8", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -49037,13 +49070,13 @@ var content = __webpack_require__(225);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("9adf45c8", content, false, {});
+var update = __webpack_require__(2)("1312870e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-58d1ce7b\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Texture.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-58d1ce7b\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Texture.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5e30f1e8\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Texture.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5e30f1e8\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Texture.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -49061,7 +49094,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-58d1ce7b] {\n  flex-shrink: 0;\n  border: 1px #41b883 solid;\n  border-radius: 4px;\n  position: relative;\n  background: linear-gradient(45deg, transparent 49%, #41b883 50%, #41b883 50%, transparent 51%, transparent), linear-gradient(-45deg, transparent 49%, #41b883 50%, #41b883 50%, transparent 51%, transparent);\n  background-size: 16px 16px;\n  background-position: 0% 0%;\n  animation: spTexture-data-v-58d1ce7b 1s infinite linear;\n}\n@keyframes spTexture-data-v-58d1ce7b {\nfrom {\n    background-position: 0px 0px;\n}\nto {\n    background-position: -16px 0px;\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-5e30f1e8] {\n  flex-shrink: 0;\n  border: 1px #41b883 solid;\n  border-radius: 4px;\n  position: relative;\n  background: linear-gradient(45deg, transparent 49%, #41b883 50%, #41b883 50%, transparent 51%, transparent), linear-gradient(-45deg, transparent 49%, #41b883 50%, #41b883 50%, transparent 51%, transparent);\n  background-size: 16px 16px;\n  background-position: 0% 0%;\n  animation: spTexture-data-v-5e30f1e8 1s infinite linear;\n}\n@keyframes spTexture-data-v-5e30f1e8 {\nfrom {\n    background-position: 0px 0px;\n}\nto {\n    background-position: -16px 0px;\n}\n}\n", ""]);
 
 // exports
 
@@ -49106,7 +49139,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-58d1ce7b", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-5e30f1e8", module.exports)
   }
 }
 
@@ -49127,11 +49160,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-4e6d87e8",
+  "data-v-78918415",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\ThreeDots.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\ThreeDots.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ThreeDots.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -49142,9 +49175,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4e6d87e8", Component.options)
+    hotAPI.createRecord("data-v-78918415", Component.options)
   } else {
-    hotAPI.reload("data-v-4e6d87e8", Component.options)
+    hotAPI.reload("data-v-78918415", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -49165,13 +49198,13 @@ var content = __webpack_require__(230);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("3e9a7582", content, false, {});
+var update = __webpack_require__(2)("036d868c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4e6d87e8\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./ThreeDots.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4e6d87e8\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./ThreeDots.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-78918415\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./ThreeDots.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-78918415\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./ThreeDots.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -49189,7 +49222,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-4e6d87e8] {\n  position: relative;\n  display: inline-block;\n  box-sizing: border-box;\n}\n.spinner *[data-v-4e6d87e8] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner .blob[data-v-4e6d87e8] {\n    box-sizing: border-box;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    border: 2px solid #41b883;\n    width: 10px;\n    height: 10px;\n    border-radius: 50%;\n}\n.spinner .blob.top[data-v-4e6d87e8] {\n      top: 0;\n      transform: translate(-50%, 0);\n      animation: blob-top-data-v-4e6d87e8 1s infinite ease-in;\n}\n.spinner .blob.bottom[data-v-4e6d87e8] {\n      top: 100%;\n      transform: translate(-50%, -100%);\n      animation: blob-bottom-data-v-4e6d87e8 1s infinite ease-in;\n}\n.spinner .blob.left[data-v-4e6d87e8] {\n      left: 0;\n      transform: translate(0, -50%);\n      animation: blob-left-data-v-4e6d87e8 1s infinite ease-in;\n}\n.spinner .move-blob[data-v-4e6d87e8] {\n    top: 0;\n    transform: translate(-50%, 0);\n    animation: blob-spinner-mover-data-v-4e6d87e8 1s infinite ease-in;\n}\n@keyframes blob-bottom-data-v-4e6d87e8 {\n25%, 50%, 75% {\n    top: 50%;\n    left: 100%;\n    transform: translate(-100%, -50%);\n}\n100% {\n    top: 0;\n    left: 50%;\n    transform: translate(-50%, 0);\n}\n}\n@keyframes blob-left-data-v-4e6d87e8 {\n25% {\n    top: 50%;\n    left: 0;\n    transform: translate(0, -50%);\n}\n50%, 100% {\n    top: 100%;\n    left: 50%;\n    transform: translate(-50%, -100%);\n}\n}\n@keyframes blob-top-data-v-4e6d87e8 {\n50% {\n    top: 0;\n    left: 50%;\n    transform: translate(-50%, 0);\n}\n75%, 100% {\n    top: 50%;\n    left: 0;\n    transform: translate(0, -50%);\n}\n}\n@keyframes blob-spinner-mover-data-v-4e6d87e8 {\n0%, 100% {\n    top: 0;\n    left: 50%;\n    transform: translate(-50%, 0);\n}\n25% {\n    top: 50%;\n    left: 100%;\n    transform: translate(-100%, -50%);\n}\n50% {\n    top: 100%;\n    left: 50%;\n    transform: translate(-50%, -100%);\n}\n75% {\n    top: 50%;\n    left: 0;\n    transform: translate(0, -50%);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-78918415] {\n  position: relative;\n  display: inline-block;\n  box-sizing: border-box;\n}\n.spinner *[data-v-78918415] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.spinner .blob[data-v-78918415] {\n    box-sizing: border-box;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    border: 2px solid #41b883;\n    width: 10px;\n    height: 10px;\n    border-radius: 50%;\n}\n.spinner .blob.top[data-v-78918415] {\n      top: 0;\n      transform: translate(-50%, 0);\n      animation: blob-top-data-v-78918415 1s infinite ease-in;\n}\n.spinner .blob.bottom[data-v-78918415] {\n      top: 100%;\n      transform: translate(-50%, -100%);\n      animation: blob-bottom-data-v-78918415 1s infinite ease-in;\n}\n.spinner .blob.left[data-v-78918415] {\n      left: 0;\n      transform: translate(0, -50%);\n      animation: blob-left-data-v-78918415 1s infinite ease-in;\n}\n.spinner .move-blob[data-v-78918415] {\n    top: 0;\n    transform: translate(-50%, 0);\n    animation: blob-spinner-mover-data-v-78918415 1s infinite ease-in;\n}\n@keyframes blob-bottom-data-v-78918415 {\n25%, 50%, 75% {\n    top: 50%;\n    left: 100%;\n    transform: translate(-100%, -50%);\n}\n100% {\n    top: 0;\n    left: 50%;\n    transform: translate(-50%, 0);\n}\n}\n@keyframes blob-left-data-v-78918415 {\n25% {\n    top: 50%;\n    left: 0;\n    transform: translate(0, -50%);\n}\n50%, 100% {\n    top: 100%;\n    left: 50%;\n    transform: translate(-50%, -100%);\n}\n}\n@keyframes blob-top-data-v-78918415 {\n50% {\n    top: 0;\n    left: 50%;\n    transform: translate(-50%, 0);\n}\n75%, 100% {\n    top: 50%;\n    left: 0;\n    transform: translate(0, -50%);\n}\n}\n@keyframes blob-spinner-mover-data-v-78918415 {\n0%, 100% {\n    top: 0;\n    left: 50%;\n    transform: translate(-50%, 0);\n}\n25% {\n    top: 50%;\n    left: 100%;\n    transform: translate(-100%, -50%);\n}\n50% {\n    top: 100%;\n    left: 50%;\n    transform: translate(-50%, -100%);\n}\n75% {\n    top: 50%;\n    left: 0;\n    transform: translate(0, -50%);\n}\n}\n", ""]);
 
 // exports
 
@@ -49265,7 +49298,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-4e6d87e8", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-78918415", module.exports)
   }
 }
 
@@ -49286,11 +49319,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-522cbb01",
+  "data-v-578bde6e",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\TwoCube.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\TwoCube.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] TwoCube.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -49301,9 +49334,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-522cbb01", Component.options)
+    hotAPI.createRecord("data-v-578bde6e", Component.options)
   } else {
-    hotAPI.reload("data-v-522cbb01", Component.options)
+    hotAPI.reload("data-v-578bde6e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -49324,13 +49357,13 @@ var content = __webpack_require__(235);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("270a36f6", content, false, {});
+var update = __webpack_require__(2)("3acc3d29", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-522cbb01\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./TwoCube.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-522cbb01\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./TwoCube.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-578bde6e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./TwoCube.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-578bde6e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./TwoCube.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -49348,7 +49381,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner[data-v-522cbb01] {\n  display: inline-block;\n  position: relative;\n}\n.spinner *[data-v-522cbb01] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.cube1[data-v-522cbb01], .cube2[data-v-522cbb01] {\n  width: 25%;\n  height: 25%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: sk-cubemove-data-v-522cbb01 1.8s ease-in-out infinite;\n}\n.cube2[data-v-522cbb01] {\n  animation-delay: -0.9s;\n}\n@keyframes sk-cubemove-data-v-522cbb01 {\n25% {\n    top: 0;\n    left: calc(100% - 25%);\n    transform: rotate(-90deg) scale(0.5);\n}\n50% {\n    top: calc(100% - 25%);\n    left: calc(100% - 25%);\n    transform: rotate(-179deg);\n}\n50.1% {\n    top: calc(100% - 25%);\n    left: calc(100% - 25%);\n    transform: rotate(-180deg);\n}\n75% {\n    top: calc(100% - 25%);\n    left: 0;\n    transform: rotate(-270deg) scale(0.5);\n}\n100% {\n    top: 0;\n    left: 0;\n    transform: rotate(-360deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner[data-v-578bde6e] {\n  display: inline-block;\n  position: relative;\n}\n.spinner *[data-v-578bde6e] {\n    line-height: 0;\n    box-sizing: border-box;\n}\n.cube1[data-v-578bde6e], .cube2[data-v-578bde6e] {\n  width: 25%;\n  height: 25%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: sk-cubemove-data-v-578bde6e 1.8s ease-in-out infinite;\n}\n.cube2[data-v-578bde6e] {\n  animation-delay: -0.9s;\n}\n@keyframes sk-cubemove-data-v-578bde6e {\n25% {\n    top: 0;\n    left: calc(100% - 25%);\n    transform: rotate(-90deg) scale(0.5);\n}\n50% {\n    top: calc(100% - 25%);\n    left: calc(100% - 25%);\n    transform: rotate(-179deg);\n}\n50.1% {\n    top: calc(100% - 25%);\n    left: calc(100% - 25%);\n    transform: rotate(-180deg);\n}\n75% {\n    top: calc(100% - 25%);\n    left: 0;\n    transform: rotate(-270deg) scale(0.5);\n}\n100% {\n    top: 0;\n    left: 0;\n    transform: rotate(-360deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -49416,7 +49449,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-522cbb01", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-578bde6e", module.exports)
   }
 }
 
@@ -49437,11 +49470,11 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-47eb79c9",
+  "data-v-eb885508",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\3.Workspace\\4.WebDev\\laravel-vue-tasks-master\\laravel-vue-tasks-master\\node_modules\\vue-loading-spinner\\src\\components\\Wave.vue"
+Component.options.__file = "D:\\3.Workspace\\4.WebDev\\notes-app\\notes-app\\node_modules\\vue-loading-spinner\\src\\components\\Wave.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Wave.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -49452,9 +49485,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-47eb79c9", Component.options)
+    hotAPI.createRecord("data-v-eb885508", Component.options)
   } else {
-    hotAPI.reload("data-v-47eb79c9", Component.options)
+    hotAPI.reload("data-v-eb885508", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -49475,13 +49508,13 @@ var content = __webpack_require__(240);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("5e5c5aa6", content, false, {});
+var update = __webpack_require__(2)("85323a00", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-47eb79c9\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Wave.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-47eb79c9\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Wave.vue");
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-eb885508\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Wave.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-eb885508\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/sass-loader/lib/loader.js!../../../vue-loader/lib/selector.js?type=styles&index=0!./Wave.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -49499,7 +49532,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spinner *[data-v-47eb79c9] {\n  line-height: 0;\n  box-sizing: border-box;\n}\n.spinner > div[data-v-47eb79c9] {\n  background-color: transparent;\n  border: 1px solid #41b883;\n  border-radius: 100%;\n  animation-fill-mode: both;\n  position: absolute;\n  opacity: 0;\n  width: 50px;\n  height: 50px;\n  animation: wave-jumper-data-v-47eb79c9 1s 0s linear infinite;\n}\n.spinner > div[data-v-47eb79c9]:nth-child(2) {\n  animation-delay: 0.33333s;\n}\n.spinner > div[data-v-47eb79c9]:nth-child(3) {\n  animation-delay: 0.66666s;\n}\n@keyframes wave-jumper-data-v-47eb79c9 {\n0% {\n    opacity: 0;\n    transform: scale(0);\n}\n5% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n", ""]);
+exports.push([module.i, "\n.spinner *[data-v-eb885508] {\n  line-height: 0;\n  box-sizing: border-box;\n}\n.spinner > div[data-v-eb885508] {\n  background-color: transparent;\n  border: 1px solid #41b883;\n  border-radius: 100%;\n  animation-fill-mode: both;\n  position: absolute;\n  opacity: 0;\n  width: 50px;\n  height: 50px;\n  animation: wave-jumper-data-v-eb885508 1s 0s linear infinite;\n}\n.spinner > div[data-v-eb885508]:nth-child(2) {\n  animation-delay: 0.33333s;\n}\n.spinner > div[data-v-eb885508]:nth-child(3) {\n  animation-delay: 0.66666s;\n}\n@keyframes wave-jumper-data-v-eb885508 {\n0% {\n    opacity: 0;\n    transform: scale(0);\n}\n5% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n", ""]);
 
 // exports
 
@@ -49548,7 +49581,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-47eb79c9", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-eb885508", module.exports)
   }
 }
 
@@ -49629,14 +49662,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return _c('li', {
       key: task.index,
       staticClass: "list-group-item"
-    }, [_vm._v("\n\n            " + _vm._s(task.body) + "\n\n            "), _c('button', {
+    }, [_c('div', {
+      staticClass: "container"
+    }, [_c('div', {
+      staticClass: "row"
+    }, [_c('div', {
+      staticClass: "col-xs-4 col-sm-4 col-md-4 col-lg-4"
+    }, [_vm._v("\n                     " + _vm._s(task.title) + "\n                  ")]), _vm._v(" "), _c('div', {
+      staticClass: "col-xs-4 col-sm-4 col-md-4 col-lg-4"
+    }, [_vm._v("\n                     " + _vm._s(task.body) + "\n                  ")]), _vm._v(" "), _c('div', {
+      staticClass: "col-xs col-sm col-md col-lg-12"
+    }, [_c('button', {
       staticClass: "btn btn-danger btn-xs pull-right",
       on: {
         "click": function($event) {
           _vm.deleteTask(task.id)
         }
       }
-    }, [_vm._v("Delete")])])
+    }, [_vm._v("Delete")])])])])])
   })], 2) : _vm._e()])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
@@ -49646,13 +49689,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "submit"
     }
-  }, [_vm._v("New Task1")])])
+  }, [_vm._v("New Note")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5d923f93", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-4777dd00", module.exports)
   }
 }
 
