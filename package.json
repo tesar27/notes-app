@@ -19,7 +19,7 @@
     "jquery": "^3.4.1",
     "laravel-mix": "^1.0",
     "laravel-mix-tailwind": "^0.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "sass": "^1.15.2",
     "sass-loader": "^7.1.0",
     "tailwindcss": "^1.1.2",
